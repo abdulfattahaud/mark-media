@@ -1,0 +1,30 @@
+image: node:21
+stages:
+  - test
+  - deploy_test
+
+test:
+  stage: test
+  script:
+    - npm i && npm run build
+    # - npm test
+
+deploy_test:
+  stage: deploy_test
+  script:
+    - echo "Deploying to testing server..."
+    - curl --silent "https://gitlab.com/gitlab-org/incubation-engineering/mobile-devops/download-secure-files/-/raw/main/installer" | bash
+    # Create directory to store pem file
+    - mkdir -p ~/.ssh
+    # Set permissions for pem file
+    - chmod 400 .secure_files/markmedia.pem
+    # Add host key to known_hosts
+    - ssh-keyscan -H 15.236.88.239 >> ~/.ssh/known_hosts
+    # SSH into EC2 instance
+    - ssh -i .secure_files/markmedia.pem ubuntu@15.236.88.239 "cd mark-media-website && git restore package-lock.json &&  git pull && npm i && npm run build && pm2 delete dev.markmedia.net && pm2 start --name dev.markmedia.net npm -- start"
+    - "echo 'Connected to EC2 instance'"
+  only:
+    - testing
+  environment:
+    name: testing
+    url: https://dev.markmedia.net
