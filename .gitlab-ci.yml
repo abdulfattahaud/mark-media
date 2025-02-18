@@ -21,7 +21,7 @@ deploy_test:
     # Add host key to known_hosts
     - ssh-keyscan -H 15.236.88.239 >> ~/.ssh/known_hosts
     # SSH into EC2 instance
-    - ssh -i .secure_files/markmedia.pem ubuntu@15.236.88.239 "cd mark-media-website && git restore package-lock.json && git pull && npm i && npm run build && pm2 delete dev.markmedia.net && pm2 start --name dev.markmedia.net npm -- start"
+    - ssh -i .secure_files/markmedia.pem ubuntu@15.236.88.239 "node -v && npm -v && cd mark-media-website && git restore package-lock.json && git pull && npm i && npm run build && pm2 delete dev.markmedia.net && pm2 start --name dev.markmedia.net npm -- start"
     - "echo 'Connected to EC2 instance'"
   only:
     - testing
