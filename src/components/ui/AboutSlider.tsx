@@ -133,7 +133,7 @@ export const AboutSlider = () => {
 
   return (
     <div className='relative w-full sm:w-auto'>
-      <div className='embla__actions absolute bottom-[-80px] left-[46%] flex translate-x-1/2 gap-1 sm:bottom-auto sm:left-auto sm:right-0 sm:top-[-4rem]'>
+      <div className='embla__actions absolute bottom-[-80px] left-[46%] flex translate-x-1/2 gap-1 sm:bottom-auto sm:left-auto sm:right-0 sm:top-[-4rem] sm:translate-x-0'>
         <button
           onClick={() => {
             emblaApi?.scrollPrev();
@@ -191,7 +191,7 @@ export const AboutSlider = () => {
                   height={495}
                   className='object-cover sm:max-w-[60%] sm:flex-[1_0_60%]'
                 />
-                <div className='bg-primary flex h-[24rem] flex-col items-start justify-center px-[2.25rem] sm:h-auto'>
+                <div className='bg-primary flex h-[24rem] w-full flex-col items-start justify-center px-[2.25rem] sm:h-auto'>
                   <h4 className='select-none text-[1.875rem] font-extrabold leading-[1] text-[#00000099]'>
                     {slides.title}
                   </h4>

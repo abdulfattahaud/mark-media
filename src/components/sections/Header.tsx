@@ -27,7 +27,7 @@ export const Header = () => {
       <button className='bg-primary hidden rounded-[.75rem] px-3 py-2 text-sm font-bold text-black sm:block md:rounded-[1.25rem] md:px-6 md:py-4 md:text-base'>
         Schedule Meeting
       </button>
-      <button className='bg-primary rounded-[10px] px-4 py-2.5'>
+      <button className='bg-primary rounded-[10px] px-4 py-2.5 sm:hidden'>
         <svg
           className='h-3.5 w-[1.125rem]'
           width='18'
