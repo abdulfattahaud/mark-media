@@ -2,7 +2,7 @@
 import { calculateRem } from "@/lib/calculateRem";
 import { useEffect } from "react";
 
-export const LayoutSetup = () => {
+export default function LayoutSetup() {
   useEffect(() => {
     calculateRem();
     const handleResize = () => calculateRem();
@@ -11,4 +11,4 @@ export const LayoutSetup = () => {
   }, []);
 
   return <></>;
-};
+}

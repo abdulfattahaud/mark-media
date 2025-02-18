@@ -5,6 +5,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #ffcd00;
+  --grayC: #00000099;
 }
 /* 
 @media (prefers-color-scheme: dark) {
@@ -18,4 +20,13 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Urbanist, sans-serif;
+}
+
+.left-border {
+  width: 1.25rem;
+  height: 100%;
+  background-color: var(--primary);
+  position: absolute;
+  left: 4.75rem;
+  top: 0;
 }

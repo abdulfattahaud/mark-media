@@ -11,6 +11,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: "var(--primary)",
+        grayC: "var(--grayC)",
       },
       fontFamily: {
         urbanist: ["Urbanist", "sans-serif"],

@@ -1,7 +1,13 @@
+import { Header } from "@/components/Header";
+import LayoutSetup from "@/components/LayoutSetup";
+import { Main } from "@/components/Main";
+
 export default function Home() {
   return (
     <div>
-      <h1>Hello World</h1>
+      <LayoutSetup />
+      <Header />
+      <Main />
     </div>
   );
 }
