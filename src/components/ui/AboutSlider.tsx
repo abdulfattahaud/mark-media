@@ -51,6 +51,7 @@ export const AboutSlider = () => {
   useEffect(() => {
     if (emblaApi) {
       emblaApi.on("select", (e) => {
+        console.log(e.selectedScrollSnap());
         setActiveSlide(e.selectedScrollSnap());
       });
     }
@@ -115,13 +116,14 @@ export const AboutSlider = () => {
         yPercent: 0,
         duration: 0.8,
         ease: "power2.inOut",
+        delay: 0.1,
       });
 
       gsap.to(slidersDescriptions[activeSlide].querySelectorAll(".word"), {
         yPercent: 0,
         duration: 0.8,
         ease: "power2.inOut",
-        delay: 0.1,
+        delay: 0.2,
         stagger: 0.025,
       });
     });
@@ -130,28 +132,76 @@ export const AboutSlider = () => {
   }, [activeSlide]);
 
   return (
-    <div className='embla' ref={emblaRef}>
-      <div className='embla__container h-full'>
-        {slides.map((slides, index) => (
-          <div key={index} className='embla__slide max-h-[31rem]'>
-            <div className='flex h-full'>
-              <Image
-                src={slides.image.src}
-                alt={slides.image.alt}
-                width={720}
-                height={495}
-                className='max-w-[60%] flex-[1_0_60%] object-cover'
-              />
-              <div className='bg-primary flex flex-col items-start justify-center px-[2.25rem]'>
-                <h4 className='select-none text-[1.875rem] font-extrabold leading-[1] text-[#00000099]'>
-                  {slides.title}
-                </h4>
-                <div className='my-6 h-[3px] w-[3.5rem] bg-black'></div>
-                <p className='select-none text-base leading-[1.5]'>{slides.description}</p>
+    <div className='relative w-full sm:w-auto'>
+      <div className='embla__actions absolute bottom-[-80px] left-[46%] flex translate-x-1/2 gap-1 sm:bottom-auto sm:left-auto sm:right-0 sm:top-[-4rem]'>
+        <button
+          onClick={() => {
+            emblaApi?.scrollPrev();
+          }}
+          className='border-primary flex size-[3.5rem] items-center justify-center rounded-full border-[.5rem] bg-black'
+        >
+          <svg
+            className='h-3 w-3.5'
+            width='14'
+            height='12'
+            viewBox='0 0 14 12'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <path
+              fillRule='evenodd'
+              clipRule='evenodd'
+              d='M6.0788 11.2867C5.87678 11.4887 5.5493 11.4887 5.34727 11.2867L0.519154 6.45865C0.422109 6.36167 0.36762 6.23007 0.36762 6.09289C0.36762 5.9557 0.422109 5.8241 0.519154 5.72705L5.34727 0.898932C5.5493 0.696908 5.87678 0.696908 6.0788 0.898932C6.28083 1.10095 6.28083 1.42851 6.0788 1.63053L2.13382 5.57559L13.3001 5.57559C13.5858 5.57559 13.8174 5.8072 13.8174 6.09289C13.8174 6.37857 13.5858 6.61018 13.3001 6.61018L2.13382 6.61018L6.0788 10.5552C6.28083 10.7572 6.28083 11.0847 6.0788 11.2867Z'
+              fill='white'
+            />
+          </svg>
+        </button>
+        <button
+          onClick={() => {
+            emblaApi?.scrollNext();
+          }}
+          className='border-primary flex size-[3.5rem] items-center justify-center rounded-full border-[.5rem] bg-black'
+        >
+          <svg
+            className='h-3 w-3.5'
+            width='14'
+            height='12'
+            viewBox='0 0 14 12'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <path
+              fillRule='evenodd'
+              clipRule='evenodd'
+              d='M8.29034 0.897605C8.49236 0.69559 8.81984 0.69559 9.02187 0.897605L13.85 5.72568C13.947 5.82265 14.0015 5.95425 14.0015 6.09144C14.0015 6.22863 13.947 6.36023 13.85 6.45727L9.02187 11.2854C8.81984 11.4874 8.49236 11.4874 8.29034 11.2854C8.08831 11.0834 8.08831 10.7558 8.29034 10.5538L12.2353 6.60874L1.06906 6.60874C0.783363 6.60874 0.551758 6.37713 0.551758 6.09144C0.551758 5.80575 0.783363 5.57414 1.06906 5.57414L12.2353 5.57414L8.29034 1.62918C8.08831 1.42716 8.08831 1.09963 8.29034 0.897605Z'
+              fill='white'
+            />
+          </svg>
+        </button>
+      </div>
+      <div className='embla relative w-full sm:w-auto' ref={emblaRef}>
+        <div className='embla__container h-full'>
+          {slides.map((slides, index) => (
+            <div key={index} className='embla__slide max-h-[35rem] sm:max-h-[31rem]'>
+              <div className='flex h-full flex-col sm:flex-row'>
+                <Image
+                  src={slides.image.src}
+                  alt={slides.image.alt}
+                  width={720}
+                  height={495}
+                  className='object-cover sm:max-w-[60%] sm:flex-[1_0_60%]'
+                />
+                <div className='bg-primary flex h-[24rem] flex-col items-start justify-center px-[2.25rem] sm:h-auto'>
+                  <h4 className='select-none text-[1.875rem] font-extrabold leading-[1] text-[#00000099]'>
+                    {slides.title}
+                  </h4>
+                  <div className='my-6 h-[3px] w-[3.5rem] bg-black'></div>
+                  <p className='select-none text-base leading-[1.5]'>{slides.description}</p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -36,7 +36,7 @@ export const About = () => {
       trigger: "#about",
       start: "top 70%",
       end: "bottom bottom",
-      markers: true,
+      markers: false,
       animation: tl,
     });
 
@@ -93,13 +93,15 @@ export const About = () => {
     };
   }, []);
   return (
-    <div id='about' className='relative h-screen'>
-      <div className='flex h-full flex-col items-start justify-center gap-12 py-[7.25rem] pl-[12.5rem] pr-[4rem]'>
-        <div className='max-w-[80%]'>
-          <span className='text-grayC hide-first border-t-grayC mb-9 block w-[22rem] border-t-2 pt-6 text-[1.875rem] font-extrabold leading-[1.06]'>
+    <div id='about' className='relative min-h-screen md:h-screen md:min-h-[850px]'>
+      <div className='flex h-full flex-col items-start justify-center gap-12 py-[3rem] pl-[2.5rem] pr-[1rem] sm:py-[7.25rem] sm:pl-[12.5rem]'>
+        <div className='pl-[1.5rem] sm:max-w-[80%] sm:pl-0'>
+          <span className='text-grayC hide-first border-t-grayC mb-9 block w-max border-t-2 pt-6 text-[1.875rem] font-extrabold leading-[1.06] sm:w-[22rem]'>
             About Us
           </span>
-          <h2 className='hide-first mb-5 text-[7.5rem] leading-[.88]'>Where Strategy and Creativity Converge</h2>
+          <h2 className='hide-first mb-5 text-[clamp(2.5rem,-14.6429rem+35.7143vw,7.5rem)] leading-[.88] md:text-[7.5rem]'>
+            Where Strategy and Creativity Converge
+          </h2>
           <blockquote className='hide-first'>
             Empowering Your Brand’s Growth Through Innovative, Results-Driven Marketing Solutions
           </blockquote>

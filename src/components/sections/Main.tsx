@@ -85,34 +85,37 @@ export const Main = () => {
       );
   }, []);
   return (
-    <div id='main-section' className='border-b-primary relative h-svh border-b-[1.25rem]'>
-      <div className='flex h-full items-center gap-10 pl-[12.5rem] pt-[6.25rem]'>
-        <div className='flex w-1/2 flex-col items-start'>
-          <span className='hide-first text-grayC mb-2 text-[1.875rem] font-extrabold leading-[1.06]'>Mark Media</span>
-          <h1 className='hide-first mb-7 text-[6rem] leading-[1.06]'>
+    <div id='main-section' className='border-b-primary relative h-svh border-b-[1.25rem] md:min-h-[850px]'>
+      <div className='flex h-full flex-col items-center gap-10 pl-[4rem] pt-[6.25rem] sm:flex-row md:pl-[12.5rem]'>
+        <div className='flex h-full w-full flex-col items-start justify-center text-white sm:h-auto sm:w-1/2 sm:justify-start'>
+          <span className='hide-first sm:text-grayC mb-2 text-[1.25rem] font-extrabold leading-[1.06] text-white md:text-[1.875rem]'>
+            Mark Media
+          </span>
+          <h1 className='hide-first mb-7 text-[clamp(2.5rem,-2.6429rem+10.7143vw,4rem)] leading-[1.06] md:text-[6rem]'>
             Your Bridge To Unstoppable
             <br /> Brand Success
           </h1>
-          <p className='text-grayC hide-first mb-[2.125rem] text-[1.5rem] leading-[1.2]'>
+          <p className='sm:text-grayC hide-first mb-[2.125rem] text-[1.25rem] leading-[1.2] text-white md:text-[1.5rem]'>
             Leading You From Vision to Victory With Strategic, Results-
             <br />
             Driven Marketing Solutions
           </p>
-          <button className='bg-primary rounded-[1.25rem] px-6 py-4 text-base font-bold text-black opacity-0'>
+          <button className='bg-primary rounded-[.75rem] px-3 py-2 text-sm font-bold text-black md:rounded-[1.25rem] md:px-6 md:py-4 md:text-base'>
             Schedule Meeting
           </button>
         </div>
-        <div className='relative h-full w-1/2'>
+        <div className='absolute left-0 top-0 z-[-1] h-full w-full sm:relative sm:inset-auto sm:z-auto sm:w-1/2'>
           <Image
             src='/images/hero-main-c.png'
             alt='Main hero image'
-            className='h-full object-cover'
+            className='h-full w-full object-cover'
             width={730}
             height={890}
           />
+          <div className='overlay absolute left-0 top-0 block size-full bg-[#00000048] sm:hidden'></div>
           <Image
             src='/icons/ebd.svg'
-            className='absolute bottom-5 left-5 z-[10] h-[7rem] w-[7.5rem]'
+            className='absolute bottom-5 left-5 z-[10] hidden h-[7rem] w-[7.5rem] sm:block'
             alt='Eat. Breath. Design.'
             width={120}
             height={112}
