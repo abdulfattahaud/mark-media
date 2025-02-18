@@ -1,0 +1,28 @@
+import type { Config } from "tailwindcss";
+
+export default {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+      },
+      fontFamily: {
+        urbanist: ["Urbanist", "sans-serif"],
+      },
+      screens: {
+        sm: "768px",
+        md: "992px",
+        lg: "1200px",
+        xl: "1440px",
+        xx: "1920px",
+      },
+    },
+  },
+  plugins: [],
+} satisfies Config;
