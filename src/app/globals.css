@@ -30,3 +30,11 @@ body {
   left: 4.75rem;
   top: 0;
 }
+
+h1 {
+  font-kerning: none;
+  text-rendering: optimizeSpeed;
+}
+.char {
+  opacity: 0;
+}
