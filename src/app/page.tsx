@@ -1,6 +1,7 @@
-import { Header } from "@/components/Header";
+import { Header } from "@/components/sections/Header";
+import { Main } from "@/components/sections/Main";
+import { About } from "@/components/sections/About";
 import LayoutSetup from "@/components/LayoutSetup";
-import { Main } from "@/components/Main";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <LayoutSetup />
       <Header />
       <Main />
+      <About />
     </div>
   );
 }

@@ -6,7 +6,7 @@ export const calculateRem = () => {
 
   //   after 1440px, the font size gonna scale up
   const rem = (clientWidth / baseWidth) * baseFontSize;
-  if (clientWidth > 1440) {
+  if (clientWidth > 992) {
     document.documentElement.style.fontSize = `${rem}px`;
   } else {
     document.documentElement.style.fontSize = `${baseFontSize}px`;

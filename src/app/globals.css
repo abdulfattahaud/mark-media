@@ -29,12 +29,40 @@ body {
   position: absolute;
   left: 4.75rem;
   top: 0;
+  transform-origin: top;
+  transform: scaleY(0);
 }
 
-h1 {
+h1,
+h2,
+p,
+blockquote,
+span {
   font-kerning: none;
   text-rendering: optimizeSpeed;
 }
+.hide-first {
+  opacity: 0;
+}
+.hide-first:has(> .char) {
+  opacity: 1;
+}
 .char {
   opacity: 0;
+}
+blockquote {
+  font-size: 1rem;
+  padding: 0.625rem 0 0.625rem 1rem;
+  border-left: 3px solid var(--grayC);
+}
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
 }

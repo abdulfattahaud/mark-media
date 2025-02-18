@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 export const Main = () => {
   useEffect(() => {
-    gsap.to(".left-border", {
+    gsap.to("#main-section .left-border", {
       scaleY: "100%",
       duration: 1,
       delay: 0.25,
@@ -30,6 +30,11 @@ export const Main = () => {
       },
       onComplete: () => {
         h1Split.revert();
+      },
+      onStart: () => {
+        document.querySelectorAll(".hide-first").forEach((el) => {
+          el.classList.remove("hide-first");
+        });
       },
     });
     tl.fromTo(
@@ -83,12 +88,12 @@ export const Main = () => {
     <div id='main-section' className='border-b-primary relative h-svh border-b-[1.25rem]'>
       <div className='flex h-full items-center gap-10 pl-[12.5rem] pt-[6.25rem]'>
         <div className='flex w-1/2 flex-col items-start'>
-          <span className='text-grayC mb-2 text-[1.875rem] font-extrabold leading-[1.06]'>Mark Media</span>
-          <h1 className='mb-7 text-[6rem] leading-[1.06]'>
+          <span className='hide-first text-grayC mb-2 text-[1.875rem] font-extrabold leading-[1.06]'>Mark Media</span>
+          <h1 className='hide-first mb-7 text-[6rem] leading-[1.06]'>
             Your Bridge To Unstoppable
             <br /> Brand Success
           </h1>
-          <p className='text-grayC mb-[2.125rem] text-[1.5rem] leading-[1.2]'>
+          <p className='text-grayC hide-first mb-[2.125rem] text-[1.5rem] leading-[1.2]'>
             Leading You From Vision to Victory With Strategic, Results-
             <br />
             Driven Marketing Solutions
@@ -114,7 +119,7 @@ export const Main = () => {
           />
         </div>
       </div>
-      <div className='left-border origin-top scale-y-0'></div>
+      <div className='left-border'></div>
     </div>
   );
 };
