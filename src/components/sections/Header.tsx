@@ -3,7 +3,7 @@ import Image from "next/image";
 export const Header = () => {
   return (
     <div
-      className='fixed left-0 top-0 z-[100] flex h-[4rem] w-full items-center justify-between gap-2 border-b border-[#BABABA33] bg-white px-8 py-4 sm:h-[6.25rem] md:px-16'
+      className='flex h-[4rem] w-full items-center justify-between gap-2 border-b border-[#BABABA33] bg-white px-8 py-4 sm:h-[6.25rem] md:px-16'
       style={{
         boxShadow: "0px 4px 100px 0px #C3C3C340",
       }}
@@ -24,10 +24,10 @@ export const Header = () => {
         <li>Testimonial</li>
         <li>Contact Us</li>
       </ul>
-      <button className='bg-primary hidden rounded-[.75rem] px-3 py-2 text-sm font-bold text-black sm:block md:rounded-[1.25rem] md:px-6 md:py-4 md:text-base'>
+      <button className='hidden rounded-[.75rem] bg-primary px-3 py-2 text-sm font-bold text-black sm:block md:rounded-[1.25rem] md:px-6 md:py-4 md:text-base'>
         Schedule Meeting
       </button>
-      <button className='bg-primary rounded-[10px] px-4 py-2.5 sm:hidden'>
+      <button className='rounded-[10px] bg-primary px-4 py-2.5 sm:hidden'>
         <svg
           className='h-3.5 w-[1.125rem]'
           width='18'

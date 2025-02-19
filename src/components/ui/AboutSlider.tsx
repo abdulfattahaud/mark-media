@@ -133,12 +133,12 @@ export const AboutSlider = () => {
 
   return (
     <div className='relative w-full sm:w-auto'>
-      <div className='embla__actions absolute bottom-[-80px] left-[46%] flex translate-x-1/2 gap-1 sm:bottom-auto sm:left-auto sm:right-0 sm:top-[-4rem] sm:translate-x-0'>
+      <div className='embla__actions absolute bottom-[-80px] left-[50%] flex -translate-x-1/2 gap-1 sm:bottom-auto sm:left-auto sm:right-0 sm:top-[-4rem] sm:translate-x-0'>
         <button
           onClick={() => {
             emblaApi?.scrollPrev();
           }}
-          className='border-primary flex size-[3.5rem] items-center justify-center rounded-full border-[.5rem] bg-black'
+          className='flex size-[3.5rem] items-center justify-center rounded-full border-[.5rem] border-primary bg-black'
         >
           <svg
             className='h-3 w-3.5'
@@ -160,7 +160,7 @@ export const AboutSlider = () => {
           onClick={() => {
             emblaApi?.scrollNext();
           }}
-          className='border-primary flex size-[3.5rem] items-center justify-center rounded-full border-[.5rem] bg-black'
+          className='flex size-[3.5rem] items-center justify-center rounded-full border-[.5rem] border-primary bg-black'
         >
           <svg
             className='h-3 w-3.5'
@@ -182,16 +182,16 @@ export const AboutSlider = () => {
       <div className='embla relative w-full sm:w-auto' ref={emblaRef}>
         <div className='embla__container h-full'>
           {slides.map((slides, index) => (
-            <div key={index} className='embla__slide max-h-[35rem] sm:max-h-[31rem]'>
+            <div key={index} className='embla__slide max-h-[55rem] sm:max-h-[31rem]'>
               <div className='flex h-full flex-col sm:flex-row'>
                 <Image
                   src={slides.image.src}
                   alt={slides.image.alt}
                   width={720}
                   height={495}
-                  className='object-cover sm:max-w-[60%] sm:flex-[1_0_60%]'
+                  className='max-h-[50%] object-cover sm:max-h-none sm:max-w-[60%] sm:flex-[1_0_60%]'
                 />
-                <div className='bg-primary flex h-[24rem] w-full flex-col items-start justify-center px-[2.25rem] sm:h-auto'>
+                <div className='flex h-[15rem] w-full flex-col items-start justify-center bg-primary px-[2.25rem] sm:h-auto'>
                   <h4 className='select-none text-[1.875rem] font-extrabold leading-[1] text-[#00000099]'>
                     {slides.title}
                   </h4>

@@ -85,22 +85,22 @@ export const Main = () => {
       );
   }, []);
   return (
-    <div id='main-section' className='border-b-primary relative h-svh border-b-[1.25rem] md:min-h-[850px]'>
-      <div className='flex h-full flex-col items-center gap-10 pl-[4rem] pt-[6.25rem] sm:flex-row md:pl-[12.5rem]'>
+    <div id='main-section' className='relative h-svh border-b-[1.25rem] border-b-primary md:min-h-[850px]'>
+      <div className='flex h-full flex-col items-center gap-10 pl-[4rem] sm:flex-row md:pl-[12.5rem]'>
         <div className='flex h-full w-full flex-col items-start justify-center text-white sm:h-auto sm:w-1/2 sm:justify-start sm:text-black'>
-          <span className='hide-first sm:text-grayC mb-2 text-[1.25rem] font-extrabold leading-[1.06] text-white md:text-[1.875rem]'>
+          <span className='hide-first mb-2 text-[1.25rem] font-extrabold leading-[1.06] text-white sm:text-grayC md:text-[1.875rem]'>
             Mark Media
           </span>
           <h1 className='hide-first mb-7 text-[clamp(2.5rem,-2.6429rem+10.7143vw,4rem)] leading-[1.06] md:text-[6rem]'>
             Your Bridge To Unstoppable
             <br /> Brand Success
           </h1>
-          <p className='sm:text-grayC hide-first mb-[2.125rem] text-[1.25rem] leading-[1.2] text-white md:text-[1.5rem]'>
+          <p className='hide-first mb-[2.125rem] text-[1.25rem] leading-[1.2] text-white sm:text-grayC md:text-[1.5rem]'>
             Leading You From Vision to Victory With Strategic, Results-
             <br />
             Driven Marketing Solutions
           </p>
-          <button className='bg-primary rounded-[.75rem] px-3 py-2 text-sm font-bold text-black md:rounded-[1.25rem] md:px-6 md:py-4 md:text-base'>
+          <button className='rounded-[.75rem] bg-primary px-3 py-2 text-sm font-bold text-black md:rounded-[1.25rem] md:px-6 md:py-4 md:text-base'>
             Schedule Meeting
           </button>
         </div>
