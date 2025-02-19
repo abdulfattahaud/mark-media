@@ -239,7 +239,7 @@ export const Expertise = () => {
       id='expertise'
       className='relative min-h-screen overflow-hidden bg-primary pr-4 sm:pr-0 md:h-screen md:min-h-[850px]'
     >
-      <div className='relative z-[2] flex h-full flex-col justify-center gap-10 pl-[2.5rem] pt-[3rem] sm:pl-[4rem] md:gap-20 md:py-[3.25rem] md:pl-[12.5rem]'>
+      <div className='relative z-[2] flex h-full flex-col justify-center gap-10 pb-[2rem] pl-[2.5rem] pt-[3rem] sm:pl-[4rem] md:gap-20 md:py-[3.25rem] md:pl-[12.5rem]'>
         <div className='flex flex-col items-start gap-8'>
           <div className='flex items-center gap-5'>
             <Image

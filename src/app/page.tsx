@@ -1,8 +1,9 @@
+import LayoutSetup from "@/components/LayoutSetup";
 import { Header } from "@/components/sections/Header";
 import { Main } from "@/components/sections/Main";
 import { About } from "@/components/sections/About";
-import LayoutSetup from "@/components/LayoutSetup";
 import { Expertise } from "@/components/sections/Expertise";
+import { HowItWorks } from "@/components/sections/HowItWorks";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Main />
       <About />
       <Expertise />
+      <HowItWorks />
     </div>
   );
 }

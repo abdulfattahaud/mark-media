@@ -110,7 +110,7 @@ export const About = () => {
         <AboutSlider />
       </div>
       <Image
-        src='/icons/about-bg.svg'
+        src='/images/about-bg.svg'
         alt='Background hexagon shapes'
         width={1500}
         height={900}

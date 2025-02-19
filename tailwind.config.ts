@@ -16,6 +16,7 @@ export default {
       },
       fontFamily: {
         urbanist: ["Urbanist", "sans-serif"],
+        syne: ["Syne", "sans-serif"],
       },
       screens: {
         sm: "768px",
