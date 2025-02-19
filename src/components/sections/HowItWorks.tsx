@@ -35,12 +35,12 @@ export const HowItWorks = () => {
           <div className='size-[3rem] rounded-full bg-[#00000024]'></div>
         </div>
       </div>
-      <div className='relative z-[1] mb-[6.75rem] flex flex-col items-center justify-center gap-12 px-[15rem] text-center'>
-        <h2 className='text-[2rem] font-extrabold text-[#24272B] md:text-[3.75rem]'>
+      <div className='relative z-[1] mb-[6.75rem] flex flex-col items-center justify-center gap-12 px-[1rem] text-center md:px-[15rem]'>
+        <h2 className='text-[2rem] font-extrabold leading-[1.06] text-[#24272B] md:text-[3.75rem]'>
           Partnering with Visionary Brands
-          <br /> To Shape Unforgettable Success Stories
+          <br className='hidden md:block' /> To Shape Unforgettable Success Stories
         </h2>
-        <div className='flex w-full justify-between border-b border-b-[#CECECE] px-6 pb-[3.25rem]'>
+        <div className='flex w-full flex-wrap justify-center gap-4 border-b border-b-[#CECECE] px-6 pb-[3.25rem] md:flex-nowrap md:justify-between'>
           <div className='flex flex-col gap-6'>
             <div className='flex flex-col gap-2'>
               <span
@@ -95,7 +95,7 @@ export const HowItWorks = () => {
           </div>
         </div>
       </div>
-      <div className='px-[6.25rem]'>
+      <div className='px-4 md:px-[6.25rem]'>
         <figure className='overflow-hidden rounded-[20px]'>
           <Image src='/images/par-bg.png' alt='' width={1400} height={640} className='h-[40rem] w-full object-cover' />
         </figure>
