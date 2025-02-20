@@ -229,6 +229,13 @@ export const Testimonial = () => {
         fill
         className='absolute inset-0 z-[0] size-full object-cover'
       />
+      <Image
+        src='/images/test-vector.svg'
+        alt='Testimonial Background'
+        width={1000}
+        height={700}
+        className='absolute left-[-10rem] top-1/2 z-[0] h-[42rem] w-auto -translate-y-1/2'
+      />
     </div>
   );
 };
