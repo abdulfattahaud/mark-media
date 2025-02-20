@@ -8,6 +8,7 @@ import { BluePrint } from "@/components/sections/BluePrint";
 import { Pricing } from "@/components/sections/Pricing";
 import { Testimonial } from "@/components/sections/Testimonial";
 import { Chat } from "@/components/ui/Chat";
+import { Footer } from "@/components/sections/Footer";
 export default function Home() {
   return (
     <div>
@@ -21,6 +22,7 @@ export default function Home() {
       <Pricing />
       <Chat />
       <Testimonial />
+      <Footer />
     </div>
   );
 }
