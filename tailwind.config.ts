@@ -18,6 +18,9 @@ export default {
         urbanist: ["Urbanist", "sans-serif"],
         syne: ["Syne", "sans-serif"],
       },
+      height: {
+        svh: "var(--vh)",
+      },
       screens: {
         sm: "768px",
         md: "993px",

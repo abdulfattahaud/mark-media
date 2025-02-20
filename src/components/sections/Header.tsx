@@ -1,13 +1,60 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { CustomEase } from "gsap/CustomEase";
+import { useEffect, useRef } from "react";
+
+CustomEase.create("ease-in-css", ".25, 1, 0.1 ,1");
+
+gsap.registerPlugin(ScrollTrigger, CustomEase);
+
 export const Header = () => {
+  const menuOpen = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    const main: HTMLElement = document.querySelector("body")!;
+    ScrollTrigger.create({
+      start: "top -30%",
+      markers: false,
+      onUpdate: () => {
+        main.classList.add("scrolled");
+      },
+      onLeaveBack: () => {
+        main.classList.remove("scrolled");
+      },
+    });
+
+    if (menuOpen.current) {
+      menuOpen.current.addEventListener("mouseover", () => {
+        main.setAttribute("data-navigation-status", "hover");
+      });
+      menuOpen.current.addEventListener("mouseleave", () => {
+        if (main.getAttribute("data-navigation-status") === "hover") {
+          main.setAttribute("data-navigation-status", "not-active");
+        }
+      });
+      menuOpen.current.addEventListener("click", () => {
+        if (main.getAttribute("data-navigation-status") === "not-active") {
+          main.setAttribute("data-navigation-status", "active");
+        } else if (main.getAttribute("data-navigation-status") === "hover") {
+          main.setAttribute("data-navigation-status", "active");
+        } else {
+          main.setAttribute("data-navigation-status", "not-active");
+        }
+      });
+    }
+  }, []);
   return (
     <div>
       <div className='menu-open-wrapper pointer-events-none fixed right-[48px] top-[48px] z-[100] hidden sm:block'>
-        <button className='menu-open flex size-[clamp(3.125rem,0.625rem+5.2083vw,6.875rem)] items-center justify-center rounded-full bg-primary'>
+        <button
+          ref={menuOpen}
+          className='menu-open flex size-[clamp(3.125rem,0.625rem+5.2083vw,6.875rem)] items-center justify-center overflow-hidden rounded-full bg-primary'
+        >
           <svg
-            className='size-[4.5rem]'
+            className='arr-svg pointer-events-none absolute size-[4.5rem]'
             width='72'
             height='72'
             viewBox='0 0 72 72'
@@ -17,12 +64,23 @@ export const Header = () => {
             <path d='M35.5537 63.36L8.10767 35.6935L35.5537 8.02686' stroke='#273F2B' strokeWidth='8.64319' />
             <path d='M8.00531 35.5303L59.4932 35.5303' stroke='#273F2B' strokeWidth='8.64319' />
           </svg>
+          <svg
+            className='arr-svg pointer-events-none absolute left-[116%] size-[4.5rem]'
+            width='72'
+            height='72'
+            viewBox='0 0 72 72'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <path d='M35.5537 63.36L8.10767 35.6935L35.5537 8.02686' stroke='#ffcd00' strokeWidth='8.64319' />
+            <path d='M8.00531 35.5303L59.4932 35.5303' stroke='#ffcd00' strokeWidth='8.64319' />
+          </svg>
         </button>
       </div>
-      <div className='menu-screen-wrapper pointer-events-none fixed left-0 top-0 z-[1001] hidden w-full justify-end bg-[#3837373D] opacity-0 sm:flex'>
-        <div className='menu-screen w-ful flex h-[100dvh] rounded-l-[3.125rem] bg-primary px-[3.125rem] py-[4.5rem] md:w-[45%] md:min-w-[40rem]'>
+      <div className='menu-screen-wrapper fixed left-0 top-0 z-[1001] hidden w-full justify-end sm:flex'>
+        <div className='menu-screen w-ful relative z-[2] flex h-[100dvh] rounded-l-[3.125rem] bg-primary px-[3.125rem] py-[4.5rem] md:w-[35%] md:min-w-[30rem]'>
           <button
-            // onClick={() => menuOut()}
+            onClick={() => document.body.setAttribute("data-navigation-status", "not-active")}
             className='close-but absolute right-4 top-4 z-[10] flex size-[3.5rem] items-center justify-center rounded-full bg-white'
           >
             <svg
@@ -190,6 +248,7 @@ export const Header = () => {
             </div>
           </div>
         </div>
+        <div className='overlay absolute left-0 top-0 z-[1] h-full w-full bg-[#3837373D] opacity-0'></div>
       </div>
       <div
         className='flex h-[4rem] w-full items-center justify-between gap-2 border-b border-[#BABABA33] bg-white px-8 py-4 sm:h-[6.25rem] md:px-16'

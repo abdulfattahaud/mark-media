@@ -24,7 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${urbanist.variable} ${syne.variable} antialiased`}>{children}</body>
+      <body data-navigation-status='not-active' className={`${urbanist.variable} ${syne.variable} antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }
