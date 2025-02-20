@@ -6,7 +6,7 @@ import Image from "next/image";
 export const Pricing = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" }, [AutoHeight()]);
   return (
-    <div className='relative min-h-[850px] md:h-screen'>
+    <div className='relative h-max min-h-screen'>
       <Image
         src='/images/busniess-bg.png'
         alt=''

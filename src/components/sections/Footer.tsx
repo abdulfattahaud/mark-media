@@ -83,7 +83,7 @@ export const Footer = () => {
                       fill='none'
                       xmlns='http://www.w3.org/2000/svg'
                     >
-                      <g clip-path='url(#clip0_300_1006)'>
+                      <g clipPath='url(#clip0_300_1006)'>
                         <path
                           d='M0.923828 8.05917L7.96303 1.02051M7.96303 1.02051L1.65564 1.02051M7.96303 1.02051V7.3279'
                           stroke='black'
@@ -108,7 +108,7 @@ export const Footer = () => {
                       fill='none'
                       xmlns='http://www.w3.org/2000/svg'
                     >
-                      <g clip-path='url(#clip0_300_1006)'>
+                      <g clipPath='url(#clip0_300_1006)'>
                         <path
                           d='M0.923828 8.05917L7.96303 1.02051M7.96303 1.02051L1.65564 1.02051M7.96303 1.02051V7.3279'
                           stroke='black'
@@ -133,7 +133,7 @@ export const Footer = () => {
                       fill='none'
                       xmlns='http://www.w3.org/2000/svg'
                     >
-                      <g clip-path='url(#clip0_300_1006)'>
+                      <g clipPath='url(#clip0_300_1006)'>
                         <path
                           d='M0.923828 8.05917L7.96303 1.02051M7.96303 1.02051L1.65564 1.02051M7.96303 1.02051V7.3279'
                           stroke='black'
@@ -158,7 +158,7 @@ export const Footer = () => {
                       fill='none'
                       xmlns='http://www.w3.org/2000/svg'
                     >
-                      <g clip-path='url(#clip0_300_1006)'>
+                      <g clipPath='url(#clip0_300_1006)'>
                         <path
                           d='M0.923828 8.05917L7.96303 1.02051M7.96303 1.02051L1.65564 1.02051M7.96303 1.02051V7.3279'
                           stroke='black'

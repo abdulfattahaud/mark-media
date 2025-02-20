@@ -85,7 +85,7 @@ export const Main = () => {
       );
   }, []);
   return (
-    <div id='main-section' className='relative h-svh border-b-[1.25rem] border-b-primary md:min-h-[850px]'>
+    <div id='main-section' className='relative h-[calc(100svh-6.25rem)] border-b-[1.25rem] border-b-primary'>
       <div className='flex h-full flex-col items-center gap-10 pl-[4rem] sm:flex-row md:pl-[12.5rem]'>
         <div className='flex h-full w-full flex-col items-start justify-center text-white sm:h-auto sm:w-1/2 sm:justify-start sm:text-black'>
           <span className='hide-first mb-2 text-[1.25rem] font-extrabold leading-[1.06] text-white sm:text-grayC md:text-[1.875rem]'>
