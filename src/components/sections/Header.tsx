@@ -4,7 +4,7 @@ import Link from "next/link";
 export const Header = () => {
   return (
     <div>
-      <div className='menu-open-wrapper pointer-events-none fixed right-[48px] top-[48px] z-[100]'>
+      <div className='menu-open-wrapper pointer-events-none fixed right-[48px] top-[48px] z-[100] hidden sm:block'>
         <button className='menu-open flex size-[clamp(3.125rem,0.625rem+5.2083vw,6.875rem)] items-center justify-center rounded-full bg-primary'>
           <svg
             className='size-[4.5rem]'
@@ -19,7 +19,7 @@ export const Header = () => {
           </svg>
         </button>
       </div>
-      <div className='menu-screen-wrapper pointer-events-none fixed left-0 top-0 z-[1001] flex w-full justify-end bg-[#3837373D] opacity-0'>
+      <div className='menu-screen-wrapper pointer-events-none fixed left-0 top-0 z-[1001] hidden w-full justify-end bg-[#3837373D] opacity-0 sm:flex'>
         <div className='menu-screen w-ful flex h-[100dvh] rounded-l-[3.125rem] bg-primary px-[3.125rem] py-[4.5rem] md:w-[45%] md:min-w-[40rem]'>
           <button
             // onClick={() => menuOut()}
