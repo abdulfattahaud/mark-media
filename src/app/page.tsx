@@ -6,7 +6,8 @@ import { Expertise } from "@/components/sections/Expertise";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { BluePrint } from "@/components/sections/BluePrint";
 import { Pricing } from "@/components/sections/Pricing";
-
+import { Testimonial } from "@/components/sections/Testimonial";
+import { Chat } from "@/components/ui/Chat";
 export default function Home() {
   return (
     <div>
@@ -18,6 +19,8 @@ export default function Home() {
       <HowItWorks />
       <BluePrint />
       <Pricing />
+      <Chat />
+      <Testimonial />
     </div>
   );
 }
