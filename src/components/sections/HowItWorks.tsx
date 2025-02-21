@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const HowItWorks = () => {
   return (
-    <div id='how-it-works' className='relative min-h-screen py-[7.5rem]'>
+    <div id='how-it-works' className='relative min-h-svh py-[7.5rem]'>
       <header className='mx-auto mb-[7.25rem] flex flex-col items-center justify-center gap-8 px-5 text-center md:mb-[11.25rem]'>
         <h2 className='text-[2rem] font-extrabold text-[#24272B] md:text-[3.75rem]'>The Brands That Trust Us</h2>
         <div className='flex max-w-[40rem] flex-wrap items-center justify-center gap-3 md:max-w-[65rem]'>

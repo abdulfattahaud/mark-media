@@ -12,6 +12,6 @@ export const calculateRem = () => {
     document.documentElement.style.fontSize = `${baseFontSize}px`;
   }
 
-  const vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty("--vh", `${vh}px`);
+  // const vh = window.innerHeight * 0.01;
+  // document.documentElement.style.setProperty("--vh", `${vh}px`);
 };

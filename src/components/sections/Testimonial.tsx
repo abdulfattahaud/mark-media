@@ -25,7 +25,7 @@ export const Testimonial = () => {
   return (
     <div
       id='testimonial'
-      className='relative z-[1] flex min-h-screen flex-col bg-[#FFCD0091] px-4 pb-[4.5rem] pt-[5.625rem] md:px-[7.125rem]'
+      className='relative z-[1] flex min-h-svh flex-col bg-[#FFCD0091] px-4 pb-[4.5rem] pt-[5.625rem] md:px-[7.125rem]'
     >
       <div className='relative z-[1] flex h-full flex-col justify-between gap-12'>
         <header>

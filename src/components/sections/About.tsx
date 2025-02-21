@@ -94,7 +94,7 @@ export const About = () => {
     };
   }, []);
   return (
-    <div id='about' className='relative min-h-screen overflow-hidden md:h-screen md:min-h-[850px]'>
+    <div id='about' className='relative min-h-screen overflow-hidden md:h-svh md:min-h-[850px]'>
       <div className='flex h-full flex-col items-start justify-center gap-12 pb-[7rem] pl-[2.5rem] pr-[1rem] pt-[3rem] sm:pl-[4rem] md:py-[7.25rem] md:pl-[12.5rem]'>
         <div className='pl-[1.5rem] sm:max-w-[80%] sm:pl-0'>
           <span className='hide-first mb-9 block w-max border-t-2 border-t-grayC pt-6 text-[1.875rem] font-extrabold leading-[1.06] text-grayC sm:w-[22rem]'>

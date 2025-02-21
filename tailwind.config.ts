@@ -19,7 +19,7 @@ export default {
         syne: ["Syne", "sans-serif"],
       },
       height: {
-        svh: "var(--vh)",
+        svh: "calc(var(--vh)*100)",
       },
       screens: {
         sm: "768px",

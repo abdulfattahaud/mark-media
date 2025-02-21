@@ -170,7 +170,7 @@ const Collaborate = () => {
 
 export const BluePrint = () => {
   return (
-    <div className='md-[10rem] min-h-screen md:mt-[30rem]'>
+    <div className='md-[10rem] min-h-svh md:mt-[30rem]'>
       <div className='h-max min-h-full overflow-hidden px-[2rem] md:px-[10rem]'>
         <Header />
         <Plan />
