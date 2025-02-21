@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import SplitType from "split-type";
 import Image from "next/image";
 
-gsap.registerPlugin(ScrollTrigger);
 export const About = () => {
   useEffect(() => {
     const h2Split = new SplitType("#about h2", {

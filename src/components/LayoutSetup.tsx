@@ -2,6 +2,11 @@
 import { calculateRem } from "@/lib/calculateRem";
 import { useEffect } from "react";
 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default function LayoutSetup() {
   useEffect(() => {
     calculateRem();

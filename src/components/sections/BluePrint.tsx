@@ -1,8 +1,69 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect } from "react";
+import { useRef } from "react";
+import SplitType from "split-type";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Header = () => {
+  const headerRef = useRef<HTMLHeadingElement>(null);
+  useEffect(() => {
+    if (!headerRef.current) return;
+    const headerSplit = new SplitType(headerRef.current.querySelector("h2")!, {
+      types: "words,chars",
+    });
+    const pSplit = new SplitType(headerRef.current.querySelector("p")!, {
+      types: "words,chars",
+    });
+    const tl = gsap.timeline({
+      defaults: {
+        ease: (i) => 1 - Math.pow(1 - i, 3),
+      },
+      onComplete: () => {
+        headerSplit.revert();
+        pSplit.revert();
+      },
+    });
+    ScrollTrigger.create({
+      trigger: headerRef.current,
+      start: "top 50%",
+      markers: false,
+      animation: tl,
+    });
+
+    tl.fromTo(
+      headerSplit.chars,
+      {
+        opacity: 0,
+        yPercent: 50,
+        x: -20,
+      },
+      {
+        opacity: 1,
+        yPercent: 0,
+        x: 0,
+        stagger: 0.02,
+      },
+    ).fromTo(
+      pSplit.chars,
+      {
+        opacity: 0,
+        yPercent: 50,
+        x: -20,
+      },
+      {
+        opacity: 1,
+        yPercent: 0,
+        x: 0,
+        stagger: 0.01,
+      },
+      "-=.6",
+    );
+  }, []);
   return (
-    <header className='mb-[15rem] flex flex-col items-center justify-center gap-12 text-center'>
+    <header ref={headerRef} className='mb-[15rem] flex flex-col items-center justify-center gap-12 text-center'>
       <h2 className='text-[3.5rem] font-semibold leading-[1] md:text-[4.5rem]'>Our Blueprint for Impact</h2>
       <p className='text-[1.25rem] font-medium leading-[1.4]'>
         Turning Bold Ideas into Real-World Results—No Boundaries, Only
@@ -13,9 +74,83 @@ const Header = () => {
 };
 
 const Plan = () => {
+  const planRef = useRef<HTMLDivElement>(null);
+  const bigTitle = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    if (!planRef.current) return;
+    const planSplit = new SplitType(planRef.current.querySelector("h3")!, {
+      types: "words,chars",
+    });
+    const pSplit = new SplitType(planRef.current.querySelector("p")!, {
+      types: "words",
+    });
+    const tl = gsap.timeline({
+      defaults: {
+        ease: (i) => 1 - Math.pow(1 - i, 3),
+      },
+      onComplete: () => {
+        planSplit.revert();
+        pSplit.revert();
+      },
+    });
+
+    ScrollTrigger.create({
+      trigger: planRef.current,
+      start: "top 50%",
+      markers: false,
+      animation: tl,
+    });
+
+    tl.fromTo(
+      bigTitle.current,
+      {
+        scale: 1.5,
+        opacity: 0,
+        x: -20,
+      },
+      {
+        scale: 1,
+        opacity: 1,
+        x: 0,
+        duration: 0.6,
+      },
+    )
+      .fromTo(
+        planSplit.chars,
+        {
+          opacity: 0,
+          yPercent: 50,
+        },
+        {
+          opacity: 1,
+          yPercent: 0,
+          stagger: 0.02,
+        },
+      )
+      .fromTo(
+        pSplit.words,
+        {
+          opacity: 0,
+          yPercent: 50,
+        },
+        {
+          opacity: 1,
+          yPercent: 0,
+          stagger: 0.01,
+        },
+        "-=.6",
+      );
+  }, []);
   return (
-    <div className='relative mb-[10rem] flex flex-col items-center justify-center gap-12 rounded-[40px] bg-black px-4 py-[5rem] md:mb-[15rem] md:flex-row md:gap-24 md:px-16 md:py-[9.5rem]'>
-      <span className='absolute left-[clamp(1rem,-1.4311rem+10.3728vw,5rem)] top-[clamp(-4.5rem,-3.2844rem+-5.1864vw,-6.5rem)] rotate-[-12deg] text-[clamp(5rem,3.1767rem+7.7796vw,8rem)] font-black leading-[1] text-[#0A0B1E] md:left-[7.5rem] md:top-[-9.5rem] md:text-[11.25rem]'>
+    <div
+      ref={planRef}
+      className='relative mb-[10rem] flex flex-col items-center justify-center gap-12 rounded-[40px] bg-black px-4 py-[5rem] md:mb-[15rem] md:flex-row md:gap-24 md:px-16 md:py-[9.5rem]'
+    >
+      <span
+        ref={bigTitle}
+        className='absolute left-[clamp(1rem,-1.4311rem+10.3728vw,5rem)] top-[clamp(-4.5rem,-3.2844rem+-5.1864vw,-6.5rem)] rotate-[-12deg] text-[clamp(5rem,3.1767rem+7.7796vw,8rem)] font-black leading-[1] text-[#0A0B1E] md:left-[7.5rem] md:top-[-9.5rem] md:text-[11.25rem]'
+      >
         <span className='text-primary'>P</span>lan.
       </span>
       <figure className='flex flex-1 items-center justify-center'>
@@ -45,12 +180,123 @@ const Plan = () => {
 };
 
 const Run = () => {
+  const runRef = useRef<HTMLDivElement>(null);
+  const bigTitle = useRef<HTMLSpanElement>(null);
+  const block1Ref = useRef<HTMLDivElement>(null);
+  const block2Ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!runRef.current) return;
+    const h31 = new SplitType(block1Ref.current!.querySelector("h3")!, {
+      types: "words,chars",
+    });
+    const h32 = new SplitType(block2Ref.current!.querySelector("h3")!, {
+      types: "words,chars",
+    });
+    const p1 = new SplitType(block1Ref.current!.querySelector("p")!, {
+      types: "words",
+    });
+    const p2 = new SplitType(block2Ref.current!.querySelector("p")!, {
+      types: "words",
+    });
+
+    const tl = gsap.timeline({
+      defaults: {
+        ease: (i) => 1 - Math.pow(1 - i, 3),
+      },
+      onComplete: () => {
+        h31.revert();
+        h32.revert();
+        p1.revert();
+        p2.revert();
+      },
+    });
+
+    ScrollTrigger.create({
+      trigger: runRef.current,
+      start: "top 50%",
+      markers: false,
+      animation: tl,
+    });
+
+    tl.fromTo(
+      bigTitle.current,
+      {
+        scale: 1.5,
+        opacity: 0,
+        x: -20,
+      },
+      {
+        scale: 1,
+        opacity: 1,
+        x: 0,
+        duration: 0.6,
+      },
+    )
+      .fromTo(
+        h31.chars,
+        {
+          opacity: 0,
+          yPercent: 50,
+        },
+        {
+          opacity: 1,
+          yPercent: 0,
+          stagger: 0.02,
+        },
+      )
+      .fromTo(
+        p1.words,
+        {
+          opacity: 0,
+          yPercent: 50,
+        },
+        {
+          opacity: 1,
+          yPercent: 0,
+          stagger: 0.01,
+        },
+        "-=.6",
+      )
+      .fromTo(
+        h32.chars,
+        {
+          opacity: 0,
+          yPercent: 50,
+        },
+        {
+          opacity: 1,
+          yPercent: 0,
+          stagger: 0.02,
+        },
+      )
+      .fromTo(
+        p2.words,
+        {
+          opacity: 0,
+          yPercent: 50,
+        },
+        {
+          opacity: 1,
+          yPercent: 0,
+          stagger: 0.01,
+        },
+        "-=.6",
+      );
+  }, []);
+
   return (
-    <div className='relative mb-[15rem] flex flex-col items-center justify-center gap-12 rounded-[40px] bg-primary px-4 py-[5rem] md:mb-[15rem] md:gap-24 md:px-16 md:py-[9.5rem]'>
-      <span className='absolute right-[clamp(1rem,-1.4311rem+10.3728vw,5rem)] top-[clamp(-4.5rem,-3.2844rem+-5.1864vw,-6.5rem)] rotate-[12deg] text-[clamp(5rem,3.1767rem+7.7796vw,8rem)] font-black leading-[1] text-[#0A0B1E] md:right-[7.5rem] md:top-[-9.5rem] md:text-[11.25rem]'>
+    <div
+      ref={runRef}
+      className='relative mb-[15rem] flex flex-col items-center justify-center gap-12 rounded-[40px] bg-primary px-4 py-[5rem] md:mb-[15rem] md:gap-24 md:px-16 md:py-[9.5rem]'
+    >
+      <span
+        ref={bigTitle}
+        className='absolute right-[clamp(1rem,-1.4311rem+10.3728vw,5rem)] top-[clamp(-4.5rem,-3.2844rem+-5.1864vw,-6.5rem)] rotate-[12deg] text-[clamp(5rem,3.1767rem+7.7796vw,8rem)] font-black leading-[1] text-[#0A0B1E] md:right-[7.5rem] md:top-[-9.5rem] md:text-[11.25rem]'
+      >
         Run.
       </span>
-      <div className='flex flex-1 flex-col items-center justify-center gap-24 md:flex-row'>
+      <div ref={block1Ref} className='flex flex-1 flex-col items-center justify-center gap-24 md:flex-row'>
         <div className='flex flex-1 flex-col gap-8 text-black'>
           <h3 className='text-[clamp(2.75rem,2.1422rem+2.5932vw,3.75rem)] font-bold leading-[.85] md:text-[3.75rem]'>
             Create & Launch
@@ -75,7 +321,7 @@ const Run = () => {
           />
         </figure>
       </div>
-      <div className='flex flex-1 flex-col-reverse items-center justify-center gap-24 md:flex-row'>
+      <div ref={block2Ref} className='flex flex-1 flex-col-reverse items-center justify-center gap-24 md:flex-row'>
         <figure className='flex flex-1 items-center justify-center'>
           <Image
             src='/images/run-2.png'
@@ -105,9 +351,76 @@ const Run = () => {
 };
 
 const Recap = () => {
+  const recapRef = useRef<HTMLDivElement>(null);
+  const bigTitle = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    if (!recapRef.current) return;
+    const h3 = new SplitType(recapRef.current.querySelector("h3")!, {
+      types: "words,chars",
+    });
+    const p = new SplitType(recapRef.current.querySelector("p")!, {
+      types: "words",
+    });
+    const tl = gsap.timeline({
+      defaults: {
+        ease: (i) => 1 - Math.pow(1 - i, 3),
+      },
+    });
+
+    ScrollTrigger.create({
+      trigger: recapRef.current,
+      start: "top 50%",
+      markers: false,
+      animation: tl,
+    });
+
+    tl.fromTo(
+      bigTitle.current,
+      {
+        scale: 1.5,
+        opacity: 0,
+        x: -20,
+      },
+      {
+        scale: 1,
+        opacity: 1,
+        x: 0,
+        duration: 0.6,
+      },
+    )
+      .fromTo(
+        h3.chars,
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          stagger: 0.02,
+        },
+      )
+      .fromTo(
+        p.words,
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          stagger: 0.01,
+        },
+        "-=.6",
+      );
+  }, []);
+
   return (
-    <div className='relative mb-[10rem] flex flex-col items-center justify-center gap-12 rounded-[40px] bg-black px-4 py-[5rem] md:mb-[15rem] md:flex-row md:gap-24 md:px-16 md:py-[9.5rem]'>
-      <span className='absolute left-[clamp(1rem,-1.4311rem+10.3728vw,5rem)] top-[clamp(-4.5rem,-3.2844rem+-5.1864vw,-6.5rem)] rotate-[-12deg] text-[clamp(5rem,3.1767rem+7.7796vw,8rem)] font-black leading-[1] text-[#0A0B1E] md:left-[7.5rem] md:top-[-9.5rem] md:text-[11.25rem]'>
+    <div
+      ref={recapRef}
+      className='relative mb-[10rem] flex flex-col items-center justify-center gap-12 rounded-[40px] bg-black px-4 py-[5rem] md:mb-[15rem] md:flex-row md:gap-24 md:px-16 md:py-[9.5rem]'
+    >
+      <span
+        ref={bigTitle}
+        className='absolute left-[clamp(1rem,-1.4311rem+10.3728vw,5rem)] top-[clamp(-4.5rem,-3.2844rem+-5.1864vw,-6.5rem)] rotate-[-12deg] text-[clamp(5rem,3.1767rem+7.7796vw,8rem)] font-black leading-[1] text-[#0A0B1E] md:left-[7.5rem] md:top-[-9.5rem] md:text-[11.25rem]'
+      >
         <span className='text-primary'>Recap</span>.
       </span>
       <div className='flex flex-1 flex-col gap-8 text-white'>
@@ -138,9 +451,75 @@ const Recap = () => {
 };
 
 const Collaborate = () => {
+  const collaborateRef = useRef<HTMLDivElement>(null);
+  const bigTitle = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    if (!collaborateRef.current) return;
+    const h3 = new SplitType(collaborateRef.current.querySelector("h3")!, {
+      types: "words,chars",
+    });
+    const p = new SplitType(collaborateRef.current.querySelector("p")!, {
+      types: "words",
+    });
+    const tl = gsap.timeline({
+      defaults: {
+        ease: (i) => 1 - Math.pow(1 - i, 3),
+      },
+    });
+
+    ScrollTrigger.create({
+      trigger: collaborateRef.current,
+      start: "top 50%",
+      markers: false,
+      animation: tl,
+    });
+
+    tl.fromTo(
+      bigTitle.current,
+      {
+        scale: 1.5,
+        opacity: 0,
+        x: -20,
+      },
+      {
+        scale: 1,
+        opacity: 1,
+        x: 0,
+        duration: 0.6,
+      },
+    )
+      .fromTo(
+        h3.chars,
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          stagger: 0.02,
+        },
+      )
+      .fromTo(
+        p.words,
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          stagger: 0.01,
+        },
+        "-=.6",
+      );
+  }, []);
   return (
-    <div className='relative mb-[10rem] flex flex-col items-center justify-center gap-12 rounded-[40px] bg-primary px-4 py-[5rem] md:mb-[15rem] md:flex-row md:gap-24 md:px-16 md:py-[9.5rem]'>
-      <span className='absolute right-[clamp(1rem,-1.4311rem+10.3728vw,5rem)] top-[clamp(-3.5rem,-3.2844rem+-5.1864vw,-6.5rem)] rotate-[12deg] text-[clamp(3rem,-0.0389rem+12.966vw,8rem)] font-black leading-[1] text-[#0A0B1E] md:right-[7.5rem] md:top-[-9.5rem] md:text-[11.25rem]'>
+    <div
+      ref={collaborateRef}
+      className='relative mb-[10rem] flex flex-col items-center justify-center gap-12 rounded-[40px] bg-primary px-4 py-[5rem] md:mb-[15rem] md:flex-row md:gap-24 md:px-16 md:py-[9.5rem]'
+    >
+      <span
+        ref={bigTitle}
+        className='absolute right-[clamp(1rem,-1.4311rem+10.3728vw,5rem)] top-[clamp(-3.5rem,-3.2844rem+-5.1864vw,-6.5rem)] rotate-[12deg] text-[clamp(3rem,-0.0389rem+12.966vw,8rem)] font-black leading-[1] text-[#0A0B1E] md:right-[7.5rem] md:top-[-9.5rem] md:text-[11.25rem]'
+      >
         Collaborate.
       </span>
       <figure className='flex flex-1 items-center justify-center'>

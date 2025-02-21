@@ -7,8 +7,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import SplitType from "split-type";
 
-gsap.registerPlugin(ScrollTrigger);
-
 type Slide = {
   image: {
     src: string;

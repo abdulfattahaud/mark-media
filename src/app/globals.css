@@ -55,6 +55,8 @@ body {
 
 h1,
 h2,
+h3,
+h4,
 p,
 blockquote,
 span {
@@ -128,6 +130,8 @@ blockquote {
   cursor: pointer;
   background-color: transparent;
   overflow: hidden;
+  padding: 0.5rem 0;
+  margin: -0.5rem 0;
   /* items-end gap-8 leading-[100%] */
   display: flex;
   align-items: center;
@@ -153,7 +157,7 @@ blockquote {
       left: 0;
       height: 100%;
       /* width: 100%; */
-      transform: translate(-5%, 110%) scale(0.95) rotate(0.001deg);
+      transform: translate(-5%, 130%) scale(0.95) rotate(0.001deg);
       transition: transform var(--animation-primary);
     }
   }
@@ -169,7 +173,7 @@ blockquote {
 
   .link-click:hover {
     .link-content {
-      transform: translate(5%, -110%) scale(1.05) rotate(0.001deg);
+      transform: translate(5%, -130%) scale(1.05) rotate(0.001deg);
       &.duplicate {
         transform: translate(0%, 0%) scale(1) rotate(0.001deg);
       }

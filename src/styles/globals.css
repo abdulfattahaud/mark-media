@@ -1,0 +1,26 @@
+.number-wrapper {
+  height: 5rem;
+}
+
+.number-row {
+  height: 100%;
+  line-height: 1;
+  width: 100%;
+}
+
+.count-number {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.digit-column {
+  height: 100%;
+  overflow: hidden;
+  min-width: 2.5rem;
+  text-align: center;
+}
+
+.digit-column:first-child {
+  min-width: 2.5rem;
+}
