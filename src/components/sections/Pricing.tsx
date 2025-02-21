@@ -2,11 +2,63 @@
 import AutoHeight from "embla-carousel-auto-height";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
+import SplitType from "split-type";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 export const Pricing = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" }, [AutoHeight()]);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!wrapperRef.current) return;
+    const h2 = new SplitType(wrapperRef.current.querySelector("h2")!, {
+      types: "words,chars",
+    });
+    const p = new SplitType(wrapperRef.current.querySelector("p")!, {
+      types: "words,chars",
+    });
+    const tl = gsap.timeline({
+      defaults: {
+        ease: (i) => 1 - Math.pow(1 - i, 3),
+      },
+    });
+
+    ScrollTrigger.create({
+      trigger: wrapperRef.current,
+      start: "top 50%",
+      markers: false,
+      animation: tl,
+    });
+
+    tl.fromTo(
+      h2.chars,
+      {
+        opacity: 0,
+        yPercent: 50,
+      },
+      {
+        opacity: 1,
+        yPercent: 0,
+        stagger: 0.02,
+      },
+    ).fromTo(
+      p.chars,
+      {
+        opacity: 0,
+        yPercent: 50,
+      },
+      {
+        opacity: 1,
+        yPercent: 0,
+        stagger: 0.01,
+      },
+      "-=.6",
+    );
+  }, []);
   return (
-    <div className='relative h-max min-h-svh'>
+    <div ref={wrapperRef} className='relative h-max min-h-svh'>
       <Image
         src='/images/busniess-bg.png'
         alt=''

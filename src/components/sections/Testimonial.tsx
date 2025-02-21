@@ -1,4 +1,9 @@
+"use client";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
+import SplitType from "split-type";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 const CheckIcon = () => {
   return (
@@ -22,8 +27,108 @@ const CheckIcon = () => {
 };
 
 export const Testimonial = () => {
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!wrapperRef.current) return;
+    const h2 = wrapperRef.current.querySelector("h2")!;
+    const headerImage = wrapperRef.current.querySelector("header img")!;
+    const h2Split = new SplitType(h2, {
+      types: "words,chars",
+    });
+    const headerSpan1: HTMLElement = wrapperRef.current.querySelector("header > div > span")!;
+    const headerSpan2: HTMLElement = wrapperRef.current.querySelector("header > span")!;
+    const headerSpan1Split = new SplitType(headerSpan1, {
+      types: "words,chars",
+    });
+    const headerSpan2Split = new SplitType(headerSpan2, {
+      types: "words,chars",
+    });
+    const tl = gsap.timeline({
+      defaults: {
+        ease: (i) => 1 - Math.pow(1 - i, 3),
+      },
+      onComplete: () => {
+        h2Split.revert();
+        headerSpan1Split.revert();
+        headerSpan2Split.revert();
+      },
+    });
+
+    ScrollTrigger.create({
+      trigger: wrapperRef.current,
+      start: "top 50%",
+      markers: false,
+      animation: tl,
+    });
+
+    tl.fromTo(
+      headerImage,
+      {
+        opacity: 0,
+        yPercent: 50,
+      },
+      {
+        opacity: 1,
+        yPercent: 0,
+        duration: 0.5,
+      },
+    )
+      .fromTo(
+        headerSpan1Split.chars,
+        {
+          opacity: 0,
+          yPercent: 50,
+        },
+        {
+          opacity: 1,
+          yPercent: 0,
+          stagger: 0.02,
+        },
+        "-=.6",
+      )
+      .fromTo(
+        h2Split.chars,
+        {
+          opacity: 0,
+          yPercent: 50,
+        },
+        {
+          opacity: 1,
+          yPercent: 0,
+          stagger: 0.02,
+        },
+        "-=.75",
+      )
+      .fromTo(
+        headerSpan2Split.chars,
+        {
+          opacity: 0,
+          yPercent: 50,
+        },
+        {
+          opacity: 1,
+          yPercent: 0,
+          stagger: 0.02,
+        },
+        "-=.75",
+      )
+      .fromTo(
+        ".testi-item",
+        {
+          opacity: 0,
+          yPercent: 50,
+        },
+        {
+          opacity: 1,
+          yPercent: 0,
+          stagger: 0.1,
+        },
+        "-=.6",
+      );
+  }, []);
   return (
     <div
+      ref={wrapperRef}
       id='testimonial'
       className='relative z-[1] flex min-h-svh flex-col bg-[#FFCD0091] px-4 pb-[4.5rem] pt-[5.625rem] md:px-[7.125rem]'
     >
@@ -41,7 +146,7 @@ export const Testimonial = () => {
         </header>
         <div className='grid grid-cols-1 gap-5 md:grid-cols-3'>
           <div className='flex flex-col gap-5 md:mt-[12.5rem]'>
-            <div className='flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
+            <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
               <div className='flex items-center gap-2'>
                 <Image
                   src='/images/test-01.png'
@@ -61,7 +166,7 @@ export const Testimonial = () => {
                 <p>@markmedia makes thinking hard, easier.</p>
               </div>
             </div>
-            <div className='flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
+            <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
               <div className='flex items-center gap-2'>
                 <Image
                   src='/images/test-02.png'
@@ -86,7 +191,7 @@ export const Testimonial = () => {
             </div>
           </div>
           <div className='flex flex-col gap-5 md:mt-[5rem]'>
-            <div className='flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
+            <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
               <div className='flex items-center gap-2'>
                 <Image
                   src='/images/test-03.png'
@@ -106,7 +211,7 @@ export const Testimonial = () => {
                 <p>Pro-tip: Use @markmedia</p>
               </div>
             </div>
-            <div className='flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
+            <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
               <div className='flex items-center gap-2'>
                 <Image
                   src='/images/test-04.png'
@@ -129,7 +234,7 @@ export const Testimonial = () => {
                 </p>
               </div>
             </div>
-            <div className='flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
+            <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
               <div className='flex items-center gap-2'>
                 <Image
                   src='/images/test-05.png'
@@ -154,7 +259,7 @@ export const Testimonial = () => {
             </div>
           </div>
           <div className='flex flex-col gap-5'>
-            <div className='flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
+            <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
               <div className='flex items-center gap-2'>
                 <Image
                   src='/images/test-06.png'
@@ -177,7 +282,7 @@ export const Testimonial = () => {
                 </p>
               </div>
             </div>
-            <div className='flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
+            <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
               <div className='flex items-center gap-2'>
                 <Image
                   src='/images/test-07.png'
@@ -197,7 +302,7 @@ export const Testimonial = () => {
                 <p>Dang. @markmedia is beyond good. It might turn into my favorite tool as a PM.</p>
               </div>
             </div>
-            <div className='flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
+            <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
               <div className='flex items-center gap-2'>
                 <Image
                   src='/images/test-08.png'
