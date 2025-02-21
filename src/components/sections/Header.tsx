@@ -11,6 +11,37 @@ CustomEase.create("ease-in-css", ".25, 1, 0.1 ,1");
 
 gsap.registerPlugin(ScrollTrigger, CustomEase);
 
+const links = [
+  {
+    name: "Home",
+    href: "#",
+  },
+  {
+    name: "About Us",
+    href: "#about-us",
+  },
+  {
+    name: "Expertise",
+    href: "#expertise",
+  },
+  {
+    name: "How it Works",
+    href: "#how-it-works",
+  },
+  {
+    name: "Pricing",
+    href: "#pricing",
+  },
+  {
+    name: "Testimonial",
+    href: "#testimonial",
+  },
+  {
+    name: "Contact Us",
+    href: "#contact-us",
+  },
+];
+
 export const Header = () => {
   const menuOpen = useRef<HTMLButtonElement>(null);
   useEffect(() => {
@@ -108,37 +139,79 @@ export const Header = () => {
           <div className='flex w-full flex-1 flex-col justify-between gap-[48px] overflow-y-scroll sm:w-auto'>
             <div className='flex h-full flex-col justify-between gap-[1.625rem]'>
               <ul className='items-list flex cursor-pointer flex-col gap-4 text-[2.75rem] font-bold leading-[110%]'>
-                <li className='flex cursor-pointer items-end gap-8 leading-[100%]'>
-                  <span className='block leading-[100%]'>Home</span>
-                  <svg
-                    className='size-4'
-                    width='16'
-                    height='16'
-                    viewBox='0 0 16 16'
-                    fill='none'
-                    xmlns='http://www.w3.org/2000/svg'
-                  >
-                    <path
-                      d='M11.1687 2.8301L0 13.9988L2.0012 16L13.17 4.8311V13.8675H16.0001V0H2.1327V2.8301H11.1687Z'
-                      fill='black'
-                    />
-                  </svg>
-                </li>
-                <li className='flex cursor-pointer items-end gap-8 leading-[100%]'>
-                  <span className='block leading-[100%]'>About Us</span>
-                  <svg
-                    className='size-4'
-                    width='16'
-                    height='16'
-                    viewBox='0 0 16 16'
-                    fill='none'
-                    xmlns='http://www.w3.org/2000/svg'
-                  >
-                    <path
-                      d='M11.1687 2.8301L0 13.9988L2.0012 16L13.17 4.8311V13.8675H16.0001V0H2.1327V2.8301H11.1687Z'
-                      fill='black'
-                    />
-                  </svg>
+                {links.map((link, index) => (
+                  <li key={index} className='cursor-pointer'>
+                    <div className='link-click'>
+                      <div className='link-content'>
+                        <span className='block leading-[100%]'>{link.name}</span>
+                        <svg
+                          className='size-4'
+                          width='16'
+                          height='16'
+                          viewBox='0 0 16 16'
+                          fill='none'
+                          xmlns='http://www.w3.org/2000/svg'
+                        >
+                          <path
+                            d='M11.1687 2.8301L0 13.9988L2.0012 16L13.17 4.8311V13.8675H16.0001V0H2.1327V2.8301H11.1687Z'
+                            fill='black'
+                          />
+                        </svg>
+                      </div>
+                      <div className='link-content duplicate'>
+                        <span className='block leading-[100%]'>{link.name}</span>
+                        <svg
+                          className='size-4'
+                          width='16'
+                          height='16'
+                          viewBox='0 0 16 16'
+                          fill='none'
+                          xmlns='http://www.w3.org/2000/svg'
+                        >
+                          <path
+                            d='M11.1687 2.8301L0 13.9988L2.0012 16L13.17 4.8311V13.8675H16.0001V0H2.1327V2.8301H11.1687Z'
+                            fill='black'
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                ))}
+                {/* <li className='flex cursor-pointer items-end gap-8 leading-[100%]'>
+                  <div className='link-click'>
+                    <div className='link-content'>
+                      <span className='block leading-[100%]'>About Us</span>
+                      <svg
+                        className='size-4'
+                        width='16'
+                        height='16'
+                        viewBox='0 0 16 16'
+                        fill='none'
+                        xmlns='http://www.w3.org/2000/svg'
+                      >
+                        <path
+                          d='M11.1687 2.8301L0 13.9988L2.0012 16L13.17 4.8311V13.8675H16.0001V0H2.1327V2.8301H11.1687Z'
+                          fill='black'
+                        />
+                      </svg>
+                    </div>
+                    <div className='link-content duplicate'>
+                      <span className='block leading-[100%]'>About Us</span>
+                      <svg
+                        className='size-4'
+                        width='16'
+                        height='16'
+                        viewBox='0 0 16 16'
+                        fill='none'
+                        xmlns='http://www.w3.org/2000/svg'
+                      >
+                        <path
+                          d='M11.1687 2.8301L0 13.9988L2.0012 16L13.17 4.8311V13.8675H16.0001V0H2.1327V2.8301H11.1687Z'
+                          fill='black'
+                        />
+                      </svg>
+                    </div>
+                  </div>
                 </li>
                 <li className='flex cursor-pointer items-end gap-8 leading-[100%]'>
                   <span className='block leading-[100%]'>Expertise</span>
@@ -219,7 +292,7 @@ export const Header = () => {
                       fill='black'
                     />
                   </svg>
-                </li>
+                </li> */}
               </ul>
               <div className='flex flex-col gap-5'>
                 <Image

@@ -124,6 +124,41 @@ blockquote {
   }
 }
 
+.link-click {
+  cursor: pointer;
+  background-color: transparent;
+  overflow: hidden;
+  /* items-end gap-8 leading-[100%] */
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  /* gap: 1rem; */
+  position: relative;
+  /* font-weight: 700;
+  line-height: 100%; */
+  transition: background-color var(--animation-primary-ease-in);
+  .link-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.25em;
+    gap: 2rem;
+    font-weight: 700;
+    line-height: 100%;
+    transition: transform var(--animation-primary);
+    &.duplicate {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      /* width: 100%; */
+      transform: translate(-5%, 110%) scale(0.95) rotate(0.001deg);
+      transition: transform var(--animation-primary);
+    }
+  }
+}
+
 @media (hover: hover) {
   .menu-open:hover {
     background-color: #273f2b;
@@ -131,6 +166,16 @@ blockquote {
   .menu-open:hover .arr-svg {
     transform: translateX(-150%) rotate(0.001deg);
   }
+
+  .link-click:hover {
+    .link-content {
+      transform: translate(5%, -110%) scale(1.05) rotate(0.001deg);
+      &.duplicate {
+        transform: translate(0%, 0%) scale(1) rotate(0.001deg);
+      }
+    }
+  }
+
   :root {
     --vh: 1vh;
   }
