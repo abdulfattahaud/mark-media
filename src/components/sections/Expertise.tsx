@@ -2,7 +2,7 @@
 import useEmblaCarousel from "embla-carousel-react";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import SplitType from "split-type";
@@ -93,8 +93,48 @@ const slides: Slide[] = [
 
 const SlideItem = ({ slide }: { slide: Slide }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const item = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const splitP = new SplitType(".embla__slide p", {
+      types: "lines,words",
+    });
+    gsap.set(splitP.words, {
+      opacity: 0,
+      yPercent: 50,
+    });
+    return () => splitP.revert();
+  }, []);
+
+  useEffect(() => {
+    if (!item.current) return;
+    if (isOpen) {
+      gsap.fromTo(
+        item.current?.querySelectorAll("p .word"),
+        {
+          opacity: 0,
+          yPercent: 50,
+        },
+        {
+          opacity: 1,
+          yPercent: 0,
+          stagger: 0.02,
+          duration: 0.5,
+        },
+      );
+    } else {
+      gsap.to(item.current?.querySelectorAll("p .word"), {
+        opacity: 0,
+        yPercent: 50,
+        duration: 0.5,
+      });
+    }
+  }, [isOpen]);
+
   return (
-    <div className='embla__slide relative mr-4 sm:!basis-[calc((100%/2)-1rem)] md:!basis-[calc((100%/3)-1rem)]'>
+    <div
+      ref={item}
+      className='embla__slide relative mr-4 sm:!basis-[calc((100%/2)-1rem)] md:!basis-[calc((100%/3)-1rem)]'
+    >
       <Image
         src={slide.image.src}
         alt={slide.image.alt}
@@ -139,7 +179,9 @@ const SlideItem = ({ slide }: { slide: Slide }) => {
 };
 
 export const Expertise = () => {
-  const [emblaRef] = useEmblaCarousel({ loop: true, align: "start", skipSnaps: true }, [WheelGesturesPlugin()]);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start", skipSnaps: true }, [
+    WheelGesturesPlugin(),
+  ]);
   useEffect(() => {
     const h2Split = new SplitType("#expertise h2", {
       types: "words,chars",
@@ -212,21 +254,7 @@ export const Expertise = () => {
           stagger: 0.015,
         },
         "-=.5",
-      )
-      .fromTo(
-        "#expertise button",
-        {
-          opacity: 0,
-          yPercent: 50,
-        },
-        {
-          opacity: 1,
-          yPercent: 0,
-          stagger: 0.015,
-        },
-        "-=.5",
       );
-
     return () => {
       ScrollTrigger.killAll();
       tl.kill();
@@ -234,7 +262,7 @@ export const Expertise = () => {
   }, []);
   return (
     <div id='expertise' className='relative h-max min-h-svh overflow-hidden bg-primary pr-4 sm:pr-0'>
-      <div className='relative z-[2] flex h-full flex-col justify-center gap-10 pb-[2rem] pl-[2.5rem] pt-[3rem] sm:pl-[4rem] md:gap-20 md:py-[3.25rem] md:pl-[12.5rem]'>
+      <div className='relative z-[2] flex h-full flex-col justify-center gap-10 pb-[2rem] pl-[2.5rem] pt-[3rem] sm:pl-[4rem] md:py-[3.25rem] md:pl-[12.5rem]'>
         <div className='flex flex-col items-start gap-8'>
           <div className='flex items-center gap-5'>
             <Image
@@ -254,7 +282,7 @@ export const Expertise = () => {
             Harness Our Full-Spectrum Marketing Services to
             <br /> Catapult Your Brand’s Reach and Results
           </span>
-          <button className='flex items-center gap-5 rounded-[85px] bg-white p-1.5 pl-[1.6rem]'>
+          {/* <button className='flex items-center gap-5 rounded-[85px] bg-white p-1.5 pl-[1.6rem]'>
             <span className='text-xs md:text-base'>Explore our work</span>
             <div className='flex size-[1.875rem] items-center justify-center rounded-full bg-black md:size-[3.5rem]'>
               <svg
@@ -273,9 +301,55 @@ export const Expertise = () => {
                 <path d='M20.4702 13.0901L14.4702 7.09009' stroke='white' strokeWidth='2' strokeLinecap='round' />
               </svg>
             </div>
-          </button>
+          </button> */}
+          <div className='embla__actions left-0 top-[20px] flex gap-1'>
+            <button
+              onClick={() => {
+                emblaApi?.scrollPrev();
+              }}
+              className='flex size-[3.5rem] items-center justify-center rounded-full border-[.5rem] border-primary bg-black'
+            >
+              <svg
+                className='h-3 w-3.5'
+                width='14'
+                height='12'
+                viewBox='0 0 14 12'
+                fill='none'
+                xmlns='http://www.w3.org/2000/svg'
+              >
+                <path
+                  fillRule='evenodd'
+                  clipRule='evenodd'
+                  d='M6.0788 11.2867C5.87678 11.4887 5.5493 11.4887 5.34727 11.2867L0.519154 6.45865C0.422109 6.36167 0.36762 6.23007 0.36762 6.09289C0.36762 5.9557 0.422109 5.8241 0.519154 5.72705L5.34727 0.898932C5.5493 0.696908 5.87678 0.696908 6.0788 0.898932C6.28083 1.10095 6.28083 1.42851 6.0788 1.63053L2.13382 5.57559L13.3001 5.57559C13.5858 5.57559 13.8174 5.8072 13.8174 6.09289C13.8174 6.37857 13.5858 6.61018 13.3001 6.61018L2.13382 6.61018L6.0788 10.5552C6.28083 10.7572 6.28083 11.0847 6.0788 11.2867Z'
+                  fill='white'
+                />
+              </svg>
+            </button>
+            <button
+              onClick={() => {
+                emblaApi?.scrollNext();
+              }}
+              className='flex size-[3.5rem] items-center justify-center rounded-full border-[.5rem] border-primary bg-black'
+            >
+              <svg
+                className='h-3 w-3.5'
+                width='14'
+                height='12'
+                viewBox='0 0 14 12'
+                fill='none'
+                xmlns='http://www.w3.org/2000/svg'
+              >
+                <path
+                  fillRule='evenodd'
+                  clipRule='evenodd'
+                  d='M8.29034 0.897605C8.49236 0.69559 8.81984 0.69559 9.02187 0.897605L13.85 5.72568C13.947 5.82265 14.0015 5.95425 14.0015 6.09144C14.0015 6.22863 13.947 6.36023 13.85 6.45727L9.02187 11.2854C8.81984 11.4874 8.49236 11.4874 8.29034 11.2854C8.08831 11.0834 8.08831 10.7558 8.29034 10.5538L12.2353 6.60874L1.06906 6.60874C0.783363 6.60874 0.551758 6.37713 0.551758 6.09144C0.551758 5.80575 0.783363 5.57414 1.06906 5.57414L12.2353 5.57414L8.29034 1.62918C8.08831 1.42716 8.08831 1.09963 8.29034 0.897605Z'
+                  fill='white'
+                />
+              </svg>
+            </button>
+          </div>
         </div>
-        <div className='embla w-full' ref={emblaRef}>
+        <div className='embla relative w-full' ref={emblaRef}>
           <div className='embla__container'>
             {slides.map((slide, index) => (
               <SlideItem key={index} slide={slide} />
