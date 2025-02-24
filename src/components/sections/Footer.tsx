@@ -1,12 +1,51 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useForm } from "react-hook-form";
+import { toast } from "sonner";
+
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { useEffect } from "react";
+
+interface FormData {
+  first_name: string;
+  last_name: string;
+  phone: string;
+  email: string;
+  message: string;
+}
 
 export const Footer = () => {
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+    reset,
+  } = useForm<FormData>({
+    defaultValues: {
+      first_name: "",
+      last_name: "",
+      phone: "",
+      email: "",
+      message: "",
+    },
+  });
+
+  const onSubmit = (data: FormData) => {
+    console.log(data);
+    toast("Successfully submitted");
+    reset();
+  };
+
+  useEffect(() => {
+    toast("Successfully submitted");
+  }, []);
+
   return (
     <div>
       <div
         id='contact-us'
-        className='relative mx-[22px] mb-[2.75rem] mt-[6.25rem] flex h-auto flex-col items-center justify-between gap-[2.5rem] overflow-hidden rounded-[30px] px-[2rem] py-[4rem] sm:mx-[2.5rem] sm:h-[15rem] sm:flex-row sm:gap-4 sm:py-0 md:mx-[5.5rem] md:px-[4rem]'
+        className='relative mx-[22px] mb-[2.75em] mt-[6.25em] flex h-auto flex-col items-center justify-between gap-[2.5em] overflow-hidden rounded-[30px] px-[2em] py-[4em] sm:mx-[2.5em] sm:h-[15em] sm:flex-row sm:gap-4 sm:py-0 md:mx-[5.5em] md:px-[4em]'
       >
         <Image
           src='/images/footer-bg.png'
@@ -15,25 +54,248 @@ export const Footer = () => {
           height={240}
           className='absolute inset-0 z-[-1] size-full object-cover'
         />
-        <span className='text-center text-[1.875rem] font-semibold leading-[1.1] text-white sm:text-left sm:text-[2.5rem] md:text-[3.5rem] md:leading-[1.3]'>
+        <span className='text-center text-[1.875em] font-semibold leading-[1.1] text-white sm:text-left sm:text-[2.5em] md:text-[3.5em] md:leading-[1.3]'>
           Let’s Kickstart Your Big Success
         </span>
-        <button className='flex items-center gap-[2.5rem] rounded-[70px] bg-white px-4 py-3 text-base font-bold md:px-8 md:py-6'>
-          <span className='text-nowrap'>Contact us</span>
-          <svg
-            className='size-6'
-            width='24'
-            height='24'
-            viewBox='0 0 24 24'
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-          >
-            <path d='M5 12H19' stroke='black' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' />
-            <path d='M12 5L19 12L12 19' stroke='black' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' />
-          </svg>
-        </button>
+        <Dialog>
+          <DialogTrigger className='flex items-center gap-[2.5em] rounded-[70px] bg-white px-4 py-3 text-base font-bold md:px-8 md:py-6'>
+            <span className='text-nowrap'>Contact us</span>
+            <svg
+              className='size-[1.5em]'
+              width='24'
+              height='24'
+              viewBox='0 0 24 24'
+              fill='none'
+              xmlns='http://www.w3.org/2000/svg'
+            >
+              <path d='M5 12H19' stroke='black' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' />
+              <path d='M12 5L19 12L12 19' stroke='black' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' />
+            </svg>
+          </DialogTrigger>
+          <DialogContent className='h-[90%] w-full max-w-[90%] overflow-scroll rounded-[20px] bg-white px-[2.5em] pb-[1em] pt-[2.25em] text-[16px] sm:max-w-[44em] sm:text-[20px]'>
+            <DialogHeader>
+              <DialogTitle
+                className='mb-[.875em]'
+                style={{
+                  background: "linear-gradient(180deg, #000000 0%, #BABABA 100%)",
+                  backgroundClip: "text",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  fontSize: "1em",
+                  lineHeight: 1.25,
+                  textAlign: "start",
+                }}
+              >
+                Partner with us to transform your ideas into reality with innovative, custom-built tech solutions.
+                Experience a collaborative journey that drives success and growth.
+              </DialogTitle>
+              <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col items-center'>
+                <div className='mb-[1em] flex flex-col justify-between sm:flex-row'>
+                  <div className='mb-[2em] flex flex-1 flex-col gap-[1.25em] sm:mb-0 sm:pr-[5em]'>
+                    <div className='input-wrapper'>
+                      <label htmlFor='first-name'>
+                        First Name*{" "}
+                        {errors.first_name && <span className='text-red-500'>{errors.first_name.message}</span>}
+                      </label>
+                      <input
+                        className='form-input'
+                        {...register("first_name", { required: { value: true, message: " is required" } })}
+                      />
+                    </div>
+                    <div className='input-wrapper'>
+                      <label htmlFor='last-name'>
+                        Last Name*{" "}
+                        {errors.last_name && <span className='text-red-500'>{errors.last_name.message}</span>}
+                      </label>
+                      <input
+                        className='form-input'
+                        {...register("last_name", { required: { value: true, message: " is required" } })}
+                      />
+                    </div>
+                    <div className='input-wrapper'>
+                      <label htmlFor='phone'>
+                        Phone Number* {errors.phone && <span className='text-red-500'>{errors.phone.message}</span>}
+                      </label>
+                      <input
+                        className='form-input'
+                        {...register("phone", {
+                          required: { value: true, message: " is required" },
+                          pattern: {
+                            value: /^\d{10}$/,
+                            message: " must be a 10-digit number",
+                          },
+                        })}
+                      />
+                    </div>
+                    <div className='input-wrapper'>
+                      <label htmlFor='email'>
+                        Email* {errors.email && <span className='text-red-500'>{errors.email.message}</span>}
+                      </label>
+                      <input
+                        className='form-input'
+                        {...register("email", {
+                          required: { value: true, message: " is required" },
+                          pattern: {
+                            value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                            message: " must be a valid email address",
+                          },
+                        })}
+                      />
+                    </div>
+                    <div className='input-wrapper'>
+                      <label htmlFor='message'>
+                        Message* {errors.message && <span className='text-red-500'>{errors.message.message}</span>}
+                      </label>
+                      <textarea
+                        className='form-input !h-auto resize-none !py-2'
+                        rows={5}
+                        {...register("message", { required: { value: true, message: " is required" } })}
+                      />
+                    </div>
+                  </div>
+                  <div className='flex flex-1 flex-col'>
+                    <header className='mb-[3.5em] flex flex-col gap-[.25em]'>
+                      <h3 className='text-[1.625em] text-[#1C2348]'>Select Service</h3>
+                      <p className='text-[.625em] font-extralight'>
+                        Please tell us a bit about what you’re looking for
+                      </p>
+                    </header>
+                    <ul className='mb-[2.25em] flex flex-col gap-[.625em] text-[1em]'>
+                      <li className='flex items-center justify-between'>
+                        <span>Website Design & Development</span>
+                        <svg
+                          className='size-[1.5em]'
+                          width='19'
+                          height='19'
+                          viewBox='0 0 19 19'
+                          fill='none'
+                          xmlns='http://www.w3.org/2000/svg'
+                        >
+                          <ellipse cx='9.71829' cy='9.5' rx='9.28177' ry='9.5' fill='#FFCD00' />
+                          <path
+                            d='M13.3275 6.72949L8.36438 11.8094L6.1084 9.50033'
+                            stroke='white'
+                            strokeWidth='2'
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
+                          />
+                        </svg>
+                      </li>
+                      <li className='flex items-center justify-between'>
+                        <span>Branding & Strategy</span>
+                        <svg
+                          className='size-[1.5em]'
+                          width='19'
+                          height='19'
+                          viewBox='0 0 19 19'
+                          fill='none'
+                          xmlns='http://www.w3.org/2000/svg'
+                        >
+                          <ellipse cx='9.71829' cy='9.5' rx='9.28177' ry='9.5' fill='#000' />
+                          <path
+                            d='M13.3275 6.72949L8.36438 11.8094L6.1084 9.50033'
+                            stroke='white'
+                            strokeWidth='2'
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
+                          />
+                        </svg>
+                      </li>
+                      <li className='flex items-center justify-between'>
+                        <span>Digital Marketing</span>
+                        <svg
+                          className='size-[1.5em]'
+                          width='19'
+                          height='19'
+                          viewBox='0 0 19 19'
+                          fill='none'
+                          xmlns='http://www.w3.org/2000/svg'
+                        >
+                          <ellipse cx='9.71829' cy='9.5' rx='9.28177' ry='9.5' fill='#FFCD00' />
+                          <path
+                            d='M13.3275 6.72949L8.36438 11.8094L6.1084 9.50033'
+                            stroke='white'
+                            strokeWidth='2'
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
+                          />
+                        </svg>
+                      </li>
+                      <li className='flex items-center justify-between'>
+                        <span>Public Relations</span>
+                        <svg
+                          className='size-[1.5em]'
+                          width='19'
+                          height='19'
+                          viewBox='0 0 19 19'
+                          fill='none'
+                          xmlns='http://www.w3.org/2000/svg'
+                        >
+                          <ellipse cx='9.71829' cy='9.5' rx='9.28177' ry='9.5' fill='#000' />
+                          <path
+                            d='M13.3275 6.72949L8.36438 11.8094L6.1084 9.50033'
+                            stroke='white'
+                            strokeWidth='2'
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
+                          />
+                        </svg>
+                      </li>
+                      <li className='flex items-center justify-between'>
+                        <span>Influencer Marketing</span>
+                        <svg
+                          className='size-[1.5em]'
+                          width='19'
+                          height='19'
+                          viewBox='0 0 19 19'
+                          fill='none'
+                          xmlns='http://www.w3.org/2000/svg'
+                        >
+                          <ellipse cx='9.71829' cy='9.5' rx='9.28177' ry='9.5' fill='#FFCD00' />
+                          <path
+                            d='M13.3275 6.72949L8.36438 11.8094L6.1084 9.50033'
+                            stroke='white'
+                            strokeWidth='2'
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
+                          />
+                        </svg>
+                      </li>
+                    </ul>
+                    <div className='flex gap-[.625em]'>
+                      <svg
+                        className='size-[1.5em]'
+                        width='19'
+                        height='19'
+                        viewBox='0 0 19 19'
+                        fill='none'
+                        xmlns='http://www.w3.org/2000/svg'
+                      >
+                        <ellipse cx='9.71829' cy='9.5' rx='9.28177' ry='9.5' fill='#000' />
+                        <path
+                          d='M13.3275 6.72949L8.36438 11.8094L6.1084 9.50033'
+                          stroke='white'
+                          strokeWidth='2'
+                          strokeLinecap='round'
+                          strokeLinejoin='round'
+                        />
+                      </svg>
+                      <span className='flex-1 text-[.625em] font-extralight'>
+                        By clicking submit, you agree to our <span className='font-bold'>Privacy Policy</span> and
+                        consent to receive updates from Mark Media.
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <button type='submit' className='w-[15em] rounded-[60px] bg-primary py-[.875em]'>
+                  Submit
+                </button>
+              </form>
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
       </div>
-      <div className='relative px-[2rem] pb-[4.25rem] pt-[5.25rem] sm:px-[4rem] md:px-[8.375rem]'>
+      <div className='relative px-[2em] pb-[4.25em] pt-[5.25em] sm:px-[4em] md:px-[8.375em]'>
         <Image
           src='/images/footer-noise.png'
           alt=''
@@ -45,33 +307,33 @@ export const Footer = () => {
           <div className='flex flex-col items-start justify-between sm:flex-row'>
             <div className='flex flex-col gap-5'>
               <Image src='/icons/logo.png' alt='' width={100} height={100} />
-              <span className='text-[1.25rem] font-bold leading-[1.2]'>Where Strategy Meets Success</span>
+              <span className='text-[1.25em] font-bold leading-[1.2]'>Where Strategy Meets Success</span>
             </div>
             <div className='flex flex-col gap-8'>
               <div className='flex flex-col gap-2'>
-                <span className='text-[.625rem] font-medium leading-[1.4]'>Address</span>
+                <span className='text-[.625em] font-medium leading-[1.4]'>Address</span>
                 <span className='text-sm'>302E, A1 Building, Dubai Digital Park, Dubai</span>
               </div>
               <div className='flex flex-col gap-2'>
-                <span className='text-[.625rem] font-medium leading-[1.4]'>Opening hours</span>
-                <span className='text-[1.25rem] font-medium'>Mon - Fri: 9AM - 6PM</span>
+                <span className='text-[.625em] font-medium leading-[1.4]'>Opening hours</span>
+                <span className='text-[1.25em] font-medium'>Mon - Fri: 9AM - 6PM</span>
               </div>
             </div>
           </div>
           <Image src='/icons/dots-line.svg' alt='' width={1200} height={40} className='my-8 h-auto w-full' />
           <div className='flex flex-wrap justify-between gap-4 sm:flex-nowrap'>
-            <span className='text-[1.5rem] leading-[1.4]'>Got a great idea but need help building it?</span>
-            <button className='text-nowrap rounded-full bg-primary px-4 py-2.5 text-[1.25rem] text-[#2E2E2E]'>
+            <span className='text-[1.5em] leading-[1.4]'>Got a great idea but need help building it?</span>
+            <button className='text-nowrap rounded-full bg-primary px-4 py-2.5 text-[1.25em] text-[#2E2E2E]'>
               Get in touch
             </button>
           </div>
           <Image src='/icons/dots-line.svg' alt='' width={1200} height={40} className='my-8 h-auto w-full' />
           <div className='flex flex-col-reverse justify-between gap-4 sm:flex-row sm:items-end'>
             <div className='flex flex-col items-center'>
-              <span className='text-[clamp(3rem,1.0916rem+8.1425vw,5rem)] font-bold leading-[1.2] sm:text-[clamp(5rem,1.5714rem+7.1429vw,6rem)] md:text-[12.5rem]'>
+              <span className='text-[clamp(3em,1.0916em+8.1425vw,5em)] font-bold leading-[1.2] sm:text-[clamp(5em,1.5714em+7.1429vw,6em)] md:text-[12.5em]'>
                 Markmedia
               </span>
-              <span className='text-sm leading-[1.35] md:text-[1.125rem]'>© 2025 All Rights reserved</span>
+              <span className='text-sm leading-[1.35] md:text-[1.125em]'>© 2025 All Rights reserved</span>
             </div>
             <div className='flex h-full flex-col items-start justify-between gap-4'>
               <ul className='flex flex-col gap-4'>
@@ -79,7 +341,7 @@ export const Footer = () => {
                   <Link href='/' target='_blank' className='flex items-end gap-2.5'>
                     <span>x</span>
                     <svg
-                      className='size-2'
+                      className='size-[.625rem]'
                       width='9'
                       height='9'
                       viewBox='0 0 9 9'
@@ -178,7 +440,7 @@ export const Footer = () => {
                   </Link>
                 </li>
               </ul>
-              <span className='text-sm font-bold leading-[1.35] text-[#2E2E2E] sm:mt-[2rem] md:mt-[4rem] md:text-[1.125rem]'>
+              <span className='text-sm font-bold leading-[1.35] text-[#2E2E2E] sm:mt-[2em] md:mt-[4em] md:text-[1.125em]'>
                 Developed by{" "}
                 <Link href='https://stepbytech.com' target='_blank' className='underline'>
                   Step by Tech

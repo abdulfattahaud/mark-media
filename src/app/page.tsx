@@ -9,6 +9,7 @@ import { Pricing } from "@/components/sections/Pricing";
 import { Testimonial } from "@/components/sections/Testimonial";
 import { Chat } from "@/components/ui/Chat";
 import { Footer } from "@/components/sections/Footer";
+import { Toaster } from "@/components/ui/sonner";
 import { Suspense } from "react";
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
         <Testimonial />
         <Footer />
       </div>
+      <Toaster />
     </Suspense>
   );
 }

@@ -79,7 +79,7 @@ export const Header = () => {
   }, []);
   return (
     <div className='relative'>
-      <div className='menu-open-wrapper pointer-events-none fixed right-[48px] top-[48px] z-[100] hidden sm:block'>
+      <div className='menu-open-wrapper pointer-events-none fixed right-[48px] top-[48px] z-[49] hidden sm:block'>
         <button
           ref={menuOpen}
           className='menu-open flex size-[clamp(3.125rem,0.625rem+5.2083vw,6.875rem)] items-center justify-center overflow-hidden rounded-full bg-primary'
