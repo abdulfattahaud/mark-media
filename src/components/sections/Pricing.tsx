@@ -12,50 +12,53 @@ export const Pricing = () => {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!wrapperRef.current) return;
-    const h2 = new SplitType(wrapperRef.current.querySelector("h2")!, {
-      types: "words,chars",
-    });
-    const p = new SplitType(wrapperRef.current.querySelector("p")!, {
-      types: "words,chars",
-    });
-    const tl = gsap.timeline({
-      defaults: {
-        ease: (i) => 1 - Math.pow(1 - i, 3),
-      },
-    });
+    const mm = gsap.matchMedia();
+    mm.add("(min-width: 768px)", () => {
+      if (!wrapperRef.current) return;
+      const h2 = new SplitType(wrapperRef.current.querySelector("h2")!, {
+        types: "words,chars",
+      });
+      const p = new SplitType(wrapperRef.current.querySelector("p")!, {
+        types: "words,chars",
+      });
+      const tl = gsap.timeline({
+        defaults: {
+          ease: (i) => 1 - Math.pow(1 - i, 3),
+        },
+      });
 
-    ScrollTrigger.create({
-      trigger: wrapperRef.current,
-      start: "top 50%",
-      markers: false,
-      animation: tl,
-    });
+      ScrollTrigger.create({
+        trigger: wrapperRef.current,
+        start: "top 50%",
+        markers: false,
+        animation: tl,
+      });
 
-    tl.fromTo(
-      h2.chars,
-      {
-        opacity: 0,
-        yPercent: 50,
-      },
-      {
-        opacity: 1,
-        yPercent: 0,
-        stagger: 0.02,
-      },
-    ).fromTo(
-      p.chars,
-      {
-        opacity: 0,
-        yPercent: 50,
-      },
-      {
-        opacity: 1,
-        yPercent: 0,
-        stagger: 0.01,
-      },
-      "-=.6",
-    );
+      tl.fromTo(
+        h2.chars,
+        {
+          opacity: 0,
+          yPercent: 50,
+        },
+        {
+          opacity: 1,
+          yPercent: 0,
+          stagger: 0.02,
+        },
+      ).fromTo(
+        p.chars,
+        {
+          opacity: 0,
+          yPercent: 50,
+        },
+        {
+          opacity: 1,
+          yPercent: 0,
+          stagger: 0.01,
+        },
+        "-=.6",
+      );
+    });
   }, []);
   return (
     <div id='pricing' ref={wrapperRef} className='relative h-max min-h-svh'>
@@ -85,10 +88,18 @@ export const Pricing = () => {
             </div>
             <div className='hidden rounded-[20px] bg-white p-6 sm:block sm:rounded-[3.125rem] sm:p-10'>
               <div className='mb-[2rem] flex items-center gap-6 border-b border-[#ECEDF1] pb-[1.875rem]'>
-                <Image src='/icons/pricing-icon.svg' alt='' width={90} height={90} className='size-[5.625rem]' />
+                <Image
+                  src='/icons/pricing-icon.svg'
+                  alt=''
+                  width={90}
+                  height={90}
+                  className='size-[3.75rem] sm:size-[5.625rem]'
+                />
                 <div className='flex flex-col'>
                   <h4 className='text-[1.25rem] font-medium leading-[1.2]'>Starter</h4>
-                  <p className='text-[1.5rem] font-bold leading-[1.2]'>For small businesses just starting out</p>
+                  <p className='text-[1.25rem] font-bold leading-[1.2] sm:text-[1.5rem]'>
+                    For small businesses just starting out
+                  </p>
                 </div>
               </div>
               <ul className='mb-[2rem] flex flex-col gap-6'>
@@ -116,10 +127,16 @@ export const Pricing = () => {
           </div>
           <div className='hidden rounded-[20px] bg-white p-6 sm:block sm:rounded-[3.125rem] sm:p-10'>
             <div className='mb-[2rem] flex items-center gap-6 border-b border-[#ECEDF1] pb-[1.875rem]'>
-              <Image src='/icons/pricing-icon.svg' alt='' width={90} height={90} className='size-[5.625rem]' />
+              <Image
+                src='/icons/pricing-icon.svg'
+                alt=''
+                width={90}
+                height={90}
+                className='size-[3.75rem] sm:size-[5.625rem]'
+              />
               <div className='flex flex-col'>
                 <h4 className='text-[1.25rem] font-medium leading-[1.2]'>Pro</h4>
-                <p className='text-[1.5rem] font-bold leading-[1.2]'>Momentum Package</p>
+                <p className='text-[1.25rem] font-bold leading-[1.2] sm:text-[1.5rem]'>Momentum Package</p>
               </div>
             </div>
             <ul className='mb-[2rem] flex flex-col gap-6'>
@@ -162,10 +179,16 @@ export const Pricing = () => {
           </div>
           <div className='hidden rounded-[20px] bg-white p-6 sm:block sm:rounded-[3.125rem] sm:p-10'>
             <div className='mb-[2rem] flex items-center gap-6 border-b border-[#ECEDF1] pb-[1.875rem]'>
-              <Image src='/icons/pricing-icon.svg' alt='' width={90} height={90} className='size-[5.625rem]' />
+              <Image
+                src='/icons/pricing-icon.svg'
+                alt=''
+                width={90}
+                height={90}
+                className='size-[3.75rem] sm:size-[5.625rem]'
+              />
               <div className='flex flex-col'>
                 <h4 className='text-[1.25rem] font-medium leading-[1.2]'>Pro</h4>
-                <p className='text-[1.5rem] font-bold leading-[1.2]'>Momentum Package</p>
+                <p className='text-[1.25rem] font-bold leading-[1.2] sm:text-[1.5rem]'>Momentum Package</p>
               </div>
             </div>
             <ul className='mb-[2rem] flex flex-col gap-6'>
@@ -211,10 +234,18 @@ export const Pricing = () => {
               <div className='embla__slide mr-4'>
                 <div className='rounded-[20px] bg-white p-6 sm:rounded-[3.125rem] sm:p-10'>
                   <div className='mb-[2rem] flex items-center gap-6 border-b border-[#ECEDF1] pb-[1.875rem]'>
-                    <Image src='/icons/pricing-icon.svg' alt='' width={90} height={90} className='size-[5.625rem]' />
+                    <Image
+                      src='/icons/pricing-icon.svg'
+                      alt=''
+                      width={90}
+                      height={90}
+                      className='size-[3.75rem] sm:size-[5.625rem]'
+                    />
                     <div className='flex flex-col'>
                       <h4 className='text-[1.25rem] font-medium leading-[1.2]'>Starter</h4>
-                      <p className='text-[1.5rem] font-bold leading-[1.2]'>For small businesses just starting out</p>
+                      <p className='text-[1.25rem] font-bold leading-[1.2] sm:text-[1.5rem]'>
+                        For small businesses just starting out
+                      </p>
                     </div>
                   </div>
                   <ul className='mb-[2rem] flex flex-col gap-6'>
@@ -243,10 +274,16 @@ export const Pricing = () => {
               <div className='embla__slide mr-4'>
                 <div className='rounded-[20px] bg-white p-6 sm:rounded-[3.125rem] sm:p-10'>
                   <div className='mb-[2rem] flex items-center gap-6 border-b border-[#ECEDF1] pb-[1.875rem]'>
-                    <Image src='/icons/pricing-icon.svg' alt='' width={90} height={90} className='size-[5.625rem]' />
+                    <Image
+                      src='/icons/pricing-icon.svg'
+                      alt=''
+                      width={90}
+                      height={90}
+                      className='size-[3.75rem] sm:size-[5.625rem]'
+                    />
                     <div className='flex flex-col'>
                       <h4 className='text-[1.25rem] font-medium leading-[1.2]'>Pro</h4>
-                      <p className='text-[1.5rem] font-bold leading-[1.2]'>Momentum Package</p>
+                      <p className='text-[1.25rem] font-bold leading-[1.2] sm:text-[1.5rem]'>Momentum Package</p>
                     </div>
                   </div>
                   <ul className='mb-[2rem] flex flex-col gap-6'>
@@ -291,10 +328,16 @@ export const Pricing = () => {
               <div className='embla__slide mr-4'>
                 <div className='rounded-[20px] bg-white p-6 sm:rounded-[3.125rem] sm:p-10'>
                   <div className='mb-[2rem] flex items-center gap-6 border-b border-[#ECEDF1] pb-[1.875rem]'>
-                    <Image src='/icons/pricing-icon.svg' alt='' width={90} height={90} className='size-[5.625rem]' />
+                    <Image
+                      src='/icons/pricing-icon.svg'
+                      alt=''
+                      width={90}
+                      height={90}
+                      className='size-[3.75rem] sm:size-[5.625rem]'
+                    />
                     <div className='flex flex-col'>
                       <h4 className='text-[1.25rem] font-medium leading-[1.2]'>Pro</h4>
-                      <p className='text-[1.5rem] font-bold leading-[1.2]'>Momentum Package</p>
+                      <p className='text-[1.25rem] font-bold leading-[1.2] sm:text-[1.5rem]'>Momentum Package</p>
                     </div>
                   </div>
                   <ul className='mb-[2rem] flex flex-col gap-6'>

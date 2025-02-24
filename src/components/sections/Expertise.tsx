@@ -95,7 +95,7 @@ const SlideItem = ({ slide }: { slide: Slide }) => {
   const [isOpen, setIsOpen] = useState(false);
   const item = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const splitP = new SplitType(".embla__slide p", {
+    const splitP = new SplitType("#expertise .embla__slide p", {
       types: "lines,words",
     });
     gsap.set(splitP.words, {

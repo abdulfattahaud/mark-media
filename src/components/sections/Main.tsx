@@ -113,7 +113,7 @@ export const Main = () => {
           </button>
         </div>
         <div className='absolute left-0 top-0 z-[-1] h-full w-full sm:relative sm:inset-auto sm:z-auto sm:w-1/2'>
-          <div className='white-grid absolute z-[1] grid size-full grid-cols-3 grid-rows-3'>
+          <div className='white-grid absolute z-[1] hidden size-full grid-cols-3 grid-rows-3 sm:grid'>
             <div className=''></div>
             <div className=''></div>
             <div className=''></div>

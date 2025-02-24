@@ -170,6 +170,23 @@ blockquote {
     --vh: 1svh;
   }
 }
+
+.mobile-menu-wrapper {
+  transition: transform var(--animation-primary-ease-in);
+}
+
+[data-navigation-status="not-active"] {
+  .mobile-menu-wrapper {
+    transform: translateX(100%) rotate(0.001deg);
+    transition: transform var(--animation-primary-ease-in);
+  }
+}
+[data-navigation-status="active"] {
+  .mobile-menu-wrapper {
+    transform: translateX(0%) rotate(0.001deg);
+  }
+}
+
 @media (hover: hover) {
   .menu-open:hover {
     background-color: #273f2b;
