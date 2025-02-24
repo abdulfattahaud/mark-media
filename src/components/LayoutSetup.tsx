@@ -3,9 +3,9 @@ import { calculateRem } from "@/lib/calculateRem";
 import { useEffect } from "react";
 
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger, CustomEase } from "gsap/all";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, CustomEase);
 
 export default function LayoutSetup() {
   useEffect(() => {

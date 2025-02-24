@@ -58,7 +58,7 @@ export const Pricing = () => {
     );
   }, []);
   return (
-    <div ref={wrapperRef} className='relative h-max min-h-svh'>
+    <div id='pricing' ref={wrapperRef} className='relative h-max min-h-svh'>
       <Image
         src='/images/busniess-bg.png'
         alt=''

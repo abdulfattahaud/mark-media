@@ -4,7 +4,10 @@ import Link from "next/link";
 export const Footer = () => {
   return (
     <div>
-      <div className='relative mx-[22px] mb-[2.75rem] mt-[6.25rem] flex h-auto flex-col items-center justify-between gap-[2.5rem] overflow-hidden rounded-[30px] px-[2rem] py-[4rem] sm:mx-[2.5rem] sm:h-[15rem] sm:flex-row sm:gap-4 sm:py-0 md:mx-[5.5rem] md:px-[4rem]'>
+      <div
+        id='contact-us'
+        className='relative mx-[22px] mb-[2.75rem] mt-[6.25rem] flex h-auto flex-col items-center justify-between gap-[2.5rem] overflow-hidden rounded-[30px] px-[2rem] py-[4rem] sm:mx-[2.5rem] sm:h-[15rem] sm:flex-row sm:gap-4 sm:py-0 md:mx-[5.5rem] md:px-[4rem]'
+      >
         <Image
           src='/images/footer-bg.png'
           alt=''

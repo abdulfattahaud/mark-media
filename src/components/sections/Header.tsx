@@ -18,7 +18,7 @@ const links = [
   },
   {
     name: "About Us",
-    href: "#about-us",
+    href: "#about",
   },
   {
     name: "Expertise",
@@ -78,7 +78,7 @@ export const Header = () => {
     }
   }, []);
   return (
-    <div>
+    <div className='relative'>
       <div className='menu-open-wrapper pointer-events-none fixed right-[48px] top-[48px] z-[100] hidden sm:block'>
         <button
           ref={menuOpen}
@@ -141,7 +141,13 @@ export const Header = () => {
               <ul className='items-list flex cursor-pointer flex-col gap-4 text-[2.75rem] font-bold leading-[110%]'>
                 {links.map((link, index) => (
                   <li key={index} className='cursor-pointer'>
-                    <div className='link-click'>
+                    <div
+                      className='link-click'
+                      onClick={() => {
+                        document.body.setAttribute("data-navigation-status", "not-active");
+                        document.querySelector(link.href)?.scrollIntoView({ behavior: "smooth" });
+                      }}
+                    >
                       <div className='link-content'>
                         <span className='block leading-[100%]'>{link.name}</span>
                         <svg
@@ -221,13 +227,11 @@ export const Header = () => {
           alt='Media Mark Logo'
         />
         <ul className='hidden gap-10 text-base md:flex'>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Expertise</li>
-          <li>How it Works</li>
-          <li>Pricing</li>
-          <li>Testimonial</li>
-          <li>Contact Us</li>
+          {links.map((link, index) => (
+            <li key={index}>
+              <Link href={link.href}>{link.name}</Link>
+            </li>
+          ))}
         </ul>
         <button className='hidden rounded-[.75rem] bg-primary px-3 py-2 text-sm font-bold text-black sm:block md:rounded-[1.25rem] md:px-6 md:py-4 md:text-base'>
           Schedule Meeting

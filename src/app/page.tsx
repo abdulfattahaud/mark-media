@@ -9,20 +9,23 @@ import { Pricing } from "@/components/sections/Pricing";
 import { Testimonial } from "@/components/sections/Testimonial";
 import { Chat } from "@/components/ui/Chat";
 import { Footer } from "@/components/sections/Footer";
+import { Suspense } from "react";
 export default function Home() {
   return (
-    <div>
-      <LayoutSetup />
-      <Header />
-      <Main />
-      <About />
-      <Expertise />
-      <HowItWorks />
-      <BluePrint />
-      <Pricing />
-      <Chat />
-      <Testimonial />
-      <Footer />
-    </div>
+    <Suspense fallback={<div>Loading...</div>}>
+      <div className='overflow-hidden'>
+        <LayoutSetup />
+        <Header />
+        <Main />
+        <About />
+        <Expertise />
+        <HowItWorks />
+        <BluePrint />
+        <Pricing />
+        <Chat />
+        <Testimonial />
+        <Footer />
+      </div>
+    </Suspense>
   );
 }

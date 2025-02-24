@@ -163,6 +163,15 @@ blockquote {
   }
 }
 
+:root {
+  --vh: 1vh;
+}
+
+@supports (height: 1svh) {
+  :root {
+    --vh: 1svh;
+  }
+}
 @media (hover: hover) {
   .menu-open:hover {
     background-color: #273f2b;
@@ -177,16 +186,6 @@ blockquote {
       &.duplicate {
         transform: translate(0%, 0%) scale(1) rotate(0.001deg);
       }
-    }
-  }
-
-  :root {
-    --vh: 1vh;
-  }
-
-  @supports (height: 1svh) {
-    :root {
-      --vh: 1svh;
     }
   }
 }

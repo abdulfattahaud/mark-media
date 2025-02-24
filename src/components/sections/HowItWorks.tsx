@@ -353,9 +353,15 @@ const ImageComp = () => {
   return (
     <div ref={wrapper} className='relative px-4 md:px-[6.25rem]'>
       <figure className='overflow-hidden rounded-[20px]'>
-        <Image src='/images/par-bg.png' alt='' width={1400} height={640} className='h-[40rem] w-full object-cover' />
+        <Image
+          src='/images/par-bg.png'
+          alt=''
+          width={1400}
+          height={640}
+          className='h-[20rem] w-full object-cover sm:h-[40rem]'
+        />
       </figure>
-      <div className='line line-1 absolute left-0 top-[70%] z-[2] flex h-[4.5rem] w-[100%] rotate-[6deg] items-center gap-[8.75rem] bg-primary text-[1.25rem] font-bold'>
+      <div className='line line-1 absolute left-[-5%] top-[50%] z-[2] flex h-[2.75rem] w-[110%] rotate-[12deg] items-center gap-6 bg-primary font-bold sm:left-0 sm:top-[70%] sm:h-[4.5rem] sm:w-[100%] sm:rotate-[6deg] sm:gap-[8.75rem] sm:text-[1.25rem]'>
         <span className='text-nowrap'>Search Engine Optimization (SEO)</span>
         <span className='text-nowrap'>Search Engine Optimization (SEO)</span>
         <span className='text-nowrap'>Search Engine Optimization (SEO)</span>
@@ -366,7 +372,7 @@ const ImageComp = () => {
         <span className='text-nowrap'>Search Engine Optimization (SEO)</span>
         <span className='text-nowrap'>Search Engine Optimization (SEO)</span>
       </div>
-      <div className='line line-2 absolute left-0 top-[70%] z-[1] flex h-[4.5rem] w-[100%] rotate-[-6deg] items-center gap-[8.75rem] bg-white text-[1.25rem] font-bold'>
+      <div className='line line-2 absolute left-[-5%] top-[50%] z-[1] flex h-[2.75rem] w-[110%] rotate-[-12deg] items-center gap-6 bg-white font-bold sm:left-0 sm:top-[70%] sm:h-[4.5rem] sm:w-[100%] sm:rotate-[-6deg] sm:gap-[8.75rem] sm:text-[1.25rem]'>
         <span className='text-nowrap'>Pay-Per-Click (PPC) Advertising</span>
         <span className='text-nowrap'>Pay-Per-Click (PPC) Advertising</span>
         <span className='text-nowrap'>Pay-Per-Click (PPC) Advertising</span>

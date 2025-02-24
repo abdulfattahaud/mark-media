@@ -117,10 +117,14 @@ export const Testimonial = () => {
         {
           opacity: 0,
           yPercent: 50,
+          x: "-100px",
+          transform: "translateZ(300px)",
         },
         {
           opacity: 1,
           yPercent: 0,
+          x: "0px",
+          transform: "translateZ(0px)",
           stagger: 0.1,
         },
         "-=.6",
@@ -145,7 +149,7 @@ export const Testimonial = () => {
           <span className='text-[1.875rem] leading-[1.2]'>High-Performing Teams Thrive on Inspired Ideas</span>
         </header>
         <div className='grid grid-cols-1 gap-5 md:grid-cols-3'>
-          <div className='flex flex-col gap-5 md:mt-[12.5rem]'>
+          <div className='flex flex-col gap-5 md:mt-[12.5rem]' style={{ perspective: "1000px" }}>
             <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
               <div className='flex items-center gap-2'>
                 <Image
@@ -190,7 +194,7 @@ export const Testimonial = () => {
               </div>
             </div>
           </div>
-          <div className='flex flex-col gap-5 md:mt-[5rem]'>
+          <div className='flex flex-col gap-5 md:mt-[5rem]' style={{ perspective: "1000px" }}>
             <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
               <div className='flex items-center gap-2'>
                 <Image
@@ -258,7 +262,7 @@ export const Testimonial = () => {
               </div>
             </div>
           </div>
-          <div className='flex flex-col gap-5'>
+          <div className='flex flex-col gap-5' style={{ perspective: "1000px" }}>
             <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
               <div className='flex items-center gap-2'>
                 <Image

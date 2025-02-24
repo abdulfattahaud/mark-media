@@ -105,15 +105,16 @@ const Plan = () => {
     tl.fromTo(
       bigTitle.current,
       {
-        scale: 1.5,
+        scale: 0.5,
         opacity: 0,
-        x: -20,
+        // x: -20,
       },
       {
         scale: 1,
         opacity: 1,
-        x: 0,
-        duration: 0.6,
+        // x: 0,
+        duration: 0.3,
+        ease: "back.out(2.5)",
       },
     )
       .fromTo(
@@ -222,15 +223,16 @@ const Run = () => {
     tl.fromTo(
       bigTitle.current,
       {
-        scale: 1.5,
+        scale: 0.5,
         opacity: 0,
-        x: -20,
+        // x: -20,
       },
       {
         scale: 1,
         opacity: 1,
-        x: 0,
-        duration: 0.6,
+        // x: 0,
+        duration: 0.3,
+        ease: "back.out(2.5)",
       },
     )
       .fromTo(
@@ -378,15 +380,16 @@ const Recap = () => {
     tl.fromTo(
       bigTitle.current,
       {
-        scale: 1.5,
+        scale: 0.5,
         opacity: 0,
-        x: -20,
+        // x: -20,
       },
       {
         scale: 1,
         opacity: 1,
-        x: 0,
-        duration: 0.6,
+        // x: 0,
+        duration: 0.3,
+        ease: "back.out(2.5)",
       },
     )
       .fromTo(
@@ -478,15 +481,16 @@ const Collaborate = () => {
     tl.fromTo(
       bigTitle.current,
       {
-        scale: 1.5,
+        scale: 0.5,
         opacity: 0,
-        x: -20,
+        // x: -20,
       },
       {
         scale: 1,
         opacity: 1,
-        x: 0,
-        duration: 0.6,
+        // x: 0,
+        duration: 0.3,
+        ease: "back.out(2.5)",
       },
     )
       .fromTo(
