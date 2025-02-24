@@ -82,6 +82,14 @@ export const Main = () => {
           opacity: 1,
         },
         "-=1.5",
+      )
+      .fromTo(
+        [".white-grid .box-1", ".white-grid .box-2"],
+        {
+          scaleX: 1,
+        },
+        { scaleX: 0, duration: 2, ease: "expo.out" },
+        "-=2",
       );
   }, []);
   return (
@@ -105,6 +113,16 @@ export const Main = () => {
           </button>
         </div>
         <div className='absolute left-0 top-0 z-[-1] h-full w-full sm:relative sm:inset-auto sm:z-auto sm:w-1/2'>
+          <div className='white-grid absolute z-[1] grid size-full grid-cols-3 grid-rows-3'>
+            <div className=''></div>
+            <div className=''></div>
+            <div className=''></div>
+            <div className='box-1 origin-left bg-white'></div>
+            <div className=''></div>
+            <div className=''></div>
+            <div className='box-2 col-span-2 origin-left bg-white'></div>
+            <div className=''></div>
+          </div>
           <Image
             src='/images/hero-main-c.png'
             alt='Main hero image'
