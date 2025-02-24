@@ -46,6 +46,7 @@ export const Main = () => {
       {
         opacity: 1,
         yPercent: 0,
+        delay: 1,
       },
     )
       .fromTo(

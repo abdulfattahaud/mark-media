@@ -165,6 +165,25 @@ blockquote {
   --vh: 1vh;
 }
 
+#loader {
+  --progress: 100%;
+  /* background-image: linear-gradient(
+    rgb(255, 205, 0) 0%,
+    rgb(255, 205, 0) var(--progress),
+    rgba(255, 205, 0, 0) var(--progress),
+    rgba(255, 205, 0, 0) 100%
+  ); */
+  /* Rectangle 34624239 */
+
+  background: linear-gradient(
+    180deg,
+    #ffcd00 0%,
+    #ffcd00 var(--progress),
+    rgba(255, 205, 0, 0) calc(var(--progress) + 30%),
+    rgba(255, 205, 0, 0) 100%
+  );
+}
+
 @supports (height: 1svh) {
   :root {
     --vh: 1svh;
