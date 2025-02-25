@@ -266,7 +266,7 @@ const Partner = () => {
             >
               <span className='count-number flex h-full flex-col'>04</span>
             </span>
-            <span className='absolute right-[1rem] font-syne text-[2.5rem] font-bold leading-[1]'>+</span>
+            <span className='absolute right-0 font-syne text-[2.5rem] font-bold leading-[1]'>+</span>
             <span className='text-[1.5rem] font-medium'>Years in Market</span>
           </div>
         </div>
@@ -280,7 +280,7 @@ const Partner = () => {
             >
               <span className='count-number flex h-full flex-col'>10</span>
             </span>
-            <span className='absolute right-[1rem] font-syne text-[2.5rem] font-bold leading-[1]'>+</span>
+            <span className='absolute right-0 font-syne text-[2.5rem] font-bold leading-[1]'>+</span>
 
             <span className='text-[1.5rem] font-medium'>Project done</span>
           </div>

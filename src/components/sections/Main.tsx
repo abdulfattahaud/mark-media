@@ -3,23 +3,24 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import SplitType from "split-type";
 import { useEffect } from "react";
+import { ContactUsDialog } from "../ui/ContactUsDialog";
 
 export const Main = () => {
   useEffect(() => {
-    gsap.to("#home .left-border", {
+    gsap.to("#main-section .left-border", {
       scaleY: "100%",
       duration: 1,
       delay: 0.25,
       ease: (i) => 1 - Math.pow(1 - i, 3),
     });
 
-    const h1Split = new SplitType("#home h1", {
+    const h1Split = new SplitType("#main-section h1", {
       types: "words,chars",
     });
-    const spanSplit = new SplitType("#home span", {
+    const spanSplit = new SplitType("#main-section span", {
       types: "words,chars",
     });
-    const pSplit = new SplitType("#home p", {
+    const pSplit = new SplitType("#main-section p", {
       types: "words,chars",
     });
     const tl = gsap.timeline({
@@ -94,7 +95,7 @@ export const Main = () => {
       );
   }, []);
   return (
-    <div id='home' className='relative h-[calc((var(--vh)*100)-6.25rem)] border-b-[1.25rem] border-b-primary'>
+    <div id='main-section' className='relative h-[calc((var(--vh)*100)-6.25rem)] border-b-[1.25rem] border-b-primary'>
       <div className='flex h-full flex-col items-center gap-10 pl-[4rem] sm:flex-row md:pl-[12.5rem]'>
         <div className='flex h-full w-full flex-col items-start justify-center text-white sm:h-auto sm:w-1/2 sm:justify-start sm:text-black'>
           <span className='hide-first mb-2 text-[1.25rem] font-extrabold leading-[1.06] text-white sm:text-grayC md:text-[1.875rem]'>
@@ -109,9 +110,7 @@ export const Main = () => {
             <br />
             Driven Marketing Solutions
           </p>
-          <button className='rounded-[.75rem] bg-primary px-3 py-2 text-sm font-bold text-black md:rounded-[1.25rem] md:px-6 md:py-4 md:text-base'>
-            Schedule Meeting
-          </button>
+          <ContactUsDialog />
         </div>
         <div className='absolute left-0 top-0 z-[-1] h-full w-full sm:relative sm:inset-auto sm:z-auto sm:w-1/2'>
           <div className='white-grid absolute z-[1] hidden size-full grid-cols-3 grid-rows-3 sm:grid'>
@@ -133,8 +132,8 @@ export const Main = () => {
           />
           <div className='overlay absolute left-0 top-0 block size-full bg-[#00000048] sm:hidden'></div>
           <Image
-            src='/icons/ebd.svg'
-            className='absolute bottom-5 left-5 z-[10] hidden h-[7rem] w-[7.5rem] sm:block'
+            src='/icons/sci.svg'
+            className='absolute bottom-5 left-5 z-[10] hidden h-[5rem] w-[7.5rem] sm:block'
             alt='Eat. Breath. Design.'
             width={120}
             height={112}

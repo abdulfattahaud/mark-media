@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CustomEase } from "gsap/CustomEase";
 import { useEffect, useRef } from "react";
+import { ContactUsDialog } from "../ui/ContactUsDialog";
 
 CustomEase.create("ease-in-css", ".25, 1, 0.1 ,1");
 
@@ -89,7 +90,7 @@ export const Header = () => {
   };
 
   return (
-    <div className='relative'>
+    <div id='home' className='relative'>
       <div className='menu-open-wrapper pointer-events-none fixed right-[32px] top-[16px] z-[49] sm:right-[48px] sm:top-[48px]'>
         <button
           ref={menuOpen}
@@ -344,9 +345,7 @@ export const Header = () => {
             </li>
           ))}
         </ul>
-        <button className='hidden rounded-[.75rem] bg-primary px-3 py-2 text-sm font-bold text-black sm:block md:rounded-[1.25rem] md:px-6 md:py-4 md:text-base'>
-          Schedule Meeting
-        </button>
+        <ContactUsDialog />
         <button ref={mobileMenu} onClick={handleClick} className='rounded-[10px] bg-primary px-4 py-2.5 sm:hidden'>
           <svg
             className='h-3.5 w-[1.125rem]'
