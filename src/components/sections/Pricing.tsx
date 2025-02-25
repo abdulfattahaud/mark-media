@@ -104,19 +104,19 @@ export const Pricing = () => {
               </div>
               <ul className='mb-[2rem] flex flex-col gap-6'>
                 <li className='flex items-center justify-between'>
-                  <span className='font-medium text-[#1C2348]'>Mail Service Auth</span>
+                  <span className='font-medium text-[#1C2348]'>Essential Branding & Strategy</span>
                   <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
                 </li>
                 <li className='flex items-center justify-between'>
-                  <span className='font-medium text-[#1C2348]'>Users Google Form</span>
+                  <span className='font-medium text-[#1C2348]'>Responsive Website Design & Development</span>
                   <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
                 </li>
                 <li className='flex items-center justify-between'>
-                  <span className='font-medium text-[#1C2348]'>Responsive Template</span>
+                  <span className='font-medium text-[#1C2348]'>Foundational Digital Marketing</span>
                   <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
                 </li>
                 <li className='flex items-center justify-between'>
-                  <span className='font-medium text-[#1C2348]'>Bulk Upload Images</span>
+                  <span className='font-medium text-[#1C2348]'>Basic Content Creation</span>
                   <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
                 </li>
               </ul>
@@ -125,7 +125,7 @@ export const Pricing = () => {
               </button>
             </div>
           </div>
-          <div className='hidden rounded-[20px] bg-white p-6 sm:block sm:rounded-[3.125rem] sm:p-10'>
+          <div className='mt-auto hidden h-max rounded-[20px] bg-white p-6 sm:block sm:rounded-[3.125rem] sm:p-10'>
             <div className='mb-[2rem] flex items-center gap-6 border-b border-[#ECEDF1] pb-[1.875rem]'>
               <Image
                 src='/icons/pricing-icon.svg'
@@ -141,35 +141,23 @@ export const Pricing = () => {
             </div>
             <ul className='mb-[2rem] flex flex-col gap-6'>
               <li className='flex items-center justify-between'>
-                <span className='font-medium text-[#1C2348]'>Mail Service Auth</span>
+                <span className='font-medium text-[#1C2348]'>Comprehensive Branding & Strategy</span>
                 <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
               </li>
               <li className='flex items-center justify-between'>
-                <span className='font-medium text-[#1C2348]'>Users Google Form</span>
+                <span className='font-medium text-[#1C2348]'>Custom Website Design & Development</span>
                 <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
               </li>
               <li className='flex items-center justify-between'>
-                <span className='font-medium text-[#1C2348]'>Responsive Template</span>
+                <span className='font-medium text-[#1C2348]'>Custom Website Design & Development</span>
                 <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
               </li>
               <li className='flex items-center justify-between'>
-                <span className='font-medium text-[#1C2348]'>Bulk Upload Images</span>
+                <span className='font-medium text-[#1C2348]'>Strategic Content Creation</span>
                 <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
               </li>
               <li className='flex items-center justify-between'>
-                <span className='font-medium text-[#1C2348]'>Grid Automatically On</span>
-                <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
-              </li>
-              <li className='flex items-center justify-between'>
-                <span className='font-medium text-[#1C2348]'>Unlimited Links</span>
-                <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
-              </li>
-              <li className='flex items-center justify-between'>
-                <span className='font-medium text-[#1C2348]'>Export to Sheets</span>
-                <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
-              </li>
-              <li className='flex items-center justify-between'>
-                <span className='font-medium text-[#1C2348]'>24/7 Customer Support</span>
+                <span className='font-medium text-[#1C2348]'>Monthly Data Analysis & Optimization </span>
                 <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
               </li>
             </ul>
@@ -193,31 +181,31 @@ export const Pricing = () => {
             </div>
             <ul className='mb-[2rem] flex flex-col gap-6'>
               <li className='flex items-center justify-between'>
-                <span className='font-medium text-[#1C2348]'>Mail Service Auth</span>
+                <span className='font-medium text-[#1C2348]'>Full-Scale Branding & Strategy</span>
                 <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
               </li>
               <li className='flex items-center justify-between'>
-                <span className='font-medium text-[#1C2348]'>Users Google Form</span>
+                <span className='font-medium text-[#1C2348]'>Advanced Website Design & Development</span>
                 <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
               </li>
               <li className='flex items-center justify-between'>
-                <span className='font-medium text-[#1C2348]'>Responsive Template</span>
+                <span className='font-medium text-[#1C2348]'>Multi-Channel Digital Marketing</span>
                 <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
               </li>
               <li className='flex items-center justify-between'>
-                <span className='font-medium text-[#1C2348]'>Bulk Upload Images</span>
+                <span className='font-medium text-[#1C2348]'>Professional Content Creation</span>
                 <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
               </li>
               <li className='flex items-center justify-between'>
-                <span className='font-medium text-[#1C2348]'>Grid Automatically On</span>
+                <span className='font-medium text-[#1C2348]'>Comprehensive PR</span>
                 <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
               </li>
               <li className='flex items-center justify-between'>
-                <span className='font-medium text-[#1C2348]'>Unlimited Links</span>
+                <span className='font-medium text-[#1C2348]'>Influencer Marketing</span>
                 <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
               </li>
               <li className='flex items-center justify-between'>
-                <span className='font-medium text-[#1C2348]'>Export to Sheets</span>
+                <span className='font-medium text-[#1C2348]'>Advanced Data Analysis</span>
                 <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
               </li>
               <li className='flex items-center justify-between'>
@@ -250,19 +238,19 @@ export const Pricing = () => {
                   </div>
                   <ul className='mb-[2rem] flex flex-col gap-6'>
                     <li className='flex items-center justify-between'>
-                      <span className='font-medium text-[#1C2348]'>Mail Service Auth</span>
+                      <span className='font-medium text-[#1C2348]'>Essential Branding & Strategy</span>
                       <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
                     </li>
                     <li className='flex items-center justify-between'>
-                      <span className='font-medium text-[#1C2348]'>Users Google Form</span>
+                      <span className='font-medium text-[#1C2348]'>Responsive Website Design & Development</span>
                       <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
                     </li>
                     <li className='flex items-center justify-between'>
-                      <span className='font-medium text-[#1C2348]'>Responsive Template</span>
+                      <span className='font-medium text-[#1C2348]'>Foundational Digital Marketing</span>
                       <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
                     </li>
                     <li className='flex items-center justify-between'>
-                      <span className='font-medium text-[#1C2348]'>Bulk Upload Images</span>
+                      <span className='font-medium text-[#1C2348]'>Basic Content Creation</span>
                       <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
                     </li>
                   </ul>
@@ -288,35 +276,23 @@ export const Pricing = () => {
                   </div>
                   <ul className='mb-[2rem] flex flex-col gap-6'>
                     <li className='flex items-center justify-between'>
-                      <span className='font-medium text-[#1C2348]'>Mail Service Auth</span>
+                      <span className='font-medium text-[#1C2348]'>Comprehensive Branding & Strategy</span>
                       <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
                     </li>
                     <li className='flex items-center justify-between'>
-                      <span className='font-medium text-[#1C2348]'>Users Google Form</span>
+                      <span className='font-medium text-[#1C2348]'>Custom Website Design & Development</span>
                       <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
                     </li>
                     <li className='flex items-center justify-between'>
-                      <span className='font-medium text-[#1C2348]'>Responsive Template</span>
+                      <span className='font-medium text-[#1C2348]'>Custom Website Design & Development</span>
                       <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
                     </li>
                     <li className='flex items-center justify-between'>
-                      <span className='font-medium text-[#1C2348]'>Bulk Upload Images</span>
+                      <span className='font-medium text-[#1C2348]'>Strategic Content Creation</span>
                       <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
                     </li>
                     <li className='flex items-center justify-between'>
-                      <span className='font-medium text-[#1C2348]'>Grid Automatically On</span>
-                      <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
-                    </li>
-                    <li className='flex items-center justify-between'>
-                      <span className='font-medium text-[#1C2348]'>Unlimited Links</span>
-                      <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
-                    </li>
-                    <li className='flex items-center justify-between'>
-                      <span className='font-medium text-[#1C2348]'>Export to Sheets</span>
-                      <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
-                    </li>
-                    <li className='flex items-center justify-between'>
-                      <span className='font-medium text-[#1C2348]'>24/7 Customer Support</span>
+                      <span className='font-medium text-[#1C2348]'>Monthly Data Analysis & Optimization </span>
                       <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
                     </li>
                   </ul>

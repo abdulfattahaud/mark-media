@@ -16,7 +16,7 @@ interface FormData {
   accept_terms: boolean;
 }
 
-const GetInTouchDialog = () => {
+const GetInTouchDialog = ({ children }: { children: React.ReactNode }) => {
   const {
     register,
     formState: { errors },
@@ -51,9 +51,7 @@ const GetInTouchDialog = () => {
   };
   return (
     <Dialog>
-      <DialogTrigger className='text-nowrap rounded-full bg-primary px-4 py-2.5 text-[1.25em] text-[#2E2E2E]'>
-        Get in touch
-      </DialogTrigger>
+      {children}
       <DialogContent
         className='h-[90%] w-full max-w-[90%] overflow-scroll rounded-[20px] bg-white px-[2.5em] pb-[1em] pt-[2.25em] text-[16px] sm:max-w-[24em] sm:text-[20px]'
         style={{
@@ -155,9 +153,9 @@ const GetInTouchDialog = () => {
                   <path
                     d='M15 4.5L6.75 12.75L3 9'
                     stroke='#FEFEFE'
-                    stroke-width='2'
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
+                    strokeWidth='2'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
                   />
                 </svg>
               </div>
@@ -224,20 +222,22 @@ export const Footer = () => {
         <span className='relative z-[1] text-center text-[1.875em] font-semibold leading-[1.1] text-white sm:text-left sm:text-[2.5em] md:text-[3.5em] md:leading-[1.3]'>
           Let’s Kickstart Your Big Success
         </span>
-        <button className='relative z-[1] flex items-center gap-[2.5em] rounded-[70px] bg-white px-4 py-3 text-base font-bold md:px-8 md:py-6'>
-          <span className='text-nowrap'>Contact us</span>
-          <svg
-            className='size-[1.5em]'
-            width='24'
-            height='24'
-            viewBox='0 0 24 24'
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-          >
-            <path d='M5 12H19' stroke='black' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' />
-            <path d='M12 5L19 12L12 19' stroke='black' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' />
-          </svg>
-        </button>
+        <GetInTouchDialog>
+          <DialogTrigger className='relative z-[1] flex items-center gap-[2.5em] rounded-[70px] bg-white px-4 py-3 text-base font-bold md:px-8 md:py-6'>
+            <span className='text-nowrap'>Contact Us</span>
+            <svg
+              className='size-[1.5em]'
+              width='24'
+              height='24'
+              viewBox='0 0 24 24'
+              fill='none'
+              xmlns='http://www.w3.org/2000/svg'
+            >
+              <path d='M5 12H19' stroke='black' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' />
+              <path d='M12 5L19 12L12 19' stroke='black' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' />
+            </svg>
+          </DialogTrigger>
+        </GetInTouchDialog>
       </div>
 
       <div className='relative px-[2em] pb-[4.25em] pt-[5.25em] sm:px-[4em] md:px-[8.375em]'>
@@ -268,7 +268,11 @@ export const Footer = () => {
           <Image src='/icons/dots-line.svg' alt='' width={1200} height={40} className='my-8 h-auto w-full' />
           <div className='flex flex-wrap justify-between gap-4 sm:flex-nowrap'>
             <span className='text-[1.5em] leading-[1.4]'>Got a great idea but need help building it?</span>
-            <GetInTouchDialog />
+            <GetInTouchDialog>
+              <DialogTrigger className='text-nowrap rounded-full bg-primary px-4 py-2.5 text-[1.25em] text-[#2E2E2E]'>
+                Get in touch
+              </DialogTrigger>
+            </GetInTouchDialog>
           </div>
           <Image src='/icons/dots-line.svg' alt='' width={1200} height={40} className='my-8 h-auto w-full' />
           <div className='flex flex-col-reverse justify-between gap-4 sm:flex-row sm:items-end'>
