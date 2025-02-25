@@ -6,20 +6,20 @@ import { useEffect } from "react";
 
 export const Main = () => {
   useEffect(() => {
-    gsap.to("#main-section .left-border", {
+    gsap.to("#home .left-border", {
       scaleY: "100%",
       duration: 1,
       delay: 0.25,
       ease: (i) => 1 - Math.pow(1 - i, 3),
     });
 
-    const h1Split = new SplitType("#main-section h1", {
+    const h1Split = new SplitType("#home h1", {
       types: "words,chars",
     });
-    const spanSplit = new SplitType("#main-section span", {
+    const spanSplit = new SplitType("#home span", {
       types: "words,chars",
     });
-    const pSplit = new SplitType("#main-section p", {
+    const pSplit = new SplitType("#home p", {
       types: "words,chars",
     });
     const tl = gsap.timeline({
@@ -46,7 +46,7 @@ export const Main = () => {
       {
         opacity: 1,
         yPercent: 0,
-        delay: 1,
+        delay: 0.75,
       },
     )
       .fromTo(
@@ -75,7 +75,7 @@ export const Main = () => {
         "-=.5",
       )
       .fromTo(
-        "#main-section button",
+        "#home button",
         {
           opacity: 0,
         },
@@ -94,7 +94,7 @@ export const Main = () => {
       );
   }, []);
   return (
-    <div id='main-section' className='relative h-[calc((var(--vh)*100)-6.25rem)] border-b-[1.25rem] border-b-primary'>
+    <div id='home' className='relative h-[calc((var(--vh)*100)-6.25rem)] border-b-[1.25rem] border-b-primary'>
       <div className='flex h-full flex-col items-center gap-10 pl-[4rem] sm:flex-row md:pl-[12.5rem]'>
         <div className='flex h-full w-full flex-col items-start justify-center text-white sm:h-auto sm:w-1/2 sm:justify-start sm:text-black'>
           <span className='hide-first mb-2 text-[1.25rem] font-extrabold leading-[1.06] text-white sm:text-grayC md:text-[1.875rem]'>

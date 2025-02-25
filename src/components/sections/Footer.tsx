@@ -12,6 +12,8 @@ interface FormData {
   phone: string;
   email: string;
   message: string;
+  checks: string[];
+  accept_terms: boolean;
 }
 
 const ContactUsDialog = () => {
@@ -20,6 +22,9 @@ const ContactUsDialog = () => {
     formState: { errors },
     handleSubmit,
     reset,
+    setValue,
+    watch,
+    clearErrors,
   } = useForm<FormData>({
     defaultValues: {
       first_name: "",
@@ -27,8 +32,27 @@ const ContactUsDialog = () => {
       phone: "",
       email: "",
       message: "",
+      checks: [],
+      accept_terms: false,
     },
   });
+
+  register("checks", {
+    required: {
+      value: true,
+      message: "Select at least one option from below",
+    },
+  });
+
+  register("accept_terms", {
+    required: {
+      value: true,
+      message: "You must accept the terms and conditions",
+    },
+  });
+
+  const checks = watch("checks");
+  const acceptTerms = watch("accept_terms");
 
   const onSubmit = (data: FormData) => {
     console.log(data);
@@ -133,20 +157,24 @@ const ContactUsDialog = () => {
               <div className='flex flex-1 flex-col'>
                 <header className='mb-[3.5em] flex flex-col gap-[.25em]'>
                   <h3 className='text-[1.625em] text-[#1C2348]'>Select Service</h3>
-                  <p className='text-[.625em] font-extralight'>Please tell us a bit about what you’re looking for</p>
+                  <p className='text-[.625em] font-extralight'>
+                    Please tell us a bit about what you’re looking for
+                    <br />
+                    {errors.checks && <span className='text-red-500'>{errors.checks.message}</span>}
+                  </p>
                 </header>
                 <ul className='mb-[2.25em] flex flex-col gap-[.625em] text-[1em]'>
-                  <li className='flex items-center justify-between'>
-                    <span>Website Design & Development</span>
+                  <li className={`relative flex items-center justify-between`}>
+                    <label>Website Design & Development</label>
                     <svg
-                      className='size-[1.5em]'
+                      className={`size-[1.5em] transition-colors ${checks.includes("Website Design & Development") ? "text-primary" : "text-black"}`}
                       width='19'
                       height='19'
                       viewBox='0 0 19 19'
                       fill='none'
                       xmlns='http://www.w3.org/2000/svg'
                     >
-                      <ellipse cx='9.71829' cy='9.5' rx='9.28177' ry='9.5' fill='#FFCD00' />
+                      <ellipse cx='9.71829' cy='9.5' rx='9.28177' ry='9.5' fill='currentColor' />
                       <path
                         d='M13.3275 6.72949L8.36438 11.8094L6.1084 9.50033'
                         stroke='white'
@@ -155,18 +183,33 @@ const ContactUsDialog = () => {
                         strokeLinejoin='round'
                       />
                     </svg>
+                    <input
+                      type='checkbox'
+                      value='Website Design & Development'
+                      onChange={(e) => {
+                        if (e.target.checked) {
+                          setValue("checks", [...checks, e.target.value]);
+                        } else {
+                          setValue(
+                            "checks",
+                            checks.filter((check) => check !== e.target.value),
+                          );
+                        }
+                      }}
+                      className='absolute inset-0 z-[10] h-full w-full cursor-pointer opacity-0'
+                    />
                   </li>
-                  <li className='flex items-center justify-between'>
+                  <li className='relative flex items-center justify-between'>
                     <span>Branding & Strategy</span>
                     <svg
-                      className='size-[1.5em]'
+                      className={`size-[1.5em] transition-colors ${checks.includes("Branding & Strategy") ? "text-primary" : "text-black"}`}
                       width='19'
                       height='19'
                       viewBox='0 0 19 19'
                       fill='none'
                       xmlns='http://www.w3.org/2000/svg'
                     >
-                      <ellipse cx='9.71829' cy='9.5' rx='9.28177' ry='9.5' fill='#000' />
+                      <ellipse cx='9.71829' cy='9.5' rx='9.28177' ry='9.5' fill='currentColor' />
                       <path
                         d='M13.3275 6.72949L8.36438 11.8094L6.1084 9.50033'
                         stroke='white'
@@ -175,18 +218,33 @@ const ContactUsDialog = () => {
                         strokeLinejoin='round'
                       />
                     </svg>
+                    <input
+                      type='checkbox'
+                      value='Branding & Strategy'
+                      onChange={(e) => {
+                        if (e.target.checked) {
+                          setValue("checks", [...checks, e.target.value]);
+                        } else {
+                          setValue(
+                            "checks",
+                            checks.filter((check) => check !== e.target.value),
+                          );
+                        }
+                      }}
+                      className='absolute inset-0 z-[10] h-full w-full cursor-pointer opacity-0'
+                    />
                   </li>
-                  <li className='flex items-center justify-between'>
+                  <li className='relative flex items-center justify-between'>
                     <span>Digital Marketing</span>
                     <svg
-                      className='size-[1.5em]'
+                      className={`size-[1.5em] transition-colors ${checks.includes("Digital Marketing") ? "text-primary" : "text-black"}`}
                       width='19'
                       height='19'
                       viewBox='0 0 19 19'
                       fill='none'
                       xmlns='http://www.w3.org/2000/svg'
                     >
-                      <ellipse cx='9.71829' cy='9.5' rx='9.28177' ry='9.5' fill='#FFCD00' />
+                      <ellipse cx='9.71829' cy='9.5' rx='9.28177' ry='9.5' fill='currentColor' />
                       <path
                         d='M13.3275 6.72949L8.36438 11.8094L6.1084 9.50033'
                         stroke='white'
@@ -195,18 +253,33 @@ const ContactUsDialog = () => {
                         strokeLinejoin='round'
                       />
                     </svg>
+                    <input
+                      type='checkbox'
+                      value='Digital Marketing'
+                      onChange={(e) => {
+                        if (e.target.checked) {
+                          setValue("checks", [...checks, e.target.value]);
+                        } else {
+                          setValue(
+                            "checks",
+                            checks.filter((check) => check !== e.target.value),
+                          );
+                        }
+                      }}
+                      className='absolute inset-0 z-[10] h-full w-full cursor-pointer opacity-0'
+                    />
                   </li>
-                  <li className='flex items-center justify-between'>
+                  <li className='relative flex items-center justify-between'>
                     <span>Public Relations</span>
                     <svg
-                      className='size-[1.5em]'
+                      className={`size-[1.5em] transition-colors ${checks.includes("Public Relations") ? "text-primary" : "text-black"}`}
                       width='19'
                       height='19'
                       viewBox='0 0 19 19'
                       fill='none'
                       xmlns='http://www.w3.org/2000/svg'
                     >
-                      <ellipse cx='9.71829' cy='9.5' rx='9.28177' ry='9.5' fill='#000' />
+                      <ellipse cx='9.71829' cy='9.5' rx='9.28177' ry='9.5' fill='currentColor' />
                       <path
                         d='M13.3275 6.72949L8.36438 11.8094L6.1084 9.50033'
                         stroke='white'
@@ -215,18 +288,33 @@ const ContactUsDialog = () => {
                         strokeLinejoin='round'
                       />
                     </svg>
+                    <input
+                      type='checkbox'
+                      value='Public Relations'
+                      onChange={(e) => {
+                        if (e.target.checked) {
+                          setValue("checks", [...checks, e.target.value]);
+                        } else {
+                          setValue(
+                            "checks",
+                            checks.filter((check) => check !== e.target.value),
+                          );
+                        }
+                      }}
+                      className='absolute inset-0 z-[10] h-full w-full cursor-pointer opacity-0'
+                    />
                   </li>
-                  <li className='flex items-center justify-between'>
+                  <li className='relative flex items-center justify-between'>
                     <span>Influencer Marketing</span>
                     <svg
-                      className='size-[1.5em]'
+                      className={`size-[1.5em] transition-colors ${checks.includes("Influencer Marketing") ? "text-primary" : "text-black"}`}
                       width='19'
                       height='19'
                       viewBox='0 0 19 19'
                       fill='none'
                       xmlns='http://www.w3.org/2000/svg'
                     >
-                      <ellipse cx='9.71829' cy='9.5' rx='9.28177' ry='9.5' fill='#FFCD00' />
+                      <ellipse cx='9.71829' cy='9.5' rx='9.28177' ry='9.5' fill='currentColor' />
                       <path
                         d='M13.3275 6.72949L8.36438 11.8094L6.1084 9.50033'
                         stroke='white'
@@ -235,18 +323,47 @@ const ContactUsDialog = () => {
                         strokeLinejoin='round'
                       />
                     </svg>
+                    <input
+                      type='checkbox'
+                      value='Influencer Marketing'
+                      onChange={(e) => {
+                        if (e.target.checked) {
+                          setValue("checks", [...checks, e.target.value]);
+                        } else {
+                          setValue(
+                            "checks",
+                            checks.filter((check) => check !== e.target.value),
+                          );
+                        }
+                      }}
+                      className='absolute inset-0 z-[10] h-full w-full cursor-pointer opacity-0'
+                    />
                   </li>
                 </ul>
-                <div className='flex gap-[.625em]'>
+
+                <div className='relative flex gap-[.625em]'>
+                  <input
+                    type='checkbox'
+                    value='accept_terms'
+                    onChange={(e) => {
+                      if (e.target.checked) {
+                        setValue("accept_terms", true);
+                        clearErrors("accept_terms");
+                      } else {
+                        setValue("accept_terms", false);
+                      }
+                    }}
+                    className='absolute inset-0 z-[10] h-full w-full cursor-pointer opacity-0'
+                  />
                   <svg
-                    className='size-[1.5em]'
+                    className={`size-[1.5em] transition-colors ${acceptTerms ? "text-primary" : "text-black"}`}
                     width='19'
                     height='19'
                     viewBox='0 0 19 19'
                     fill='none'
                     xmlns='http://www.w3.org/2000/svg'
                   >
-                    <ellipse cx='9.71829' cy='9.5' rx='9.28177' ry='9.5' fill='#000' />
+                    <ellipse cx='9.71829' cy='9.5' rx='9.28177' ry='9.5' fill='currentColor' />
                     <path
                       d='M13.3275 6.72949L8.36438 11.8094L6.1084 9.50033'
                       stroke='white'
@@ -255,10 +372,11 @@ const ContactUsDialog = () => {
                       strokeLinejoin='round'
                     />
                   </svg>
-                  <span className='flex-1 text-[.625em] font-extralight'>
+                  <label htmlFor='accept_terms' className='flex-1 text-[.625em] font-extralight'>
                     By clicking submit, you agree to our <span className='font-bold'>Privacy Policy</span> and consent
-                    to receive updates from Mark Media.
-                  </span>
+                    to receive updates from Mark Media. <br />
+                    {errors.accept_terms && <span className='text-red-500'>{errors.accept_terms.message}</span>}
+                  </label>
                 </div>
               </div>
             </div>
@@ -278,14 +396,27 @@ const GetInTouchDialog = () => {
     formState: { errors },
     handleSubmit,
     reset,
+    setValue,
+    watch,
+    clearErrors,
   } = useForm<FormData>({
     defaultValues: {
       first_name: "",
       phone: "",
       email: "",
       message: "",
+      accept_terms: false,
     },
   });
+
+  register("accept_terms", {
+    required: {
+      value: true,
+      message: "You must accept the terms and conditions",
+    },
+  });
+
+  const acceptTerms = watch("accept_terms");
 
   const onSubmit = (data: FormData) => {
     console.log(data);
@@ -365,16 +496,29 @@ const GetInTouchDialog = () => {
                 />
               </div>
             </div>
-            <div className='mt-auto flex gap-[.625em]'>
+            <div className='relative flex gap-[.625em]'>
+              <input
+                type='checkbox'
+                value='accept_terms'
+                onChange={(e) => {
+                  if (e.target.checked) {
+                    setValue("accept_terms", true);
+                    clearErrors("accept_terms");
+                  } else {
+                    setValue("accept_terms", false);
+                  }
+                }}
+                className='absolute inset-0 z-[10] h-full w-full cursor-pointer opacity-0'
+              />
               <svg
-                className='size-[1.5em]'
+                className={`size-[1.5em] transition-colors ${acceptTerms ? "text-primary" : "text-black"}`}
                 width='19'
                 height='19'
                 viewBox='0 0 19 19'
                 fill='none'
                 xmlns='http://www.w3.org/2000/svg'
               >
-                <ellipse cx='9.71829' cy='9.5' rx='9.28177' ry='9.5' fill='#000' />
+                <ellipse cx='9.71829' cy='9.5' rx='9.28177' ry='9.5' fill='currentColor' />
                 <path
                   d='M13.3275 6.72949L8.36438 11.8094L6.1084 9.50033'
                   stroke='white'
@@ -383,10 +527,11 @@ const GetInTouchDialog = () => {
                   strokeLinejoin='round'
                 />
               </svg>
-              <span className='flex-1 text-[.625em] font-extralight'>
+              <label htmlFor='accept_terms' className='flex-1 text-[.625em] font-extralight'>
                 By clicking submit, you agree to our <span className='font-bold'>Privacy Policy</span> and consent to
-                receive updates from Mark Media.
-              </span>
+                receive updates from Mark Media. <br />
+                {errors.accept_terms && <span className='text-red-500'>{errors.accept_terms.message}</span>}
+              </label>
             </div>
             <button
               type='submit'

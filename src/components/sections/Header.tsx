@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger, CustomEase);
 const links = [
   {
     name: "Home",
-    href: "#",
+    href: "#home",
   },
   {
     name: "About Us",
@@ -323,8 +323,14 @@ export const Header = () => {
         />
         <ul className='hidden gap-10 text-base md:flex'>
           {links.map((link, index) => (
-            <li key={index}>
-              <Link href={link.href}>{link.name}</Link>
+            <li
+              key={index}
+              className='cursor-pointer'
+              onClick={() => {
+                document.querySelector(link.href)?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              {link.name}
             </li>
           ))}
         </ul>

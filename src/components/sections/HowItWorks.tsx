@@ -275,7 +275,7 @@ const Partner = () => {
                 WebkitTextStroke: "#C1C1C1 2px",
               }}
             >
-              <span className='count-number flex h-full flex-col'>200</span>
+              <span className='count-number flex h-full flex-col'>20</span>
             </span>
             <span className='text-[1.5rem] font-medium'>Project done</span>
           </div>
@@ -288,7 +288,7 @@ const Partner = () => {
                 WebkitTextStroke: "#C1C1C1 2px",
               }}
             >
-              <span className='count-number flex h-full flex-col'>300</span>
+              <span className='count-number flex h-full flex-col'>30</span>
             </span>
             <span className='text-[1.5rem] font-medium'>Top Feedbak</span>
           </div>
@@ -301,7 +301,7 @@ const Partner = () => {
                 WebkitTextStroke: "#C1C1C1 2px",
               }}
             >
-              <span className='count-number flex h-full flex-col'>400</span>
+              <span className='count-number flex h-full flex-col'>40</span>
             </span>
             <span className='text-[1.5rem] font-medium'>Team Member</span>
           </div>
