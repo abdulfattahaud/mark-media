@@ -14,14 +14,19 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import gsap from "gsap";
+import { Chat } from "@/components/ui/Chat";
 
 const Loader = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setIsLoaded(true);
-    }, 1000);
-    return () => clearTimeout(timeout);
+    while (document.documentElement.getAttribute("loaded") !== "true") {
+      const loaded = document.documentElement.getAttribute("loaded");
+      console.log("Loading", loaded);
+      if (loaded === "true") {
+        break;
+      }
+    }
+    setIsLoaded(true);
   }, []);
 
   useEffect(() => {
@@ -45,6 +50,7 @@ const Loader = () => {
   }, [isLoaded]);
   return (
     <div>
+      <LayoutSetup />
       <div id='loader' className='fixed left-0 top-0 z-[2000] flex h-screen w-full items-center justify-center'>
         <div className='logo-wrapper overflow-hidden'>
           <Image src='/icons/logo.png' alt='Mark Media Logo' width={200} height={100} className='h-auto w-[300px]' />
@@ -58,17 +64,15 @@ const Loader = () => {
 const Home = () => {
   return (
     <div className='overflow-hidden'>
-      <LayoutSetup />
       <Header />
-      <div className='relative z-[1] bg-white'>
-        <Main />
-        <About />
-        <Expertise />
-        <HowItWorks />
-        <BluePrint />
-        <Pricing />
-        <Testimonial />
-      </div>
+      <Main />
+      <About />
+      <Expertise />
+      <HowItWorks />
+      <BluePrint />
+      <Pricing />
+      <Chat />
+      <Testimonial />
       <Footer />
       <Toaster />
     </div>

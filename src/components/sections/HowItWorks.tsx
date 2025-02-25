@@ -157,7 +157,6 @@ const Partner = () => {
 
     // Create array of numbers 0-9 for the rotating effect
     const numbers = Array.from({ length: 10 }, (_, i) => i);
-    numbers.push(0);
 
     const tl = gsap.timeline({
       onComplete: () => {
@@ -184,9 +183,10 @@ const Partner = () => {
     // Add number counting animations
     const numberElements = partnerRef.current.querySelectorAll(".count-number");
     numberElements.forEach((el) => {
-      const targetNumber = el.textContent?.padStart(2, "0") || "00";
-      const [tens, ones] = targetNumber.split("").map(Number);
-      console.log(tens, ones);
+      const targetNumber = parseInt(el.textContent || "0", 10);
+      const targetStr = targetNumber.toString().padStart(2, "0");
+      const [tens, ones] = targetStr.split("").map(Number);
+
       // Create two columns of numbers for two-digit display
       const numberRows = `
         <div class="flex">
@@ -202,35 +202,37 @@ const Partner = () => {
 
       const digitColumns = el.querySelectorAll(".digit-column");
 
+      // Animate first digit (tens)
       gsap.fromTo(
         digitColumns[0].querySelectorAll(".number-row"),
         {
           yPercent: 0,
         },
         {
-          yPercent: -(tens === 0 ? 10 : tens) * 100,
+          yPercent: -tens * 100,
           duration: 2,
           ease: "power2.out",
           scrollTrigger: {
             trigger: el,
-            start: "top 50%",
+            start: "top 70%",
             markers: false,
           },
         },
       );
 
+      // Animate second digit (ones)
       gsap.fromTo(
         digitColumns[1].querySelectorAll(".number-row"),
         {
           yPercent: 0,
         },
         {
-          yPercent: -(ones === 0 ? 10 : ones) * 100,
+          yPercent: -ones * 100,
           duration: 2,
           ease: "power2.out",
           scrollTrigger: {
             trigger: el,
-            start: "top 50%",
+            start: "top 70%",
             markers: false,
           },
         },
@@ -255,33 +257,36 @@ const Partner = () => {
       </h2>
       <div className='flex w-full flex-wrap justify-center gap-4 border-b border-b-[#CECECE] px-6 pb-[3.25rem] md:flex-nowrap md:justify-between'>
         <div className='flex flex-col gap-6'>
-          <div className='flex flex-col items-center gap-2'>
+          <div className='relative flex flex-col items-center gap-2'>
             <span
               className='number-wrapper h-[5rem] w-max overflow-hidden font-syne text-[5rem] font-bold leading-[1] text-transparent'
               style={{
                 WebkitTextStroke: "#C1C1C1 2px",
               }}
             >
-              <span className='count-number flex h-full flex-col'>40</span>
+              <span className='count-number flex h-full flex-col'>04</span>
             </span>
+            <span className='absolute right-[1rem] font-syne text-[2.5rem] font-bold leading-[1]'>+</span>
             <span className='text-[1.5rem] font-medium'>Years in Market</span>
           </div>
         </div>
         <div className='flex flex-col gap-6'>
-          <div className='flex flex-col gap-2'>
+          <div className='relative flex flex-col gap-2'>
             <span
               className='number-wrapper h-[5rem] w-max overflow-hidden font-syne text-[5rem] font-bold leading-[1] text-transparent'
               style={{
                 WebkitTextStroke: "#C1C1C1 2px",
               }}
             >
-              <span className='count-number flex h-full flex-col'>20</span>
+              <span className='count-number flex h-full flex-col'>10</span>
             </span>
+            <span className='absolute right-[1rem] font-syne text-[2.5rem] font-bold leading-[1]'>+</span>
+
             <span className='text-[1.5rem] font-medium'>Project done</span>
           </div>
         </div>
         <div className='flex flex-col gap-6'>
-          <div className='flex flex-col gap-2'>
+          <div className='relative flex flex-col gap-2'>
             <span
               className='number-wrapper h-[5rem] w-max overflow-hidden font-syne text-[5rem] font-bold leading-[1] text-transparent'
               style={{
@@ -290,19 +295,22 @@ const Partner = () => {
             >
               <span className='count-number flex h-full flex-col'>30</span>
             </span>
+            <span className='absolute right-[-.5rem] font-syne text-[2.5rem] font-bold leading-[1]'>%</span>
             <span className='text-[1.5rem] font-medium'>Top Feedbak</span>
           </div>
         </div>
         <div className='flex flex-col gap-6'>
-          <div className='flex flex-col gap-2'>
+          <div className='relative flex flex-col gap-2'>
             <span
               className='number-wrapper h-[5rem] w-max overflow-hidden font-syne text-[5rem] font-bold leading-[1] text-transparent'
               style={{
                 WebkitTextStroke: "#C1C1C1 2px",
               }}
             >
-              <span className='count-number flex h-full flex-col'>40</span>
+              <span className='count-number flex h-full flex-col'>15</span>
             </span>
+            <span className='absolute right-[1rem] font-syne text-[2.5rem] font-bold leading-[1]'>+</span>
+
             <span className='text-[1.5rem] font-medium'>Team Member</span>
           </div>
         </div>

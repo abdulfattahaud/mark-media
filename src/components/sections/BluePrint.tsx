@@ -158,6 +158,7 @@ const Plan = () => {
         <Image
           src='/images/plan-img.png'
           alt='Plan'
+          loading='eager'
           width={450}
           height={500}
           className='h-auto max-h-[20rem] w-auto md:max-h-[50%]'
@@ -317,6 +318,7 @@ const Run = () => {
           <Image
             src='/images/run-1.png'
             alt='Plan'
+            loading='eager'
             width={450}
             height={500}
             className='h-auto max-h-[20rem] w-auto md:max-h-[50%]'
@@ -328,6 +330,7 @@ const Run = () => {
           <Image
             src='/images/run-2.png'
             alt='Plan'
+            loading='eager'
             width={450}
             height={500}
             className='h-auto max-h-[20rem] w-auto md:max-h-[50%]'
@@ -444,6 +447,7 @@ const Recap = () => {
         <Image
           src='/images/recap-img.png'
           alt='Plan'
+          loading='eager'
           width={450}
           height={500}
           className='h-auto max-h-[20rem] w-auto md:max-h-[50%]'
@@ -530,6 +534,7 @@ const Collaborate = () => {
         <Image
           src='/images/collaborate-1.png'
           alt='Plan'
+          loading='eager'
           width={450}
           height={500}
           className='h-auto max-h-[20rem] w-auto md:max-h-[50%]'
@@ -552,6 +557,9 @@ const Collaborate = () => {
 };
 
 export const BluePrint = () => {
+  useEffect(() => {
+    ScrollTrigger.update();
+  }, []);
   return (
     <div className='md-[10rem] min-h-svh md:mt-[30rem]'>
       <div className='h-max min-h-full overflow-hidden px-[2rem] md:px-[10rem]'>
