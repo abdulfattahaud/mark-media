@@ -45,8 +45,10 @@ const links = [
 export const Header = () => {
   const menuOpen = useRef<HTMLButtonElement>(null);
   const mobileMenu = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
     const main: HTMLElement = document.querySelector("body")!;
+
     ScrollTrigger.create({
       start: "top -30%",
       markers: false,
@@ -57,35 +59,43 @@ export const Header = () => {
         main.classList.remove("scrolled");
       },
     });
-
-    const checkStatus = () => {
-      if (main.getAttribute("data-navigation-status") === "not-active") {
-        main.setAttribute("data-navigation-status", "active");
-      } else if (main.getAttribute("data-navigation-status") === "hover") {
-        main.setAttribute("data-navigation-status", "active");
-      } else {
-        main.setAttribute("data-navigation-status", "not-active");
-      }
-    };
-    if (menuOpen.current) {
-      menuOpen.current.addEventListener("mouseover", () => {
-        main.setAttribute("data-navigation-status", "hover");
-      });
-      menuOpen.current.addEventListener("mouseleave", () => {
-        if (main.getAttribute("data-navigation-status") === "hover") {
-          main.setAttribute("data-navigation-status", "not-active");
-        }
-      });
-
-      menuOpen.current.addEventListener("click", () => checkStatus());
-      mobileMenu.current!.addEventListener("click", () => checkStatus());
-    }
   }, []);
+
+  const handleMouseOver = () => {
+    const main = document.querySelector("body");
+    main?.setAttribute("data-navigation-status", "hover");
+  };
+
+  const handleMouseLeave = () => {
+    const main = document.querySelector("body");
+    if (main?.getAttribute("data-navigation-status") === "hover") {
+      main.setAttribute("data-navigation-status", "not-active");
+    }
+  };
+
+  const handleClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    console.log("test");
+
+    const main = document.querySelector("body");
+    if (
+      main?.getAttribute("data-navigation-status") === "not-active" ||
+      main?.getAttribute("data-navigation-status") === "hover"
+    ) {
+      main.setAttribute("data-navigation-status", "active");
+    } else {
+      main?.setAttribute("data-navigation-status", "not-active");
+    }
+  };
+
   return (
     <div className='relative'>
       <div className='menu-open-wrapper pointer-events-none fixed right-[32px] top-[16px] z-[49] sm:right-[48px] sm:top-[48px]'>
         <button
           ref={menuOpen}
+          onMouseOver={handleMouseOver}
+          onMouseLeave={handleMouseLeave}
+          onClick={handleClick}
           className='menu-open flex size-[clamp(3.125rem,0.625rem+5.2083vw,6.875rem)] items-center justify-center overflow-hidden rounded-full bg-primary'
         >
           <svg
@@ -217,7 +227,7 @@ export const Header = () => {
         </div>
         <div className='overlay absolute left-0 top-0 z-[1] h-full w-full bg-[#3837373D] opacity-0'></div>
       </div>
-      <div className='mobile-menu-wrapper fixed left-0 top-0 z-[1001] h-[100svh] w-full bg-primary'>
+      <div className='mobile-menu-wrapper fixed left-0 top-0 z-[1001] h-[100svh] w-full bg-primary sm:hidden'>
         <div className='relative h-full w-full'>
           <button
             onClick={() => document.body.setAttribute("data-navigation-status", "not-active")}
@@ -337,7 +347,7 @@ export const Header = () => {
         <button className='hidden rounded-[.75rem] bg-primary px-3 py-2 text-sm font-bold text-black sm:block md:rounded-[1.25rem] md:px-6 md:py-4 md:text-base'>
           Schedule Meeting
         </button>
-        <button ref={mobileMenu} className='rounded-[10px] bg-primary px-4 py-2.5 sm:hidden'>
+        <button ref={mobileMenu} onClick={handleClick} className='rounded-[10px] bg-primary px-4 py-2.5 sm:hidden'>
           <svg
             className='h-3.5 w-[1.125rem]'
             width='18'

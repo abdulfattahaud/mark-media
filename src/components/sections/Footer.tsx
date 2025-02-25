@@ -75,7 +75,12 @@ const ContactUsDialog = () => {
           <path d='M12 5L19 12L12 19' stroke='black' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' />
         </svg>
       </DialogTrigger>
-      <DialogContent className='h-[90%] w-full max-w-[90%] overflow-scroll rounded-[20px] bg-white px-[2.5em] pb-[1em] pt-[2.25em] text-[16px] sm:max-w-[44em] sm:text-[20px]'>
+      <DialogContent
+        className='h-[90%] w-full max-w-[90%] overflow-scroll rounded-[20px] bg-white px-[2.5em] pb-[1em] pt-[2.25em] text-[16px] sm:max-w-[44em] sm:text-[20px]'
+        style={{
+          boxShadow: "rgb(107 107 107) 0px 0px 0px 30px",
+        }}
+      >
         <DialogHeader>
           <DialogTitle
             className='mb-[.875em]'
@@ -428,7 +433,12 @@ const GetInTouchDialog = () => {
       <DialogTrigger className='text-nowrap rounded-full bg-primary px-4 py-2.5 text-[1.25em] text-[#2E2E2E]'>
         Get in touch
       </DialogTrigger>
-      <DialogContent className='h-[90%] w-full max-w-[90%] overflow-scroll rounded-[20px] bg-white px-[2.5em] pb-[1em] pt-[2.25em] text-[16px] sm:max-w-[24em] sm:text-[20px]'>
+      <DialogContent
+        className='h-[90%] w-full max-w-[90%] overflow-scroll rounded-[20px] bg-white px-[2.5em] pb-[1em] pt-[2.25em] text-[16px] sm:max-w-[24em] sm:text-[20px]'
+        style={{
+          boxShadow: "rgb(107 107 107) 0px 0px 0px 30px",
+        }}
+      >
         <DialogHeader>
           <DialogTitle
             className='mb-[.5em]'
