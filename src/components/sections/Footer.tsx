@@ -607,10 +607,31 @@ export const Footer = () => {
           </div>
           <Image src='/icons/dots-line.svg' alt='' width={1200} height={40} className='my-8 h-auto w-full' />
           <div className='flex flex-col-reverse justify-between gap-4 sm:flex-row sm:items-end'>
-            <div className='flex flex-col items-center'>
+            <div className='relative flex flex-col items-center'>
               <span className='text-[clamp(3em,1.0916em+8.1425vw,5em)] font-bold leading-[1.2] sm:text-[clamp(5em,1.5714em+7.1429vw,6em)] md:text-[12.5em]'>
                 Markmedia
               </span>
+              <button
+                onClick={() => {
+                  window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                  });
+                }}
+                className='absolute right-0 top-[-50%] z-[2] flex size-[2.5rem] items-center justify-center rounded-full bg-primary sm:left-0 sm:right-auto sm:top-[-3rem] sm:size-[3.5rem] md:left-[-7rem] md:top-0 md:size-[6.5rem]'
+              >
+                <svg
+                  className='size-[1.875rem] sm:size-[2.5rem] md:size-[4.5rem]'
+                  width='73'
+                  height='73'
+                  viewBox='0 0 73 73'
+                  fill='none'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path d='M8.9476 36.027L36.4496 8.41611L64.2798 35.6963' stroke='#273F2B' strokeWidth='8.64319' />
+                  <path d='M36.6122 8.31287L36.9199 59.7998' stroke='#273F2B' strokeWidth='8.64319' />
+                </svg>
+              </button>
               <span className='text-sm leading-[1.35] md:text-[1.125em]'>© 2025 All Rights reserved</span>
             </div>
             <div className='flex h-full flex-col items-start justify-between gap-4'>
