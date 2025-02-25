@@ -4,7 +4,8 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
-
+import useEmblaCarousel from "embla-carousel-react";
+import AutoScroll from "embla-carousel-auto-scroll";
 const Header = () => {
   const headerRef = useRef<HTMLDivElement>(null);
 
@@ -319,6 +320,59 @@ const Partner = () => {
   );
 };
 
+const Line1 = () => {
+  const [emblaRef] = useEmblaCarousel({ loop: true, skipSnaps: false, containScroll: "trimSnaps" }, [
+    AutoScroll({ playOnInit: true, stopOnInteraction: false }),
+  ]);
+  return (
+    <div
+      ref={emblaRef}
+      className='line embla line-1 absolute left-[-5%] top-[50%] z-[2] h-[2.75rem] w-full min-w-[110%] rotate-[12deg] bg-primary font-bold sm:left-0 sm:top-[70%] sm:h-[4.5rem] sm:rotate-[6deg] sm:text-[1.25rem]'
+    >
+      <div className='embla__container flex h-full items-center gap-6 sm:gap-[8.75rem]'>
+        <span className='embla__slide !basis-auto text-nowrap'>Influencer Marketing</span>
+        <span className='embla__slide !basis-auto text-nowrap'>Social Media Marketing</span>
+        <span className='embla__slide !basis-auto text-nowrap'>Search Engine Optimization (SEO)</span>
+        <span className='embla__slide !basis-auto text-nowrap'>Analytics and Reporting</span>
+        <span className='embla__slide !basis-auto text-nowrap'>Influencer Marketing</span>
+        <span className='embla__slide !basis-auto text-nowrap'>Social Media Marketing</span>
+        <span className='embla__slide !basis-auto text-nowrap'>Search Engine Optimization (SEO)</span>
+        <span className='embla__slide !basis-auto text-nowrap'>Analytics and Reporting</span>
+      </div>
+    </div>
+  );
+};
+
+const Line2 = () => {
+  const [emblaRef] = useEmblaCarousel({ loop: true, skipSnaps: false, containScroll: "trimSnaps" }, [
+    AutoScroll({
+      playOnInit: true,
+      stopOnInteraction: false,
+      direction: "backward",
+    }),
+  ]);
+
+  return (
+    <div
+      ref={emblaRef}
+      className='line embla line-2 absolute left-[-5%] top-[50%] z-[2] h-[2.75rem] w-full min-w-[110%] rotate-[-12deg] bg-white font-bold sm:left-0 sm:top-[70%] sm:h-[4.5rem] sm:rotate-[-6deg] sm:text-[1.25rem]'
+    >
+      <div className='embla__container flex h-full items-center gap-6 sm:gap-[8.75rem]'>
+        <span className='embla__slide !basis-auto text-nowrap'>Pay-Per-Click (PPC) Advertising</span>
+        <span className='embla__slide !basis-auto text-nowrap'>Content Marketing</span>
+        <span className='embla__slide !basis-auto text-nowrap'>Run Series</span>
+        <span className='embla__slide !basis-auto text-nowrap'>Web Design and Development</span>
+        <span className='embla__slide !basis-auto text-nowrap'>Conversion Rate Optimization</span>
+        <span className='embla__slide !basis-auto text-nowrap'>Pay-Per-Click (PPC) Advertising</span>
+        <span className='embla__slide !basis-auto text-nowrap'>Content Marketing</span>
+        <span className='embla__slide !basis-auto text-nowrap'>Run Series</span>
+        <span className='embla__slide !basis-auto text-nowrap'>Web Design and Development</span>
+        <span className='embla__slide !basis-auto text-nowrap'>Conversion Rate Optimization</span>
+      </div>
+    </div>
+  );
+};
+
 const ImageComp = () => {
   const wrapper = useRef<HTMLDivElement>(null);
 
@@ -369,28 +423,8 @@ const ImageComp = () => {
           className='h-[20rem] w-full object-cover sm:h-[40rem]'
         />
       </figure>
-      <div className='line line-1 absolute left-[-5%] top-[50%] z-[2] flex h-[2.75rem] w-[110%] rotate-[12deg] items-center gap-6 bg-primary font-bold sm:left-0 sm:top-[70%] sm:h-[4.5rem] sm:w-[100%] sm:rotate-[6deg] sm:gap-[8.75rem] sm:text-[1.25rem]'>
-        <span className='text-nowrap'>Search Engine Optimization (SEO)</span>
-        <span className='text-nowrap'>Search Engine Optimization (SEO)</span>
-        <span className='text-nowrap'>Search Engine Optimization (SEO)</span>
-        <span className='text-nowrap'>Search Engine Optimization (SEO)</span>
-        <span className='text-nowrap'>Search Engine Optimization (SEO)</span>
-        <span className='text-nowrap'>Search Engine Optimization (SEO)</span>
-        <span className='text-nowrap'>Search Engine Optimization (SEO)</span>
-        <span className='text-nowrap'>Search Engine Optimization (SEO)</span>
-        <span className='text-nowrap'>Search Engine Optimization (SEO)</span>
-      </div>
-      <div className='line line-2 absolute left-[-5%] top-[50%] z-[1] flex h-[2.75rem] w-[110%] rotate-[-12deg] items-center gap-6 bg-white font-bold sm:left-0 sm:top-[70%] sm:h-[4.5rem] sm:w-[100%] sm:rotate-[-6deg] sm:gap-[8.75rem] sm:text-[1.25rem]'>
-        <span className='text-nowrap'>Pay-Per-Click (PPC) Advertising</span>
-        <span className='text-nowrap'>Pay-Per-Click (PPC) Advertising</span>
-        <span className='text-nowrap'>Pay-Per-Click (PPC) Advertising</span>
-        <span className='text-nowrap'>Pay-Per-Click (PPC) Advertising</span>
-        <span className='text-nowrap'>Pay-Per-Click (PPC) Advertising</span>
-        <span className='text-nowrap'>Pay-Per-Click (PPC) Advertising</span>
-        <span className='text-nowrap'>Pay-Per-Click (PPC) Advertising</span>
-        <span className='text-nowrap'>Pay-Per-Click (PPC) Advertising</span>
-        <span className='text-nowrap'>Pay-Per-Click (PPC) Advertising</span>
-      </div>
+      <Line1 />
+      <Line2 />
     </div>
   );
 };
