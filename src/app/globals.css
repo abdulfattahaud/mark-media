@@ -174,6 +174,7 @@ blockquote {
     rgba(255, 205, 0, 0) 100%
   ); */
   /* Rectangle 34624239 */
+  pointer-events: none;
 
   background: linear-gradient(
     180deg,
@@ -203,6 +204,7 @@ blockquote {
 [data-navigation-status="active"] {
   .mobile-menu-wrapper {
     transform: translateX(0%) rotate(0.001deg);
+    pointer-events: all;
   }
 }
 
