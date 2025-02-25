@@ -5,6 +5,9 @@ import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 interface FormData {
   first_name: string;
@@ -557,198 +560,225 @@ const GetInTouchDialog = () => {
 };
 
 export const Footer = () => {
+  useEffect(() => {
+    // footer spacer set height to #footer
+    const footer = document.getElementById("footer");
+    if (footer) {
+      (document.querySelector(".footer-spacer") as HTMLElement).style.height = `${footer.clientHeight}px`;
+    }
+    ScrollTrigger.create({
+      // trigger: ".footer-spacer",
+      markers: false,
+      start: "bottom 300%",
+      onEnter: () => {
+        gsap.set(".footer-spacer", {
+          backgroundColor: "transparent",
+        });
+      },
+      onLeaveBack: () => {
+        gsap.set(".footer-spacer", {
+          backgroundColor: "white",
+        });
+      },
+    });
+  }, []);
   return (
-    <div>
-      <div
-        id='contact-us'
-        className='relative mx-[22px] mb-[2.75em] mt-[6.25em] flex h-auto flex-col items-center justify-between gap-[2.5em] overflow-hidden rounded-[30px] px-[2em] py-[4em] sm:mx-[2.5em] sm:h-[15em] sm:flex-row sm:gap-4 sm:py-0 md:mx-[5.5em] md:px-[4em]'
-      >
-        <Image
-          src='/images/footer-bg.png'
-          alt=''
-          width={1400}
-          height={240}
-          className='absolute inset-0 z-[-1] size-full object-cover'
-        />
-        <span className='text-center text-[1.875em] font-semibold leading-[1.1] text-white sm:text-left sm:text-[2.5em] md:text-[3.5em] md:leading-[1.3]'>
-          Let’s Kickstart Your Big Success
-        </span>
-        <ContactUsDialog />
-      </div>
-      <div className='relative px-[2em] pb-[4.25em] pt-[5.25em] sm:px-[4em] md:px-[8.375em]'>
-        <Image
-          src='/images/footer-noise.png'
-          alt=''
-          width={1600}
-          height={740}
-          className='absolute inset-0 z-[-1] size-full object-cover'
-        />
-        <div className='flex flex-col'>
-          <div className='flex flex-col items-start justify-between sm:flex-row'>
-            <div className='flex flex-col gap-5'>
-              <Image src='/icons/logo.png' alt='' width={100} height={100} />
-              <span className='text-[1.25em] font-bold leading-[1.2]'>Where Strategy Meets Success</span>
-            </div>
-            <div className='flex flex-col gap-8'>
-              <div className='flex flex-col gap-2'>
-                <span className='text-[.625em] font-medium leading-[1.4]'>Address</span>
-                <span className='text-sm'>302E, A1 Building, Dubai Digital Park, Dubai</span>
+    <>
+      <div className='footer-spacer pointer-events-none relative z-[1] w-full bg-transparent bg-white'></div>
+
+      <div id='footer' className='fixed bottom-0 left-0 z-[-1]'>
+        <div
+          id='contact-us'
+          className='relative mx-[22px] mb-[2.75em] mt-[6.25em] flex h-auto flex-col items-center justify-between gap-[2.5em] overflow-hidden rounded-[30px] px-[2em] py-[4em] sm:mx-[2.5em] sm:h-[15em] sm:flex-row sm:gap-4 sm:py-0 md:mx-[5.5em] md:px-[4em]'
+        >
+          <Image
+            src='/images/footer-bg.png'
+            alt=''
+            width={1400}
+            height={240}
+            className='absolute inset-0 z-[-1] size-full object-cover'
+          />
+          <span className='text-center text-[1.875em] font-semibold leading-[1.1] text-white sm:text-left sm:text-[2.5em] md:text-[3.5em] md:leading-[1.3]'>
+            Let’s Kickstart Your Big Success
+          </span>
+          <ContactUsDialog />
+        </div>
+
+        <div className='relative px-[2em] pb-[4.25em] pt-[5.25em] sm:px-[4em] md:px-[8.375em]'>
+          <Image
+            src='/images/footer-noise.png'
+            alt=''
+            width={1600}
+            height={740}
+            className='absolute inset-0 z-[-1] size-full object-cover'
+          />
+          <div className='flex flex-col'>
+            <div className='flex flex-col items-start justify-between sm:flex-row'>
+              <div className='flex flex-col gap-5'>
+                <Image src='/icons/logo.png' alt='' width={100} height={100} />
+                <span className='text-[1.25em] font-bold leading-[1.2]'>Where Strategy Meets Success</span>
               </div>
-              <div className='flex flex-col gap-2'>
-                <span className='text-[.625em] font-medium leading-[1.4]'>Opening hours</span>
-                <span className='text-[1.25em] font-medium'>Mon - Fri: 9AM - 6PM</span>
+              <div className='flex flex-col gap-8'>
+                <div className='flex flex-col gap-2'>
+                  <span className='text-[.625em] font-medium leading-[1.4]'>Address</span>
+                  <span className='text-sm'>302E, A1 Building, Dubai Digital Park, Dubai</span>
+                </div>
+                <div className='flex flex-col gap-2'>
+                  <span className='text-[.625em] font-medium leading-[1.4]'>Opening hours</span>
+                  <span className='text-[1.25em] font-medium'>Mon - Fri: 9AM - 6PM</span>
+                </div>
               </div>
             </div>
-          </div>
-          <Image src='/icons/dots-line.svg' alt='' width={1200} height={40} className='my-8 h-auto w-full' />
-          <div className='flex flex-wrap justify-between gap-4 sm:flex-nowrap'>
-            <span className='text-[1.5em] leading-[1.4]'>Got a great idea but need help building it?</span>
-            <GetInTouchDialog />
-          </div>
-          <Image src='/icons/dots-line.svg' alt='' width={1200} height={40} className='my-8 h-auto w-full' />
-          <div className='flex flex-col-reverse justify-between gap-4 sm:flex-row sm:items-end'>
-            <div className='relative flex flex-col items-center'>
-              <span className='text-[clamp(3em,1.0916em+8.1425vw,5em)] font-bold leading-[1.2] sm:text-[clamp(5em,1.5714em+7.1429vw,6em)] md:text-[12.5em]'>
-                Markmedia
-              </span>
-              <button
-                onClick={() => {
-                  window.scrollTo({
-                    top: 0,
-                    behavior: "smooth",
-                  });
-                }}
-                className='absolute right-0 top-[-50%] z-[2] flex size-[2.5rem] items-center justify-center rounded-full bg-primary sm:left-0 sm:right-auto sm:top-[-3rem] sm:size-[3.5rem] md:left-[-7rem] md:top-0 md:size-[6.5rem]'
-              >
-                <svg
-                  className='size-[1.875rem] sm:size-[2.5rem] md:size-[4.5rem]'
-                  width='73'
-                  height='73'
-                  viewBox='0 0 73 73'
-                  fill='none'
-                  xmlns='http://www.w3.org/2000/svg'
+            <Image src='/icons/dots-line.svg' alt='' width={1200} height={40} className='my-8 h-auto w-full' />
+            <div className='flex flex-wrap justify-between gap-4 sm:flex-nowrap'>
+              <span className='text-[1.5em] leading-[1.4]'>Got a great idea but need help building it?</span>
+              <GetInTouchDialog />
+            </div>
+            <Image src='/icons/dots-line.svg' alt='' width={1200} height={40} className='my-8 h-auto w-full' />
+            <div className='flex flex-col-reverse justify-between gap-4 sm:flex-row sm:items-end'>
+              <div className='relative flex flex-col items-center'>
+                <span className='text-[clamp(3em,1.0916em+8.1425vw,5em)] font-bold leading-[1.2] sm:text-[clamp(5em,1.5714em+7.1429vw,6em)] md:text-[12.5em]'>
+                  Markmedia
+                </span>
+                <button
+                  onClick={() => {
+                    window.scrollTo({
+                      top: 0,
+                      behavior: "smooth",
+                    });
+                  }}
+                  className='absolute right-0 top-[-50%] z-[2] flex size-[2.5rem] items-center justify-center rounded-full bg-primary sm:left-0 sm:right-auto sm:top-[-3rem] sm:size-[3.5rem] md:left-[-7rem] md:top-0 md:size-[6.5rem]'
                 >
-                  <path d='M8.9476 36.027L36.4496 8.41611L64.2798 35.6963' stroke='#273F2B' strokeWidth='8.64319' />
-                  <path d='M36.6122 8.31287L36.9199 59.7998' stroke='#273F2B' strokeWidth='8.64319' />
-                </svg>
-              </button>
-              <span className='text-sm leading-[1.35] md:text-[1.125em]'>© 2025 All Rights reserved</span>
-            </div>
-            <div className='flex h-full flex-col items-start justify-between gap-4'>
-              <ul className='flex flex-col gap-4'>
-                <li>
-                  <Link href='/' target='_blank' className='flex items-end gap-2.5'>
-                    <span>x</span>
-                    <svg
-                      className='size-[.625rem]'
-                      width='9'
-                      height='9'
-                      viewBox='0 0 9 9'
-                      fill='none'
-                      xmlns='http://www.w3.org/2000/svg'
-                    >
-                      <g clipPath='url(#clip0_300_1006)'>
-                        <path
-                          d='M0.923828 8.05917L7.96303 1.02051M7.96303 1.02051L1.65564 1.02051M7.96303 1.02051V7.3279'
-                          stroke='black'
-                          strokeLinecap='round'
-                          strokeLinejoin='round'
-                        />
-                      </g>
-                      <defs>
-                        <clipPath id='clip0_300_1006'>
-                          <rect width='8.92' height='8.92' fill='white' transform='translate(0 0.0800781)' />
-                        </clipPath>
-                      </defs>
-                    </svg>
+                  <svg
+                    className='size-[1.875rem] sm:size-[2.5rem] md:size-[4.5rem]'
+                    width='73'
+                    height='73'
+                    viewBox='0 0 73 73'
+                    fill='none'
+                    xmlns='http://www.w3.org/2000/svg'
+                  >
+                    <path d='M8.9476 36.027L36.4496 8.41611L64.2798 35.6963' stroke='#273F2B' strokeWidth='8.64319' />
+                    <path d='M36.6122 8.31287L36.9199 59.7998' stroke='#273F2B' strokeWidth='8.64319' />
+                  </svg>
+                </button>
+                <span className='text-sm leading-[1.35] md:text-[1.125em]'>© 2025 All Rights reserved</span>
+              </div>
+              <div className='flex h-full flex-col items-start justify-between gap-4'>
+                <ul className='flex flex-col gap-4'>
+                  <li>
+                    <Link href='/' target='_blank' className='flex items-end gap-2.5'>
+                      <span>x</span>
+                      <svg
+                        className='size-[.625rem]'
+                        width='9'
+                        height='9'
+                        viewBox='0 0 9 9'
+                        fill='none'
+                        xmlns='http://www.w3.org/2000/svg'
+                      >
+                        <g clipPath='url(#clip0_300_1006)'>
+                          <path
+                            d='M0.923828 8.05917L7.96303 1.02051M7.96303 1.02051L1.65564 1.02051M7.96303 1.02051V7.3279'
+                            stroke='black'
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
+                          />
+                        </g>
+                        <defs>
+                          <clipPath id='clip0_300_1006'>
+                            <rect width='8.92' height='8.92' fill='white' transform='translate(0 0.0800781)' />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </Link>
+                    <Link href='/' target='_blank' className='flex items-end gap-2.5'>
+                      <span>Facebook</span>
+                      <svg
+                        className='size-2'
+                        width='9'
+                        height='9'
+                        viewBox='0 0 9 9'
+                        fill='none'
+                        xmlns='http://www.w3.org/2000/svg'
+                      >
+                        <g clipPath='url(#clip0_300_1006)'>
+                          <path
+                            d='M0.923828 8.05917L7.96303 1.02051M7.96303 1.02051L1.65564 1.02051M7.96303 1.02051V7.3279'
+                            stroke='black'
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
+                          />
+                        </g>
+                        <defs>
+                          <clipPath id='clip0_300_1006'>
+                            <rect width='8.92' height='8.92' fill='white' transform='translate(0 0.0800781)' />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </Link>
+                    <Link href='/' target='_blank' className='flex items-end gap-2.5'>
+                      <span>Instagram</span>
+                      <svg
+                        className='size-2'
+                        width='9'
+                        height='9'
+                        viewBox='0 0 9 9'
+                        fill='none'
+                        xmlns='http://www.w3.org/2000/svg'
+                      >
+                        <g clipPath='url(#clip0_300_1006)'>
+                          <path
+                            d='M0.923828 8.05917L7.96303 1.02051M7.96303 1.02051L1.65564 1.02051M7.96303 1.02051V7.3279'
+                            stroke='black'
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
+                          />
+                        </g>
+                        <defs>
+                          <clipPath id='clip0_300_1006'>
+                            <rect width='8.92' height='8.92' fill='white' transform='translate(0 0.0800781)' />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </Link>
+                    <Link href='/' target='_blank' className='flex items-end gap-2.5'>
+                      <span>LinkedIn</span>
+                      <svg
+                        className='size-2'
+                        width='9'
+                        height='9'
+                        viewBox='0 0 9 9'
+                        fill='none'
+                        xmlns='http://www.w3.org/2000/svg'
+                      >
+                        <g clipPath='url(#clip0_300_1006)'>
+                          <path
+                            d='M0.923828 8.05917L7.96303 1.02051M7.96303 1.02051L1.65564 1.02051M7.96303 1.02051V7.3279'
+                            stroke='black'
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
+                          />
+                        </g>
+                        <defs>
+                          <clipPath id='clip0_300_1006'>
+                            <rect width='8.92' height='8.92' fill='white' transform='translate(0 0.0800781)' />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </Link>
+                  </li>
+                </ul>
+                <span className='text-sm font-bold leading-[1.35] text-[#2E2E2E] sm:mt-[2em] md:mt-[4em] md:text-[1.125em]'>
+                  Developed by{" "}
+                  <Link href='https://stepbytech.com' target='_blank' className='underline'>
+                    Step by Tech
                   </Link>
-                  <Link href='/' target='_blank' className='flex items-end gap-2.5'>
-                    <span>Facebook</span>
-                    <svg
-                      className='size-2'
-                      width='9'
-                      height='9'
-                      viewBox='0 0 9 9'
-                      fill='none'
-                      xmlns='http://www.w3.org/2000/svg'
-                    >
-                      <g clipPath='url(#clip0_300_1006)'>
-                        <path
-                          d='M0.923828 8.05917L7.96303 1.02051M7.96303 1.02051L1.65564 1.02051M7.96303 1.02051V7.3279'
-                          stroke='black'
-                          strokeLinecap='round'
-                          strokeLinejoin='round'
-                        />
-                      </g>
-                      <defs>
-                        <clipPath id='clip0_300_1006'>
-                          <rect width='8.92' height='8.92' fill='white' transform='translate(0 0.0800781)' />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </Link>
-                  <Link href='/' target='_blank' className='flex items-end gap-2.5'>
-                    <span>Instagram</span>
-                    <svg
-                      className='size-2'
-                      width='9'
-                      height='9'
-                      viewBox='0 0 9 9'
-                      fill='none'
-                      xmlns='http://www.w3.org/2000/svg'
-                    >
-                      <g clipPath='url(#clip0_300_1006)'>
-                        <path
-                          d='M0.923828 8.05917L7.96303 1.02051M7.96303 1.02051L1.65564 1.02051M7.96303 1.02051V7.3279'
-                          stroke='black'
-                          strokeLinecap='round'
-                          strokeLinejoin='round'
-                        />
-                      </g>
-                      <defs>
-                        <clipPath id='clip0_300_1006'>
-                          <rect width='8.92' height='8.92' fill='white' transform='translate(0 0.0800781)' />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </Link>
-                  <Link href='/' target='_blank' className='flex items-end gap-2.5'>
-                    <span>LinkedIn</span>
-                    <svg
-                      className='size-2'
-                      width='9'
-                      height='9'
-                      viewBox='0 0 9 9'
-                      fill='none'
-                      xmlns='http://www.w3.org/2000/svg'
-                    >
-                      <g clipPath='url(#clip0_300_1006)'>
-                        <path
-                          d='M0.923828 8.05917L7.96303 1.02051M7.96303 1.02051L1.65564 1.02051M7.96303 1.02051V7.3279'
-                          stroke='black'
-                          strokeLinecap='round'
-                          strokeLinejoin='round'
-                        />
-                      </g>
-                      <defs>
-                        <clipPath id='clip0_300_1006'>
-                          <rect width='8.92' height='8.92' fill='white' transform='translate(0 0.0800781)' />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </Link>
-                </li>
-              </ul>
-              <span className='text-sm font-bold leading-[1.35] text-[#2E2E2E] sm:mt-[2em] md:mt-[4em] md:text-[1.125em]'>
-                Developed by{" "}
-                <Link href='https://stepbytech.com' target='_blank' className='underline'>
-                  Step by Tech
-                </Link>
-              </span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };

@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import SplitType from "split-type";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import { Chat } from "../ui/Chat";
 
 const CheckIcon = () => {
   return (
@@ -131,220 +132,223 @@ export const Testimonial = () => {
       );
   }, []);
   return (
-    <div
-      ref={wrapperRef}
-      id='testimonial'
-      className='relative z-[1] flex min-h-svh flex-col bg-[#FFCD0091] px-4 pb-[4.5rem] pt-[5.625rem] md:px-[7.125rem]'
-    >
-      <div className='relative z-[1] flex h-full flex-col justify-between gap-12'>
-        <header>
-          <div className='mb-[3.25rem] flex items-center'>
-            <Image src='/icons/rocket.png' alt='' width={50} height={50} className='size-[3.125rem]' />
-            <span className='text-sm text-[#220A33]'>Real Stories, Real Results—Straight From Our Partners</span>
-          </div>
-          <h2 className='mb-6 text-[clamp(2.5rem,0.9806rem+6.483vw,5rem)] font-bold leading-[1.05] text-[#220A33] md:text-[5rem]'>
-            Where Great Minds Share <br className='hidden md:block' />
-            Their Success Stories
-          </h2>
-          <span className='text-[1.875rem] leading-[1.2]'>High-Performing Teams Thrive on Inspired Ideas</span>
-        </header>
-        <div className='grid grid-cols-1 gap-5 md:grid-cols-3'>
-          <div className='flex flex-col gap-5 md:mt-[12.5rem]' style={{ perspective: "1000px" }}>
-            <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
-              <div className='flex items-center gap-2'>
-                <Image
-                  src='/images/test-01.png'
-                  alt=''
-                  width={40}
-                  height={40}
-                  className='size-10 rounded-full object-cover'
-                />
+    <div className='relative'>
+      <Chat />
+      <div
+        ref={wrapperRef}
+        id='testimonial'
+        className='relative z-[1] flex min-h-svh flex-col bg-[#FFCD0091] px-4 pb-[4.5rem] pt-[5.625rem] md:px-[7.125rem]'
+      >
+        <div className='relative z-[1] flex h-full flex-col justify-between gap-12'>
+          <header>
+            <div className='mb-[3.25rem] flex items-center'>
+              <Image src='/icons/rocket.png' alt='' width={50} height={50} className='size-[3.125rem]' />
+              <span className='text-sm text-[#220A33]'>Real Stories, Real Results—Straight From Our Partners</span>
+            </div>
+            <h2 className='mb-6 text-[clamp(2.5rem,0.9806rem+6.483vw,5rem)] font-bold leading-[1.05] text-[#220A33] md:text-[5rem]'>
+              Where Great Minds Share <br className='hidden md:block' />
+              Their Success Stories
+            </h2>
+            <span className='text-[1.875rem] leading-[1.2]'>High-Performing Teams Thrive on Inspired Ideas</span>
+          </header>
+          <div className='grid grid-cols-1 gap-5 md:grid-cols-3'>
+            <div className='flex flex-col gap-5 md:mt-[12.5rem]' style={{ perspective: "1000px" }}>
+              <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
                 <div className='flex items-center gap-2'>
-                  <span className='text-xs font-bold leading-[1] text-[#220A33]'>Jeff Weinstein</span>
-                  <CheckIcon />
-                  <span className='text-xs font-medium text-[#BA59FF]'>@Jeff_weinstein</span>
+                  <Image
+                    src='/images/test-01.png'
+                    alt=''
+                    width={40}
+                    height={40}
+                    className='size-10 rounded-full object-cover'
+                  />
+                  <div className='flex items-center gap-2'>
+                    <span className='text-xs font-bold leading-[1] text-[#220A33]'>Jeff Weinstein</span>
+                    <CheckIcon />
+                    <span className='text-xs font-medium text-[#BA59FF]'>@Jeff_weinstein</span>
+                  </div>
+                </div>
+
+                <div className='pl-[3rem] text-base'>
+                  <p>@markmedia makes thinking hard, easier.</p>
                 </div>
               </div>
+              <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
+                <div className='flex items-center gap-2'>
+                  <Image
+                    src='/images/test-02.png'
+                    alt=''
+                    width={40}
+                    height={40}
+                    className='size-10 rounded-full object-cover'
+                  />
+                  <div className='flex items-center gap-2'>
+                    <span className='text-xs font-bold leading-[1] text-[#220A33]'>Jake Mor</span>
+                    <CheckIcon />
+                    <span className='text-xs font-medium text-[#BA59FF]'>@Jake_Mor</span>
+                  </div>
+                </div>
 
-              <div className='pl-[3rem] text-base'>
-                <p>@markmedia makes thinking hard, easier.</p>
+                <div className='pl-[3rem] text-base'>
+                  <p>
+                    Mark Media transformed our online presence with a sleek, user-friendly website that perfectly
+                    reflects our development
+                  </p>
+                </div>
               </div>
             </div>
-            <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
-              <div className='flex items-center gap-2'>
-                <Image
-                  src='/images/test-02.png'
-                  alt=''
-                  width={40}
-                  height={40}
-                  className='size-10 rounded-full object-cover'
-                />
+            <div className='flex flex-col gap-5 md:mt-[5rem]' style={{ perspective: "1000px" }}>
+              <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
                 <div className='flex items-center gap-2'>
-                  <span className='text-xs font-bold leading-[1] text-[#220A33]'>Jake Mor</span>
-                  <CheckIcon />
-                  <span className='text-xs font-medium text-[#BA59FF]'>@Jake_Mor</span>
+                  <Image
+                    src='/images/test-03.png'
+                    alt=''
+                    width={40}
+                    height={40}
+                    className='size-10 rounded-full object-cover'
+                  />
+                  <div className='flex items-center gap-2'>
+                    <span className='text-xs font-bold leading-[1] text-[#220A33]'>Danny Trinh</span>
+                    <CheckIcon />
+                    <span className='text-xs font-medium text-[#BA59FF]'>@dtrinh</span>
+                  </div>
+                </div>
+
+                <div className='pl-[3rem] text-base'>
+                  <p>Pro-tip: Use @markmedia</p>
                 </div>
               </div>
+              <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
+                <div className='flex items-center gap-2'>
+                  <Image
+                    src='/images/test-04.png'
+                    alt=''
+                    width={40}
+                    height={40}
+                    className='size-10 rounded-full object-cover'
+                  />
+                  <div className='flex items-center gap-2'>
+                    <span className='text-xs font-bold leading-[1] text-[#220A33]'>Max Ogles</span>
+                    <CheckIcon />
+                    <span className='text-xs font-medium text-[#BA59FF]'>@maxogles</span>
+                  </div>
+                </div>
 
-              <div className='pl-[3rem] text-base'>
-                <p>
-                  Mark Media transformed our online presence with a sleek, user-friendly website that perfectly reflects
-                  our development
-                </p>
+                <div className='pl-[3rem] text-base'>
+                  <p>
+                    Mark Media transformed our online presence with a sleek, user-friendly website that perfectly
+                    reflects our development
+                  </p>
+                </div>
+              </div>
+              <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
+                <div className='flex items-center gap-2'>
+                  <Image
+                    src='/images/test-05.png'
+                    alt=''
+                    width={40}
+                    height={40}
+                    className='size-10 rounded-full object-cover'
+                  />
+                  <div className='flex items-center gap-2'>
+                    <span className='text-xs font-bold leading-[1] text-[#220A33]'>Design pappa</span>
+                    <CheckIcon />
+                    <span className='text-xs font-medium text-[#BA59FF]'>@designpappa</span>
+                  </div>
+                </div>
+
+                <div className='pl-[3rem] text-base'>
+                  <p>
+                    Mark Media transformed our online presence with a sleek, user-friendly website that perfectly
+                    reflects our development
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div className='flex flex-col gap-5 md:mt-[5rem]' style={{ perspective: "1000px" }}>
-            <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
-              <div className='flex items-center gap-2'>
-                <Image
-                  src='/images/test-03.png'
-                  alt=''
-                  width={40}
-                  height={40}
-                  className='size-10 rounded-full object-cover'
-                />
+            <div className='flex flex-col gap-5' style={{ perspective: "1000px" }}>
+              <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
                 <div className='flex items-center gap-2'>
-                  <span className='text-xs font-bold leading-[1] text-[#220A33]'>Danny Trinh</span>
-                  <CheckIcon />
-                  <span className='text-xs font-medium text-[#BA59FF]'>@dtrinh</span>
+                  <Image
+                    src='/images/test-06.png'
+                    alt=''
+                    width={40}
+                    height={40}
+                    className='size-10 rounded-full object-cover'
+                  />
+                  <div className='flex items-center gap-2'>
+                    <span className='text-xs font-bold leading-[1] text-[#220A33]'>Shahed Khan</span>
+                    <CheckIcon />
+                    <span className='text-xs font-medium text-[#BA59FF]'>@_shahedk</span>
+                  </div>
+                </div>
+
+                <div className='pl-[3rem] text-base'>
+                  <p>
+                    @markmedia is such an underrated product. Great design. Built for collaboration. Highly recommend it
+                    to anyone who creates flowcharts, mind maps, etc.
+                  </p>
                 </div>
               </div>
-
-              <div className='pl-[3rem] text-base'>
-                <p>Pro-tip: Use @markmedia</p>
-              </div>
-            </div>
-            <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
-              <div className='flex items-center gap-2'>
-                <Image
-                  src='/images/test-04.png'
-                  alt=''
-                  width={40}
-                  height={40}
-                  className='size-10 rounded-full object-cover'
-                />
+              <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
                 <div className='flex items-center gap-2'>
-                  <span className='text-xs font-bold leading-[1] text-[#220A33]'>Max Ogles</span>
-                  <CheckIcon />
-                  <span className='text-xs font-medium text-[#BA59FF]'>@maxogles</span>
+                  <Image
+                    src='/images/test-07.png'
+                    alt=''
+                    width={40}
+                    height={40}
+                    className='size-10 rounded-full object-cover'
+                  />
+                  <div className='flex items-center gap-2'>
+                    <span className='text-xs font-bold leading-[1] text-[#220A33]'>Josh Johnson</span>
+                    <CheckIcon />
+                    <span className='text-xs font-medium text-[#BA59FF]'>@secondfret</span>
+                  </div>
+                </div>
+
+                <div className='pl-[3rem] text-base'>
+                  <p>Dang. @markmedia is beyond good. It might turn into my favorite tool as a PM.</p>
                 </div>
               </div>
-
-              <div className='pl-[3rem] text-base'>
-                <p>
-                  Mark Media transformed our online presence with a sleek, user-friendly website that perfectly reflects
-                  our development
-                </p>
-              </div>
-            </div>
-            <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
-              <div className='flex items-center gap-2'>
-                <Image
-                  src='/images/test-05.png'
-                  alt=''
-                  width={40}
-                  height={40}
-                  className='size-10 rounded-full object-cover'
-                />
+              <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
                 <div className='flex items-center gap-2'>
-                  <span className='text-xs font-bold leading-[1] text-[#220A33]'>Design pappa</span>
-                  <CheckIcon />
-                  <span className='text-xs font-medium text-[#BA59FF]'>@designpappa</span>
+                  <Image
+                    src='/images/test-08.png'
+                    alt=''
+                    width={40}
+                    height={40}
+                    className='size-10 rounded-full object-cover'
+                  />
+                  <div className='flex items-center gap-2'>
+                    <span className='text-xs font-bold leading-[1] text-[#220A33]'>Mark Johnson CC</span>
+                    <CheckIcon />
+                    <span className='text-xs font-medium text-[#BA59FF]'>@markjohnsoncc</span>
+                  </div>
                 </div>
-              </div>
 
-              <div className='pl-[3rem] text-base'>
-                <p>
-                  Mark Media transformed our online presence with a sleek, user-friendly website that perfectly reflects
-                  our development
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className='flex flex-col gap-5' style={{ perspective: "1000px" }}>
-            <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
-              <div className='flex items-center gap-2'>
-                <Image
-                  src='/images/test-06.png'
-                  alt=''
-                  width={40}
-                  height={40}
-                  className='size-10 rounded-full object-cover'
-                />
-                <div className='flex items-center gap-2'>
-                  <span className='text-xs font-bold leading-[1] text-[#220A33]'>Shahed Khan</span>
-                  <CheckIcon />
-                  <span className='text-xs font-medium text-[#BA59FF]'>@_shahedk</span>
+                <div className='pl-[3rem] text-base'>
+                  <p>
+                    Mark Media transformed our online presence with a sleek, user-friendly website that perfectly
+                    reflects our development
+                  </p>
                 </div>
-              </div>
-
-              <div className='pl-[3rem] text-base'>
-                <p>
-                  @markmedia is such an underrated product. Great design. Built for collaboration. Highly recommend it
-                  to anyone who creates flowcharts, mind maps, etc.
-                </p>
-              </div>
-            </div>
-            <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
-              <div className='flex items-center gap-2'>
-                <Image
-                  src='/images/test-07.png'
-                  alt=''
-                  width={40}
-                  height={40}
-                  className='size-10 rounded-full object-cover'
-                />
-                <div className='flex items-center gap-2'>
-                  <span className='text-xs font-bold leading-[1] text-[#220A33]'>Josh Johnson</span>
-                  <CheckIcon />
-                  <span className='text-xs font-medium text-[#BA59FF]'>@secondfret</span>
-                </div>
-              </div>
-
-              <div className='pl-[3rem] text-base'>
-                <p>Dang. @markmedia is beyond good. It might turn into my favorite tool as a PM.</p>
-              </div>
-            </div>
-            <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
-              <div className='flex items-center gap-2'>
-                <Image
-                  src='/images/test-08.png'
-                  alt=''
-                  width={40}
-                  height={40}
-                  className='size-10 rounded-full object-cover'
-                />
-                <div className='flex items-center gap-2'>
-                  <span className='text-xs font-bold leading-[1] text-[#220A33]'>Mark Johnson CC</span>
-                  <CheckIcon />
-                  <span className='text-xs font-medium text-[#BA59FF]'>@markjohnsoncc</span>
-                </div>
-              </div>
-
-              <div className='pl-[3rem] text-base'>
-                <p>
-                  Mark Media transformed our online presence with a sleek, user-friendly website that perfectly reflects
-                  our development
-                </p>
               </div>
             </div>
           </div>
         </div>
+        <Image
+          src='/images/testimonial-noise.svg'
+          alt='Testimonial Background'
+          fill
+          className='absolute inset-0 z-[0] size-full object-cover'
+        />
+        <Image
+          src='/images/test-vector.svg'
+          alt='Testimonial Background'
+          width={1000}
+          height={700}
+          className='absolute left-[-10rem] top-1/2 z-[0] h-[42rem] w-auto -translate-y-1/2'
+        />
       </div>
-      <Image
-        src='/images/testimonial-noise.svg'
-        alt='Testimonial Background'
-        fill
-        className='absolute inset-0 z-[0] size-full object-cover'
-      />
-      <Image
-        src='/images/test-vector.svg'
-        alt='Testimonial Background'
-        width={1000}
-        height={700}
-        className='absolute left-[-10rem] top-1/2 z-[0] h-[42rem] w-auto -translate-y-1/2'
-      />
     </div>
   );
 };

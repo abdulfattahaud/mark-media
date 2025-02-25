@@ -8,7 +8,6 @@ import { HowItWorks } from "@/components/sections/HowItWorks";
 import { BluePrint } from "@/components/sections/BluePrint";
 import { Pricing } from "@/components/sections/Pricing";
 import { Testimonial } from "@/components/sections/Testimonial";
-import { Chat } from "@/components/ui/Chat";
 import { Footer } from "@/components/sections/Footer";
 import { Toaster } from "@/components/ui/sonner";
 import Image from "next/image";
@@ -61,14 +60,15 @@ const Home = () => {
     <div className='overflow-hidden'>
       <LayoutSetup />
       <Header />
-      <Main />
-      <About />
-      <Expertise />
-      <HowItWorks />
-      <BluePrint />
-      <Pricing />
-      <Chat />
-      <Testimonial />
+      <div className='relative z-[1] bg-white'>
+        <Main />
+        <About />
+        <Expertise />
+        <HowItWorks />
+        <BluePrint />
+        <Pricing />
+        <Testimonial />
+      </div>
       <Footer />
       <Toaster />
     </div>
