@@ -1,6 +1,8 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
+import axios from "axios";
+import { useState } from "react";
 
 interface FormData {
   name: string;
@@ -30,6 +32,7 @@ export const ContactUsDialog = ({ children }: { children: React.ReactNode }) => 
       accept_terms: false,
     },
   });
+  const [loading, setLoading] = useState(false);
   register("checks", {
     required: {
       value: true,
@@ -48,12 +51,45 @@ export const ContactUsDialog = ({ children }: { children: React.ReactNode }) => 
   const acceptTerms = watch("accept_terms");
 
   const onSubmit = (data: FormData) => {
-    console.log(data);
-    toast("Successfully submitted");
-    reset();
+    setLoading(true);
+    const dataToSend = {
+      name: data.name,
+      phone: data.phone,
+      email: data.email,
+      message: data.message,
+      services: data.checks,
+    };
+    axios
+      .post(
+        "https://6qxcdqe8vb.execute-api.eu-west-3.amazonaws.com/testing-markmedia-rest-api/schedule-meeting",
+        dataToSend,
+        {
+          headers: {
+            "x-api-key": "87654321edfjnjkk",
+          },
+        },
+      )
+      .then(() => {
+        toast("Successfully submitted");
+        const dialogCloseBtn = document.querySelector(".dialog-close-btn");
+        if (dialogCloseBtn) {
+          (dialogCloseBtn as HTMLButtonElement).click();
+        }
+        reset();
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
   return (
-    <Dialog>
+    <Dialog
+      onOpenChange={() => {
+        reset();
+      }}
+    >
       {children}
       <DialogContent className='h-max max-h-[90%] w-full max-w-[85%] overflow-scroll rounded-[20px] bg-white px-[2.5em] pb-[1em] pt-[2.25em] text-[16px] shadow-[rgb(107_107_107)_0px_0px_0px_20px] sm:max-w-[44em] sm:text-[20px] sm:shadow-[rgb(107_107_107)_0px_0px_0px_30px]'>
         <DialogHeader>

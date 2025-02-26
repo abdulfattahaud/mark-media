@@ -5,8 +5,9 @@ import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { ScrollTrigger } from "gsap/all";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import axios from "axios";
 
 interface FormData {
   name: string;
@@ -34,6 +35,7 @@ const GetInTouchDialog = ({ children }: { children: React.ReactNode }) => {
       accept_terms: false,
     },
   });
+  const [loading, setLoading] = useState(false);
 
   register("accept_terms", {
     required: {
@@ -44,13 +46,46 @@ const GetInTouchDialog = ({ children }: { children: React.ReactNode }) => {
 
   const acceptTerms = watch("accept_terms");
 
-  const onSubmit = (data: FormData) => {
-    console.log(data);
-    toast("Successfully submitted");
-    reset();
+  const onSubmit = async (data: FormData) => {
+    setLoading(true);
+    const dataToSend = {
+      name: data.name,
+      phone: data.phone,
+      email: data.email,
+      message: data.message,
+    };
+    axios
+      .post(
+        "https://6qxcdqe8vb.execute-api.eu-west-3.amazonaws.com/testing-markmedia-rest-api/contact-us",
+        dataToSend,
+        {
+          headers: {
+            "x-api-key": "87654321edfjnjkk",
+          },
+        },
+      )
+      .then(() => {
+        toast("Successfully submitted");
+        const dialogCloseBtn = document.querySelector(".dialog-close-btn");
+        if (dialogCloseBtn) {
+          (dialogCloseBtn as HTMLButtonElement).click();
+        }
+        reset();
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
+
   return (
-    <Dialog>
+    <Dialog
+      onOpenChange={() => {
+        reset();
+      }}
+    >
       {children}
       <DialogContent
         className='h-[90%] w-full max-w-[85%] overflow-scroll rounded-[20px] bg-white px-[2.5em] pb-[1em] pt-[2.25em] text-[16px] shadow-[rgb(107_107_107)_0px_0px_0px_20px] sm:max-w-[24em] sm:text-[20px] sm:shadow-[rgb(107_107_107)_0px_0px_0px_30px]'
@@ -167,9 +202,10 @@ const GetInTouchDialog = ({ children }: { children: React.ReactNode }) => {
             </div>
             <button
               type='submit'
-              className='mx-auto mt-[1em] w-[15em] rounded-[60px] bg-primary py-[.875em] font-medium'
+              className={`mx-auto mt-[1em] w-[15em] rounded-[60px] bg-primary py-[.875em] font-medium ${loading ? "pointer-events-none cursor-wait opacity-50" : ""}`}
+              disabled={loading}
             >
-              Submit
+              {loading ? "Submitting..." : "Submit"}
             </button>
           </form>
         </DialogHeader>
