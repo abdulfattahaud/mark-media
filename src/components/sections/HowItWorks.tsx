@@ -262,7 +262,8 @@ const Partner = () => {
             <span
               className='number-wrapper h-[5rem] w-max overflow-hidden font-syne text-[5rem] font-bold leading-[1] text-transparent'
               style={{
-                WebkitTextStroke: "#C1C1C1 2px",
+                // WebkitTextStroke: "#C1C1C1 2px",
+                textShadow: "0px 0px 1px white, 0px 0px 0px black",
               }}
             >
               <span className='count-number flex h-full flex-col'>04</span>
@@ -276,7 +277,8 @@ const Partner = () => {
             <span
               className='number-wrapper h-[5rem] w-max overflow-hidden font-syne text-[5rem] font-bold leading-[1] text-transparent'
               style={{
-                WebkitTextStroke: "#C1C1C1 2px",
+                // WebkitTextStroke: "#C1C1C1 2px",
+                textShadow: "0px 0px 1px white, 0px 0px 0px black",
               }}
             >
               <span className='count-number flex h-full flex-col'>10</span>
@@ -291,7 +293,8 @@ const Partner = () => {
             <span
               className='number-wrapper h-[5rem] w-max overflow-hidden font-syne text-[5rem] font-bold leading-[1] text-transparent'
               style={{
-                WebkitTextStroke: "#C1C1C1 2px",
+                // WebkitTextStroke: "#C1C1C1 2px",
+                textShadow: "0px 0px 1px white, 0px 0px 0px black",
               }}
             >
               <span className='count-number flex h-full flex-col'>30</span>
@@ -305,7 +308,8 @@ const Partner = () => {
             <span
               className='number-wrapper h-[5rem] w-max overflow-hidden font-syne text-[5rem] font-bold leading-[1] text-transparent'
               style={{
-                WebkitTextStroke: "#C1C1C1 2px",
+                // WebkitTextStroke: "#C1C1C1 2px",
+                textShadow: "0px 0px 1px white, 0px 0px 0px black",
               }}
             >
               <span className='count-number flex h-full flex-col'>15</span>
