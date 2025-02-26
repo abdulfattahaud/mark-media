@@ -168,7 +168,7 @@ const Plan = () => {
         <h3 className='text-[clamp(2.75rem,2.1422rem+2.5932vw,3.75rem)] font-bold leading-[.85] md:text-[3.75rem]'>
           Immerse &<br /> Strategize
         </h3>
-        <p className='text-base leading-[1.5]'>
+        <p className='text-[1.125rem] leading-[1.5]'>
           We begin by diving headfirst into your brand—discovering what sets you apart, identifying your ideal audience,
           and clarifying your ultimate goals. This immersive process includes competitor analysis, market research, and
           brand audits to ensure we fully understand your unique value proposition. By synthesizing these insights, we
@@ -304,7 +304,7 @@ const Run = () => {
           <h3 className='text-[clamp(2.75rem,2.1422rem+2.5932vw,3.75rem)] font-bold leading-[.85] md:text-[3.75rem]'>
             Create & Launch
           </h3>
-          <p className='text-base leading-[1.5]'>
+          <p className='text-[1.125rem] leading-[1.5]'>
             We begin by diving headfirst into your brand—discovering what sets you apart, identifying your ideal
             audience, and clarifying your ultimate goals. This immersive process includes competitor analysis, market
             research, and brand audits to ensure we fully understand your unique value proposition. By synthesizing
@@ -340,7 +340,7 @@ const Run = () => {
           <h3 className='text-[clamp(2.75rem,2.1422rem+2.5932vw,3.75rem)] font-bold leading-[.85] md:text-[3.75rem]'>
             Analyze &<br /> Optimize
           </h3>
-          <p className='text-base leading-[1.5]'>
+          <p className='text-[1.125rem] leading-[1.5]'>
             Once campaigns are live, we rigorously track performance and collect data on everything from engagement
             rates to lead conversions. This granular analysis goes beyond vanity metrics, allowing us to uncover
             meaningful insights into audience behavior and campaign effectiveness. Using these findings, we refine our
@@ -433,7 +433,7 @@ const Recap = () => {
         <h3 className='text-[clamp(2.75rem,2.1422rem+2.5932vw,3.75rem)] font-bold leading-[.85] md:text-[3.75rem]'>
           The Big Picture
         </h3>
-        <p className='text-base leading-[1.5]'>
+        <p className='text-[1.125rem] leading-[1.5]'>
           Our holistic, three-phase marketing framework—Immerse & Strategize, Create & Launch, Analyze &
           Optimize—ensures every campaign is backed by deep insights, brought to life through creative excellence, and
           continuously refined for sustained impact. We start by immersing ourselves in your brand to develop a
@@ -545,7 +545,7 @@ const Collaborate = () => {
           Collaborate for
           <br className='hidden md:block' /> Impact
         </h3>
-        <p className='text-base leading-[1.5]'>
+        <p className='text-[1.125rem] leading-[1.5]'>
           At Mark Media, we believe collaboration is the cornerstone of success. By partnering closely with you, we fuse
           your vision with our strategic expertise to build meaningful marketing solutions that truly resonate and
           deliver tangible results. Your insights guide us every step of the way, ensuring a shared vision, unified
@@ -561,7 +561,7 @@ export const BluePrint = () => {
     ScrollTrigger.update();
   }, []);
   return (
-    <div className='md-[10rem] min-h-svh md:mt-[30rem]'>
+    <div className='md-[10rem] min-h-svh md:mt-[20rem]'>
       <div className='h-max min-h-full overflow-hidden px-[2rem] md:px-[10rem]'>
         <Header />
         <Plan />

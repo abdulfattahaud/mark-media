@@ -200,7 +200,7 @@ export const AboutSlider = () => {
                     alt={slides.image.alt}
                     width={720}
                     height={495}
-                    className='h-full object-cover'
+                    className='h-full w-full object-cover'
                   />
                   <div
                     className='absolute bottom-2 left-4 right-0 z-[1] text-[2.25rem] font-bold leading-[1] text-white'
@@ -212,7 +212,7 @@ export const AboutSlider = () => {
                     {slides.title}
                   </h4>
                   <div className='my-6 h-[3px] w-[3.5rem] bg-black'></div>
-                  <p className='select-none text-base leading-[1.5]'>{slides.description}</p>
+                  <p className='select-none text-[1.125rem] leading-[1.5]'>{slides.description}</p>
                 </div>
               </div>
             </div>

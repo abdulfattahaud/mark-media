@@ -331,7 +331,7 @@ export const Header = () => {
           className='w-[5.5rem] sm:w-[7.25rem]'
           alt='Media Mark Logo'
         />
-        <ul className='hidden gap-10 text-base md:flex'>
+        <ul className='hidden gap-10 text-[1.125rem] md:flex'>
           {links.map((link, index) => (
             <li
               key={index}

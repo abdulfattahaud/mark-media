@@ -297,10 +297,10 @@ const Partner = () => {
                 textShadow: "0px 0px 1px white, 0px 0px 0px black",
               }}
             >
-              <span className='count-number flex h-full flex-col'>30</span>
+              <span className='count-number flex h-full flex-col'>95</span>
             </span>
             <span className='absolute right-[-.5rem] font-syne text-[2.5rem] font-bold leading-[1]'>%</span>
-            <span className='text-[1.5rem] font-medium'>Top Feedbak</span>
+            <span className='text-[1.5rem] font-medium'>Top Feedback</span>
           </div>
         </div>
         <div className='flex flex-col gap-6'>
