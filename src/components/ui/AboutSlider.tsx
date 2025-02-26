@@ -51,7 +51,6 @@ export const AboutSlider = () => {
   useEffect(() => {
     if (emblaApi) {
       emblaApi.on("select", (e) => {
-        console.log(e.selectedScrollSnap());
         setActiveSlide(e.selectedScrollSnap());
       });
     }

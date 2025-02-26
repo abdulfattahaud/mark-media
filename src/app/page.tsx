@@ -21,7 +21,6 @@ const Loader = () => {
   useEffect(() => {
     while (document.documentElement.getAttribute("loaded") !== "true") {
       const loaded = document.documentElement.getAttribute("loaded");
-      console.log("Loading", loaded);
       if (loaded === "true") {
         break;
       }

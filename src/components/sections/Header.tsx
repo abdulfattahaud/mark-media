@@ -76,7 +76,6 @@ export const Header = () => {
 
   const handleClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    console.log("test");
 
     const main = document.querySelector("body");
     if (
