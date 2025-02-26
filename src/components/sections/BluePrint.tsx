@@ -154,14 +154,14 @@ const Plan = () => {
       >
         <span className='text-primary'>P</span>lan.
       </span>
-      <figure className='flex flex-1 items-center justify-center'>
+      <figure className='flex h-[38rem] flex-1 items-center justify-center'>
         <Image
           src='/images/plan-img.png'
           alt='Plan'
           loading='eager'
           width={450}
           height={500}
-          className='h-auto max-h-[20rem] w-auto md:max-h-[50%]'
+          className='h-full w-auto'
         />
       </figure>
       <div className='flex flex-1 flex-col gap-8 text-white'>
@@ -314,26 +314,26 @@ const Run = () => {
             ignite growth.
           </p>
         </div>
-        <figure className='flex flex-1 items-center justify-center'>
+        <figure className='flex h-[38rem] flex-1 items-center justify-center'>
           <Image
             src='/images/run-1.png'
             alt='Plan'
             loading='eager'
             width={450}
             height={500}
-            className='h-auto max-h-[20rem] w-auto md:max-h-[50%]'
+            className='h-full w-auto'
           />
         </figure>
       </div>
       <div ref={block2Ref} className='flex flex-1 flex-col items-center justify-center gap-24 md:flex-row'>
-        <figure className='flex flex-1 items-center justify-center'>
+        <figure className='flex h-[38rem] flex-1 items-center justify-center'>
           <Image
             src='/images/run-2.png'
             alt='Plan'
             loading='eager'
             width={450}
             height={500}
-            className='h-auto max-h-[20rem] w-auto md:max-h-[50%]'
+            className='h-full w-auto'
           />
         </figure>
         <div className='flex flex-1 flex-col gap-8 text-black'>
@@ -443,14 +443,14 @@ const Recap = () => {
           see—and seize—the full scope of your brand’s potential.
         </p>
       </div>
-      <figure className='flex flex-1 items-center justify-center'>
+      <figure className='flex h-[38rem] flex-1 items-center justify-center'>
         <Image
           src='/images/recap-img.png'
           alt='Plan'
           loading='eager'
           width={450}
           height={500}
-          className='h-auto max-h-[20rem] w-auto md:max-h-[50%]'
+          className='h-full w-auto'
         />
       </figure>
     </div>
@@ -530,14 +530,14 @@ const Collaborate = () => {
       >
         Collaborate.
       </span>
-      <figure className='flex flex-1 items-center justify-center'>
+      <figure className='flex h-[38rem] flex-1 items-center justify-center'>
         <Image
           src='/images/collaborate-1.png'
           alt='Plan'
           loading='eager'
           width={450}
           height={500}
-          className='h-auto max-h-[20rem] w-auto md:max-h-[50%]'
+          className='h-full w-auto'
         />
       </figure>
       <div className='flex flex-1 flex-col gap-8'>

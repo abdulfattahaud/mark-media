@@ -9,7 +9,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
 interface FormData {
-  first_name: string;
+  name: string;
   phone: string;
   email: string;
   message: string;
@@ -27,7 +27,7 @@ const GetInTouchDialog = ({ children }: { children: React.ReactNode }) => {
     clearErrors,
   } = useForm<FormData>({
     defaultValues: {
-      first_name: "",
+      name: "",
       phone: "",
       email: "",
       message: "",
@@ -53,9 +53,9 @@ const GetInTouchDialog = ({ children }: { children: React.ReactNode }) => {
     <Dialog>
       {children}
       <DialogContent
-        className='h-[90%] w-full max-w-[90%] overflow-scroll rounded-[20px] bg-white px-[2.5em] pb-[1em] pt-[2.25em] text-[16px] sm:max-w-[24em] sm:text-[20px]'
+        className='h-[90%] w-full max-w-[85%] overflow-scroll rounded-[20px] bg-white px-[2.5em] pb-[1em] pt-[2.25em] text-[16px] shadow-[rgb(107_107_107)_0px_0px_0px_20px] sm:max-w-[24em] sm:text-[20px] sm:shadow-[rgb(107_107_107)_0px_0px_0px_30px]'
         style={{
-          boxShadow: "rgb(107 107 107) 0px 0px 0px 30px",
+          boxShadow: "",
         }}
       >
         <DialogHeader>
@@ -77,11 +77,11 @@ const GetInTouchDialog = ({ children }: { children: React.ReactNode }) => {
             <div className='mb-[.5em] flex flex-col gap-[1em]'>
               <div className='input-wrapper'>
                 <label htmlFor='first-name'>
-                  First Name* {errors.first_name && <span className='text-red-500'>{errors.first_name.message}</span>}
+                  Name* {errors.name && <span className='text-red-500'>{errors.name.message}</span>}
                 </label>
                 <input
                   className='form-input'
-                  {...register("first_name", { required: { value: true, message: " is required" } })}
+                  {...register("name", { required: { value: true, message: " is required" } })}
                 />
               </div>
               <div className='input-wrapper'>
