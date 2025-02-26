@@ -10,6 +10,14 @@
   --animation-primary: 0.6s cubic-bezier(0.2, 1.33, 0.25, 1);
   --animation-primary-ease-in: 0.6s cubic-bezier(0.25, 1, 0.1, 1);
 }
+* {
+  /* hide scrollbar on all cases */
+  scrollbar-width: none;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+
 /* 
 @media (prefers-color-scheme: dark) {
   :root {
