@@ -561,7 +561,7 @@ export const BluePrint = () => {
     ScrollTrigger.update();
   }, []);
   return (
-    <div className='md-[10rem] min-h-svh md:mt-[20rem]'>
+    <div className='md-[10rem] min-h-svh md:mt-[15rem]'>
       <div className='h-max min-h-full overflow-hidden px-[2rem] md:px-[10rem]'>
         <Header />
         <Plan />
