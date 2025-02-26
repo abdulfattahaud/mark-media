@@ -60,7 +60,7 @@ export const ContactUsDialog = () => {
         Schedule Meeting
       </DialogTrigger>
       <DialogContent
-        className='h-[90%] w-full max-w-[90%] overflow-scroll rounded-[20px] bg-white px-[2.5em] pb-[1em] pt-[2.25em] text-[16px] sm:max-w-[44em] sm:text-[20px]'
+        className='h-max max-h-[90%] w-full max-w-[90%] overflow-scroll rounded-[20px] bg-white px-[2.5em] pb-[1em] pt-[2.25em] text-[16px] sm:max-w-[44em] sm:text-[20px]'
         style={{
           boxShadow: "rgb(107 107 107) 0px 0px 0px 30px",
         }}
@@ -207,7 +207,7 @@ export const ContactUsDialog = () => {
                         <path
                           d='M15 4.5L6.75 12.75L3 9'
                           stroke='#FEFEFE'
-                          stroke-width='2'
+                          strokeWidth='2'
                           strokeLinecap='round'
                           strokeLinejoin='round'
                         />
@@ -245,9 +245,9 @@ export const ContactUsDialog = () => {
                         <path
                           d='M15 4.5L6.75 12.75L3 9'
                           stroke='#FEFEFE'
-                          stroke-width='2'
-                          stroke-linecap='round'
-                          stroke-linejoin='round'
+                          strokeWidth='2'
+                          strokeLinecap='round'
+                          strokeLinejoin='round'
                         />
                       </svg>
                     </div>
@@ -283,9 +283,9 @@ export const ContactUsDialog = () => {
                         <path
                           d='M15 4.5L6.75 12.75L3 9'
                           stroke='#FEFEFE'
-                          stroke-width='2'
-                          stroke-linecap='round'
-                          stroke-linejoin='round'
+                          strokeWidth='2'
+                          strokeLinecap='round'
+                          strokeLinejoin='round'
                         />
                       </svg>
                     </div>
@@ -321,9 +321,9 @@ export const ContactUsDialog = () => {
                         <path
                           d='M15 4.5L6.75 12.75L3 9'
                           stroke='#FEFEFE'
-                          stroke-width='2'
-                          stroke-linecap='round'
-                          stroke-linejoin='round'
+                          strokeWidth='2'
+                          strokeLinecap='round'
+                          strokeLinejoin='round'
                         />
                       </svg>
                     </div>
@@ -373,9 +373,9 @@ export const ContactUsDialog = () => {
                       <path
                         d='M15 4.5L6.75 12.75L3 9'
                         stroke='#FEFEFE'
-                        stroke-width='2'
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
+                        strokeWidth='2'
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
                       />
                     </svg>
                   </div>

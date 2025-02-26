@@ -360,12 +360,12 @@ const Line2 = () => {
       <div className='embla__container flex h-full items-center gap-6 sm:gap-[8.75rem]'>
         <span className='embla__slide !basis-auto text-nowrap'>Pay-Per-Click (PPC) Advertising</span>
         <span className='embla__slide !basis-auto text-nowrap'>Content Marketing</span>
-        <span className='embla__slide !basis-auto text-nowrap'>Run Series</span>
+        <span className='embla__slide !basis-auto text-nowrap'>Video Production & Animation</span>
         <span className='embla__slide !basis-auto text-nowrap'>Web Design and Development</span>
         <span className='embla__slide !basis-auto text-nowrap'>Conversion Rate Optimization</span>
         <span className='embla__slide !basis-auto text-nowrap'>Pay-Per-Click (PPC) Advertising</span>
         <span className='embla__slide !basis-auto text-nowrap'>Content Marketing</span>
-        <span className='embla__slide !basis-auto text-nowrap'>Run Series</span>
+        <span className='embla__slide !basis-auto text-nowrap'>Video Production & Animation</span>
         <span className='embla__slide !basis-auto text-nowrap'>Web Design and Development</span>
         <span className='embla__slide !basis-auto text-nowrap'>Conversion Rate Optimization</span>
       </div>

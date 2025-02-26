@@ -2,19 +2,21 @@
 import AutoHeight from "embla-carousel-auto-height";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import SplitType from "split-type";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-
+import { useGSAP } from "@gsap/react";
 export const Pricing = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" }, [AutoHeight()]);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     const mm = gsap.matchMedia();
     mm.add("(min-width: 768px)", () => {
       if (!wrapperRef.current) return;
+      console.log("test");
+
       const h2 = new SplitType(wrapperRef.current.querySelector("h2")!, {
         types: "words,chars",
       });
@@ -96,10 +98,8 @@ export const Pricing = () => {
                   className='size-[3.75rem] sm:size-[5.625rem]'
                 />
                 <div className='flex flex-col'>
-                  <h4 className='text-[1.25rem] font-medium leading-[1.2]'>Starter</h4>
-                  <p className='text-[1.25rem] font-bold leading-[1.2] sm:text-[1.5rem]'>
-                    For small businesses just starting out
-                  </p>
+                  <h4 className='text-[1.25rem] font-medium leading-[1.2]'>Basic</h4>
+                  <p className='text-[1.25rem] font-bold leading-[1.2] sm:text-[1.5rem]'>Foundations Package</p>
                 </div>
               </div>
               <ul className='mb-[2rem] flex flex-col gap-6'>
@@ -135,8 +135,8 @@ export const Pricing = () => {
                 className='size-[3.75rem] sm:size-[5.625rem]'
               />
               <div className='flex flex-col'>
-                <h4 className='text-[1.25rem] font-medium leading-[1.2]'>Pro</h4>
-                <p className='text-[1.25rem] font-bold leading-[1.2] sm:text-[1.5rem]'>Momentum Package</p>
+                <h4 className='text-[1.25rem] font-medium leading-[1.2]'>Standard</h4>
+                <p className='text-[1.25rem] font-bold leading-[1.2] sm:text-[1.5rem]'>Accelerate Package</p>
               </div>
             </div>
             <ul className='mb-[2rem] flex flex-col gap-6'>
@@ -175,8 +175,8 @@ export const Pricing = () => {
                 className='size-[3.75rem] sm:size-[5.625rem]'
               />
               <div className='flex flex-col'>
-                <h4 className='text-[1.25rem] font-medium leading-[1.2]'>Pro</h4>
-                <p className='text-[1.25rem] font-bold leading-[1.2] sm:text-[1.5rem]'>Momentum Package</p>
+                <h4 className='text-[1.25rem] font-medium leading-[1.2]'>Premium</h4>
+                <p className='text-[1.25rem] font-bold leading-[1.2] sm:text-[1.5rem]'>Elevate Package</p>
               </div>
             </div>
             <ul className='mb-[2rem] flex flex-col gap-6'>
@@ -230,10 +230,8 @@ export const Pricing = () => {
                       className='size-[3.75rem] sm:size-[5.625rem]'
                     />
                     <div className='flex flex-col'>
-                      <h4 className='text-[1.25rem] font-medium leading-[1.2]'>Starter</h4>
-                      <p className='text-[1.25rem] font-bold leading-[1.2] sm:text-[1.5rem]'>
-                        For small businesses just starting out
-                      </p>
+                      <h4 className='text-[1.25rem] font-medium leading-[1.2]'>Basic</h4>
+                      <p className='text-[1.25rem] font-bold leading-[1.2] sm:text-[1.5rem]'>Foundations Package</p>
                     </div>
                   </div>
                   <ul className='mb-[2rem] flex flex-col gap-6'>
@@ -270,8 +268,8 @@ export const Pricing = () => {
                       className='size-[3.75rem] sm:size-[5.625rem]'
                     />
                     <div className='flex flex-col'>
-                      <h4 className='text-[1.25rem] font-medium leading-[1.2]'>Pro</h4>
-                      <p className='text-[1.25rem] font-bold leading-[1.2] sm:text-[1.5rem]'>Momentum Package</p>
+                      <h4 className='text-[1.25rem] font-medium leading-[1.2]'>Standard</h4>
+                      <p className='text-[1.25rem] font-bold leading-[1.2] sm:text-[1.5rem]'>Accelerate Package</p>
                     </div>
                   </div>
                   <ul className='mb-[2rem] flex flex-col gap-6'>
@@ -312,8 +310,8 @@ export const Pricing = () => {
                       className='size-[3.75rem] sm:size-[5.625rem]'
                     />
                     <div className='flex flex-col'>
-                      <h4 className='text-[1.25rem] font-medium leading-[1.2]'>Pro</h4>
-                      <p className='text-[1.25rem] font-bold leading-[1.2] sm:text-[1.5rem]'>Momentum Package</p>
+                      <h4 className='text-[1.25rem] font-medium leading-[1.2]'>Premium</h4>
+                      <p className='text-[1.25rem] font-bold leading-[1.2] sm:text-[1.5rem]'>Elevate Package</p>
                     </div>
                   </div>
                   <ul className='mb-[2rem] flex flex-col gap-6'>

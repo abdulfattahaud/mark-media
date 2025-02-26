@@ -276,7 +276,7 @@ export const Footer = () => {
           </div>
           <Image src='/icons/dots-line.svg' alt='' width={1200} height={40} className='my-8 h-auto w-full' />
           <div className='flex flex-col-reverse justify-between gap-4 sm:flex-row sm:items-end'>
-            <div className='relative flex flex-col items-center'>
+            <div className='relative flex flex-col items-center sm:items-start'>
               <span className='text-[clamp(3em,1.0916em+8.1425vw,5em)] font-bold leading-[1.2] sm:text-[clamp(5em,1.5714em+7.1429vw,6em)] md:text-[12.5em]'>
                 Markmedia
               </span>
