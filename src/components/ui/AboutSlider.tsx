@@ -12,6 +12,7 @@ type Slide = {
   };
   title: string;
   description: string;
+  text: string;
 };
 
 const slides: Slide[] = [
@@ -23,6 +24,9 @@ const slides: Slide[] = [
     title: "Mission",
     description:
       "At Mark Media, our mission is to empower businesses of every size with innovative, data-driven marketing solutions that captivate audiences, spark growth, and deliver real, measurable success.",
+    text: `Empower<br />
+          Inspire.<br />
+          Transform.`,
   },
   {
     image: {
@@ -32,6 +36,9 @@ const slides: Slide[] = [
     title: "Vision",
     description:
       "We envision a future where brands transcend boundaries through the perfect fusion of strategic insights and inspiring creativity—amplifying their voices in a fast-evolving digital world.",
+    text: `Imagine<br />
+          Innovate<br />
+          Inspire`,
   },
   {
     image: {
@@ -41,6 +48,10 @@ const slides: Slide[] = [
     title: "Goal",
     description:
       "Our goal is to continuously refine our approach—harnessing emerging technologies, local expertise, and fresh perspectives—to ensure your brand stays one step ahead in today's competitive marketplace.",
+    text: `
+        Aim.<br />
+        Achieve.<br />
+        Advance.`,
   },
 ];
 
@@ -183,13 +194,19 @@ export const AboutSlider = () => {
           {slides.map((slides, index) => (
             <div key={index} className='embla__slide max-h-[55rem] sm:max-h-[31rem]'>
               <div className='flex h-full flex-col sm:flex-row'>
-                <Image
-                  src={slides.image.src}
-                  alt={slides.image.alt}
-                  width={720}
-                  height={495}
-                  className='max-h-[50%] object-cover sm:max-h-none sm:max-w-[60%] sm:flex-[1_0_60%]'
-                />
+                <div className='relative max-h-[50%] sm:max-h-none sm:max-w-[60%] sm:flex-[1_0_60%]'>
+                  <Image
+                    src={slides.image.src}
+                    alt={slides.image.alt}
+                    width={720}
+                    height={495}
+                    className='h-full object-cover'
+                  />
+                  <div
+                    className='absolute bottom-2 left-4 right-0 z-[1] text-[2.25rem] font-bold leading-[1] text-white'
+                    dangerouslySetInnerHTML={{ __html: slides.text }}
+                  ></div>
+                </div>
                 <div className='flex h-[15rem] w-full flex-col items-start justify-center bg-primary px-[2.25rem] sm:h-auto'>
                   <h4 className='select-none text-[1.875rem] font-extrabold leading-[1] text-[#00000099]'>
                     {slides.title}
