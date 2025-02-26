@@ -3,10 +3,10 @@ import Image from "next/image";
 export const Chat = () => {
   return (
     <div className='relative z-[2] bg-white'>
-      <div className='flex translate-y-[5.325rem] flex-col items-end gap-2 pr-10 md:translate-y-[10.625rem] md:gap-4'>
+      <div className='flex translate-y-[5.325rem] flex-col items-end gap-2 pr-4 sm:pr-10 md:translate-y-[10.625rem] md:gap-4'>
         <div className='flex items-center gap-4'>
           <div className='flex items-center gap-4 rounded-[64px] bg-[#FFCD001C] p-2 pl-[2rem] md:p-4'>
-            <span className='text-[1.75rem] font-bold uppercase leading-[1.3] text-[#26422B] md:text-[3.375rem]'>
+            <span className='text-[1.4rem] font-bold uppercase leading-[1.3] text-[#26422B] sm:text-[1.75rem] md:text-[3.375rem]'>
               our customers
             </span>
             <Image
@@ -67,13 +67,13 @@ export const Chat = () => {
             <rect x='56' y='28' width='16' height='16' rx='8' fill='#273F2B' />
             <rect x='80' y='28' width='16' height='16' rx='8' fill='#273F2B' />
           </svg>
-          <span className='text-[#26422B text-[1.75rem] font-bold uppercase leading-[1.3] md:text-[3.375rem]'>
+          <span className='text-[1.4rem] font-bold uppercase leading-[1.3] text-[#26422B] sm:text-[1.75rem] md:text-[3.375rem]'>
             Say It
           </span>
         </div>
         <div className='flex items-center gap-4 pr-2 md:pr-10'>
           <div className='rounded-[64px] bg-[#FFCD0075] px-6 py-2 md:px-12 md:py-4'>
-            <span className='text-[#26422B text-[1.75rem] font-bold uppercase leading-[1.3] md:text-[3.375rem]'>
+            <span className='text-[1.4rem] font-bold uppercase leading-[1.3] text-[#26422B] sm:text-[1.75rem] md:text-[3.375rem]'>
               Best !!
             </span>
           </div>

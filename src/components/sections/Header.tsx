@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CustomEase } from "gsap/CustomEase";
 import { useEffect, useRef } from "react";
 import { ContactUsDialog } from "../ui/ContactUsDialog";
+import { DialogTrigger } from "../ui/dialog";
 
 CustomEase.create("ease-in-css", ".25, 1, 0.1 ,1");
 
@@ -97,6 +98,9 @@ export const Header = () => {
           onMouseLeave={handleMouseLeave}
           onClick={handleClick}
           className='menu-open flex size-[clamp(3.125rem,0.625rem+5.2083vw,6.875rem)] items-center justify-center overflow-hidden rounded-full bg-primary'
+          style={{
+            boxShadow: "hsl(47.91deg 100% 30.39%) 0px 0px 4px 0px",
+          }}
         >
           <svg
             className='arr-svg pointer-events-none absolute size-[1.5rem] sm:size-[4.5rem]'
@@ -344,7 +348,11 @@ export const Header = () => {
             </li>
           ))}
         </ul>
-        <ContactUsDialog />
+        <ContactUsDialog>
+          <DialogTrigger className='hidden rounded-[.75rem] bg-primary px-3 py-2 text-sm font-bold text-black sm:block md:rounded-[1.25rem] md:px-6 md:py-4 md:text-base'>
+            Schedule Meeting
+          </DialogTrigger>
+        </ContactUsDialog>
         <button ref={mobileMenu} onClick={handleClick} className='rounded-[10px] bg-primary px-4 py-2.5 sm:hidden'>
           <svg
             className='h-3.5 w-[1.125rem]'

@@ -140,7 +140,7 @@ const SlideItem = ({ slide }: { slide: Slide }) => {
         alt={slide.image.alt}
         width={488}
         height={400}
-        className='h-[18rem] w-full rounded-[25px] object-cover md:h-[25rem]'
+        className='h-[32rem] w-full rounded-[25px] object-cover md:h-[25rem]'
       />
       <div
         className={`absolute bottom-3 left-3 flex flex-col overflow-hidden ${isOpen ? "h-[calc(100%-1.5rem)] rounded-[20px] bg-[#FFCD00CC]" : "h-[2.5rem] rounded-[50px] bg-primary md:h-[4rem]"} w-[calc(100%-1.5rem)] px-2 py-1 transition-[height_background]`}
@@ -261,7 +261,7 @@ export const Expertise = () => {
     };
   }, []);
   return (
-    <div id='expertise' className='relative h-max min-h-svh overflow-hidden bg-primary pr-4 sm:pr-0'>
+    <div id='expertise' className='relative h-max min-h-[min(100svh,900px)] overflow-hidden bg-primary pr-4 sm:pr-0'>
       <div className='relative z-[2] flex h-full flex-col justify-center gap-10 pb-[2rem] pl-[2.5rem] pt-[3rem] sm:pl-[4rem] md:py-[3.25rem] md:pl-[12.5rem]'>
         <div className='flex flex-col items-start gap-8'>
           <div className='flex items-center gap-5'>
@@ -278,7 +278,7 @@ export const Expertise = () => {
             Supercharge Your
             <br /> Growth
           </h2>
-          <span className='hide-first span-2 text-xs md:text-base'>
+          <span className='hide-first span-2 text-base md:text-[1.25rem]'>
             Harness Our Full-Spectrum Marketing Services to
             <br /> Catapult Your Brand’s Reach and Results
           </span>

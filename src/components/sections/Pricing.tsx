@@ -7,6 +7,8 @@ import SplitType from "split-type";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
+import { ContactUsDialog } from "../ui/ContactUsDialog";
+import { DialogTrigger } from "../ui/dialog";
 export const Pricing = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" }, [AutoHeight()]);
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -102,7 +104,7 @@ export const Pricing = () => {
                   <p className='text-[1.25rem] font-bold leading-[1.2] sm:text-[1.5rem]'>Foundations Package</p>
                 </div>
               </div>
-              <ul className='mb-[2rem] flex flex-col gap-6'>
+              <ul className='mb-[2rem] flex flex-col gap-6 text-[1.125rem]'>
                 <li className='flex items-center justify-between'>
                   <span className='font-medium text-[#1C2348]'>Essential Branding & Strategy</span>
                   <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
@@ -120,9 +122,11 @@ export const Pricing = () => {
                   <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
                 </li>
               </ul>
-              <button className='h-[3.125rem] w-full rounded-[60px] bg-primary text-[1.1875rem] font-medium text-black'>
-                Schedule Demo
-              </button>
+              <ContactUsDialog>
+                <DialogTrigger className='h-[3.125rem] w-full rounded-[60px] bg-primary text-[1.1875rem] font-medium text-black'>
+                  Schedule Demo
+                </DialogTrigger>
+              </ContactUsDialog>
             </div>
           </div>
           <div className='mt-auto hidden h-max rounded-[20px] bg-white p-6 sm:block sm:rounded-[3.125rem] sm:p-10'>
@@ -139,7 +143,7 @@ export const Pricing = () => {
                 <p className='text-[1.25rem] font-bold leading-[1.2] sm:text-[1.5rem]'>Accelerate Package</p>
               </div>
             </div>
-            <ul className='mb-[2rem] flex flex-col gap-6'>
+            <ul className='mb-[2rem] flex flex-col gap-6 text-[1.125rem]'>
               <li className='flex items-center justify-between'>
                 <span className='font-medium text-[#1C2348]'>Comprehensive Branding & Strategy</span>
                 <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
@@ -161,9 +165,11 @@ export const Pricing = () => {
                 <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
               </li>
             </ul>
-            <button className='h-[3.125rem] w-full rounded-[60px] bg-primary text-[1.1875rem] font-medium text-black'>
-              Schedule Demo
-            </button>
+            <ContactUsDialog>
+              <DialogTrigger className='h-[3.125rem] w-full rounded-[60px] bg-primary text-[1.1875rem] font-medium text-black'>
+                Schedule Demo
+              </DialogTrigger>
+            </ContactUsDialog>
           </div>
           <div className='hidden rounded-[20px] bg-white p-6 sm:block sm:rounded-[3.125rem] sm:p-10'>
             <div className='mb-[2rem] flex items-center gap-6 border-b border-[#ECEDF1] pb-[1.875rem]'>
@@ -179,7 +185,7 @@ export const Pricing = () => {
                 <p className='text-[1.25rem] font-bold leading-[1.2] sm:text-[1.5rem]'>Elevate Package</p>
               </div>
             </div>
-            <ul className='mb-[2rem] flex flex-col gap-6'>
+            <ul className='mb-[2rem] flex flex-col gap-6 text-[1.125rem]'>
               <li className='flex items-center justify-between'>
                 <span className='font-medium text-[#1C2348]'>Full-Scale Branding & Strategy</span>
                 <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
@@ -213,9 +219,11 @@ export const Pricing = () => {
                 <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
               </li>
             </ul>
-            <button className='h-[3.125rem] w-full rounded-[60px] bg-primary text-[1.1875rem] font-medium text-black'>
-              Schedule Demo
-            </button>
+            <ContactUsDialog>
+              <DialogTrigger className='h-[3.125rem] w-full rounded-[60px] bg-primary text-[1.1875rem] font-medium text-black'>
+                Schedule Demo
+              </DialogTrigger>
+            </ContactUsDialog>
           </div>
           <div className='embla sm:hidden' ref={emblaRef}>
             <div className='embla__container items-start transition-[height]'>
@@ -252,9 +260,11 @@ export const Pricing = () => {
                       <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
                     </li>
                   </ul>
-                  <button className='h-[3.125rem] w-full rounded-[60px] bg-primary text-[1.1875rem] font-medium text-black'>
-                    Schedule Demo
-                  </button>
+                  <ContactUsDialog>
+                    <DialogTrigger className='h-[3.125rem] w-full rounded-[60px] bg-primary text-[1.1875rem] font-medium text-black'>
+                      Schedule Demo
+                    </DialogTrigger>
+                  </ContactUsDialog>
                 </div>
               </div>
               <div className='embla__slide mr-4'>
@@ -294,9 +304,11 @@ export const Pricing = () => {
                       <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
                     </li>
                   </ul>
-                  <button className='h-[3.125rem] w-full rounded-[60px] bg-primary text-[1.1875rem] font-medium text-black'>
-                    Schedule Demo
-                  </button>
+                  <ContactUsDialog>
+                    <DialogTrigger className='h-[3.125rem] w-full rounded-[60px] bg-primary text-[1.1875rem] font-medium text-black'>
+                      Schedule Demo
+                    </DialogTrigger>
+                  </ContactUsDialog>
                 </div>
               </div>
               <div className='embla__slide mr-4'>
@@ -348,9 +360,11 @@ export const Pricing = () => {
                       <Image src='/icons/check.svg' alt='' width={24} height={24} className='size-6' />
                     </li>
                   </ul>
-                  <button className='h-[3.125rem] w-full rounded-[60px] bg-primary text-[1.1875rem] font-medium text-black'>
-                    Schedule Demo
-                  </button>
+                  <ContactUsDialog>
+                    <DialogTrigger className='h-[3.125rem] w-full rounded-[60px] bg-primary text-[1.1875rem] font-medium text-black'>
+                      Schedule Demo
+                    </DialogTrigger>
+                  </ContactUsDialog>
                 </div>
               </div>
             </div>

@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import SplitType from "split-type";
 import { useEffect } from "react";
 import { ContactUsDialog } from "../ui/ContactUsDialog";
+import { DialogTrigger } from "../ui/dialog";
 
 export const Main = () => {
   useEffect(() => {
@@ -110,7 +111,11 @@ export const Main = () => {
             <br />
             Driven Marketing Solutions
           </p>
-          <ContactUsDialog />
+          <ContactUsDialog>
+            <DialogTrigger className='hidden rounded-[.75rem] bg-primary px-3 py-2 text-sm font-bold text-black sm:block md:rounded-[1.25rem] md:px-6 md:py-4 md:text-base'>
+              Schedule Meeting
+            </DialogTrigger>
+          </ContactUsDialog>
         </div>
         <div className='absolute left-0 top-0 z-[-1] h-full w-full sm:relative sm:inset-auto sm:z-auto sm:w-1/2'>
           <div className='white-grid absolute z-[1] hidden size-full grid-cols-3 grid-rows-3 sm:grid'>

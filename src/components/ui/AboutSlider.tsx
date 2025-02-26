@@ -203,16 +203,16 @@ export const AboutSlider = () => {
                     className='h-full w-full object-cover'
                   />
                   <div
-                    className='absolute bottom-2 left-4 right-0 z-[1] text-[2.25rem] font-bold leading-[1] text-white'
+                    className='absolute bottom-2 left-4 right-0 z-[1] text-[1.5rem] font-bold leading-[1] text-white sm:text-[2.25rem]'
                     dangerouslySetInnerHTML={{ __html: slides.text }}
                   ></div>
                 </div>
-                <div className='flex h-[15rem] w-full flex-col items-start justify-center bg-primary px-[2.25rem] sm:h-auto'>
+                <div className='flex h-[18rem] w-full flex-col items-start justify-center bg-primary px-[2.25rem] sm:h-auto'>
                   <h4 className='select-none text-[1.875rem] font-extrabold leading-[1] text-[#00000099]'>
                     {slides.title}
                   </h4>
-                  <div className='my-6 h-[3px] w-[3.5rem] bg-black'></div>
-                  <p className='select-none text-[1.125rem] leading-[1.5]'>{slides.description}</p>
+                  <div className='my-3 h-[3px] w-[3.5rem] bg-black sm:my-6'></div>
+                  <p className='select-none text-[1rem] leading-[1.5] sm:text-[1.25rem]'>{slides.description}</p>
                 </div>
               </div>
             </div>

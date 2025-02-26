@@ -150,7 +150,7 @@ const Plan = () => {
     >
       <span
         ref={bigTitle}
-        className='absolute left-[clamp(1rem,-1.4311rem+10.3728vw,5rem)] top-[clamp(-4.5rem,-3.2844rem+-5.1864vw,-6.5rem)] rotate-[-12deg] text-[clamp(5rem,3.1767rem+7.7796vw,8rem)] font-black leading-[1] text-[#0A0B1E] md:left-[7.5rem] md:top-[-9.5rem] md:text-[11.25rem]'
+        className='absolute left-[clamp(1rem,-1.4311rem+10.3728vw,5rem)] top-[-7rem] rotate-[-12deg] text-[clamp(8rem,5.5689rem+10.3728vw,12rem)] font-black leading-[1] text-[#0A0B1E] sm:top-[-10rem] md:left-[7.5rem] md:top-[-9.5rem] md:text-[11.25rem]'
       >
         <span className='text-primary'>P</span>lan.
       </span>
@@ -168,7 +168,7 @@ const Plan = () => {
         <h3 className='text-[clamp(2.75rem,2.1422rem+2.5932vw,3.75rem)] font-bold leading-[.85] md:text-[3.75rem]'>
           Immerse &<br /> Strategize
         </h3>
-        <p className='text-[1.125rem] leading-[1.5]'>
+        <p className='text-base leading-[1.5] sm:text-[1.25rem]'>
           We begin by diving headfirst into your brand—discovering what sets you apart, identifying your ideal audience,
           and clarifying your ultimate goals. This immersive process includes competitor analysis, market research, and
           brand audits to ensure we fully understand your unique value proposition. By synthesizing these insights, we
@@ -295,16 +295,16 @@ const Run = () => {
     >
       <span
         ref={bigTitle}
-        className='absolute right-[clamp(1rem,-1.4311rem+10.3728vw,5rem)] top-[clamp(-4.5rem,-3.2844rem+-5.1864vw,-6.5rem)] rotate-[12deg] text-[clamp(5rem,3.1767rem+7.7796vw,8rem)] font-black leading-[1] text-[#0A0B1E] md:right-[7.5rem] md:top-[-9.5rem] md:text-[11.25rem]'
+        className='absolute right-[clamp(1rem,-1.4311rem+10.3728vw,5rem)] top-[clamp(-7.5rem,-3.2844rem+-5.1864vw,-10.5rem)] rotate-[12deg] text-[clamp(8rem,5.5689rem+10.3728vw,12rem)] font-black leading-[1] text-[#0A0B1E] md:right-[7.5rem] md:top-[-9.5rem] md:text-[11.25rem]'
       >
         Run.
       </span>
-      <div ref={block1Ref} className='flex flex-1 flex-col items-center justify-center gap-24 md:flex-row'>
+      <div ref={block1Ref} className='flex flex-1 flex-col-reverse items-center justify-center gap-24 md:flex-row'>
         <div className='flex flex-1 flex-col gap-8 text-black'>
           <h3 className='text-[clamp(2.75rem,2.1422rem+2.5932vw,3.75rem)] font-bold leading-[.85] md:text-[3.75rem]'>
             Create & Launch
           </h3>
-          <p className='text-[1.125rem] leading-[1.5]'>
+          <p className='text-base leading-[1.5] sm:text-[1.25rem]'>
             We begin by diving headfirst into your brand—discovering what sets you apart, identifying your ideal
             audience, and clarifying your ultimate goals. This immersive process includes competitor analysis, market
             research, and brand audits to ensure we fully understand your unique value proposition. By synthesizing
@@ -325,7 +325,7 @@ const Run = () => {
           />
         </figure>
       </div>
-      <div ref={block2Ref} className='flex flex-1 flex-col-reverse items-center justify-center gap-24 md:flex-row'>
+      <div ref={block2Ref} className='flex flex-1 flex-col items-center justify-center gap-24 md:flex-row'>
         <figure className='flex flex-1 items-center justify-center'>
           <Image
             src='/images/run-2.png'
@@ -340,7 +340,7 @@ const Run = () => {
           <h3 className='text-[clamp(2.75rem,2.1422rem+2.5932vw,3.75rem)] font-bold leading-[.85] md:text-[3.75rem]'>
             Analyze &<br /> Optimize
           </h3>
-          <p className='text-[1.125rem] leading-[1.5]'>
+          <p className='text-base leading-[1.5] sm:text-[1.25rem]'>
             Once campaigns are live, we rigorously track performance and collect data on everything from engagement
             rates to lead conversions. This granular analysis goes beyond vanity metrics, allowing us to uncover
             meaningful insights into audience behavior and campaign effectiveness. Using these findings, we refine our
@@ -421,7 +421,7 @@ const Recap = () => {
   return (
     <div
       ref={recapRef}
-      className='relative mb-[10rem] flex flex-col items-center justify-center gap-12 rounded-[40px] bg-black px-4 py-[5rem] md:mb-[15rem] md:flex-row md:gap-24 md:px-16 md:py-[9.5rem]'
+      className='relative mb-[10rem] flex flex-col-reverse items-center justify-center gap-12 rounded-[40px] bg-black px-4 py-[5rem] md:mb-[15rem] md:flex-row md:gap-24 md:px-16 md:py-[9.5rem]'
     >
       <span
         ref={bigTitle}
@@ -433,7 +433,7 @@ const Recap = () => {
         <h3 className='text-[clamp(2.75rem,2.1422rem+2.5932vw,3.75rem)] font-bold leading-[.85] md:text-[3.75rem]'>
           The Big Picture
         </h3>
-        <p className='text-[1.125rem] leading-[1.5]'>
+        <p className='text-base leading-[1.5] sm:text-[1.25rem]'>
           Our holistic, three-phase marketing framework—Immerse & Strategize, Create & Launch, Analyze &
           Optimize—ensures every campaign is backed by deep insights, brought to life through creative excellence, and
           continuously refined for sustained impact. We start by immersing ourselves in your brand to develop a
@@ -545,7 +545,7 @@ const Collaborate = () => {
           Collaborate for
           <br className='hidden md:block' /> Impact
         </h3>
-        <p className='text-[1.125rem] leading-[1.5]'>
+        <p className='text-base leading-[1.5] sm:text-[1.25rem]'>
           At Mark Media, we believe collaboration is the cornerstone of success. By partnering closely with you, we fuse
           your vision with our strategic expertise to build meaningful marketing solutions that truly resonate and
           deliver tangible results. Your insights guide us every step of the way, ensuring a shared vision, unified
@@ -561,7 +561,7 @@ export const BluePrint = () => {
     ScrollTrigger.update();
   }, []);
   return (
-    <div className='md-[10rem] min-h-svh md:mt-[15rem]'>
+    <div className='md-[10rem] min-h-svh md:mt-[10rem]'>
       <div className='h-max min-h-full overflow-hidden px-[2rem] md:px-[10rem]'>
         <Header />
         <Plan />

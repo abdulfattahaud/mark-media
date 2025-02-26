@@ -183,9 +183,10 @@ export const Footer = () => {
 
   useEffect(() => {
     const mm = gsap.matchMedia();
-    ScrollTrigger.update();
+    ScrollTrigger.refresh();
     mm.add("(min-width: 992px)", () => {
       if (!ref.current) return;
+
       gsap.fromTo(
         ref.current.previousElementSibling,
         {

@@ -1,10 +1,9 @@
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 
 interface FormData {
-  first_name: string;
-  last_name?: string;
+  name: string;
   phone: string;
   email: string;
   message: string;
@@ -12,7 +11,7 @@ interface FormData {
   accept_terms: boolean;
 }
 
-export const ContactUsDialog = () => {
+export const ContactUsDialog = ({ children }: { children: React.ReactNode }) => {
   const {
     register,
     formState: { errors },
@@ -23,8 +22,7 @@ export const ContactUsDialog = () => {
     clearErrors,
   } = useForm<FormData>({
     defaultValues: {
-      first_name: "",
-      last_name: "",
+      name: "",
       phone: "",
       email: "",
       message: "",
@@ -56,9 +54,7 @@ export const ContactUsDialog = () => {
   };
   return (
     <Dialog>
-      <DialogTrigger className='hidden rounded-[.75rem] bg-primary px-3 py-2 text-sm font-bold text-black sm:block md:rounded-[1.25rem] md:px-6 md:py-4 md:text-base'>
-        Schedule Meeting
-      </DialogTrigger>
+      {children}
       <DialogContent
         className='h-max max-h-[90%] w-full max-w-[90%] overflow-scroll rounded-[20px] bg-white px-[2.5em] pb-[1em] pt-[2.25em] text-[16px] sm:max-w-[44em] sm:text-[20px]'
         style={{
@@ -86,20 +82,11 @@ export const ContactUsDialog = () => {
               <div className='mb-[2em] flex flex-1 flex-col gap-[1.25em] sm:mb-0 sm:pr-[5em]'>
                 <div className='input-wrapper'>
                   <label htmlFor='first-name'>
-                    First Name* {errors.first_name && <span className='text-red-500'>{errors.first_name.message}</span>}
+                    Name* {errors.name && <span className='text-red-500'>{errors.name.message}</span>}
                   </label>
                   <input
                     className='form-input'
-                    {...register("first_name", { required: { value: true, message: " is required" } })}
-                  />
-                </div>
-                <div className='input-wrapper'>
-                  <label htmlFor='last-name'>
-                    Last Name* {errors.last_name && <span className='text-red-500'>{errors.last_name.message}</span>}
-                  </label>
-                  <input
-                    className='form-input'
-                    {...register("last_name", { required: { value: true, message: " is required" } })}
+                    {...register("name", { required: { value: true, message: " is required" } })}
                   />
                 </div>
                 <div className='input-wrapper'>
