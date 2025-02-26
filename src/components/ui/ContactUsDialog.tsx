@@ -405,8 +405,12 @@ export const ContactUsDialog = ({ children }: { children: React.ReactNode }) => 
                 </div>
               </div>
             </div>
-            <button type='submit' className='w-[15em] rounded-[60px] bg-primary py-[.875em]'>
-              Submit
+            <button
+              disabled={loading}
+              type='submit'
+              className={`w-[15em] rounded-[60px] bg-primary py-[.875em] font-medium ${loading ? "pointer-events-none cursor-wait opacity-50" : ""}`}
+            >
+              {loading ? "Submitting..." : "Submit"}
             </button>
           </form>
         </DialogHeader>
