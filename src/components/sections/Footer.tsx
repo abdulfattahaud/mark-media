@@ -88,7 +88,7 @@ const GetInTouchDialog = ({ children }: { children: React.ReactNode }) => {
     >
       {children}
       <DialogContent
-        className='h-[90%] w-full max-w-[85%] overflow-scroll rounded-[20px] bg-white px-[2.5em] pb-[1em] pt-[2.25em] text-[16px] shadow-[rgb(107_107_107)_0px_0px_0px_20px] sm:max-w-[24em] sm:text-[20px] sm:shadow-[rgb(107_107_107)_0px_0px_0px_30px]'
+        className='h-max max-h-[580px] w-full max-w-[85%] overflow-scroll rounded-[20px] bg-white px-[2.5em] pb-[1em] pt-[2.25em] text-[16px] shadow-[rgb(107_107_107)_0px_0px_0px_20px] sm:h-[90%] sm:max-h-none sm:max-w-[24em] sm:text-[20px] sm:shadow-[rgb(107_107_107)_0px_0px_0px_30px]'
         style={{
           boxShadow: "",
         }}
@@ -109,7 +109,7 @@ const GetInTouchDialog = ({ children }: { children: React.ReactNode }) => {
             Get in touch.
           </DialogTitle>
           <form onSubmit={handleSubmit(onSubmit)} className='flex h-full flex-col justify-between'>
-            <div className='mb-[.5em] flex flex-col gap-[1em]'>
+            <div className='mb-[1rem] flex flex-col gap-[1em] sm:mb-[.5em]'>
               <div className='input-wrapper'>
                 <label htmlFor='first-name'>
                   Name* {errors.name && <span className='text-red-500'>{errors.name.message}</span>}
@@ -194,7 +194,7 @@ const GetInTouchDialog = ({ children }: { children: React.ReactNode }) => {
                   />
                 </svg>
               </div>
-              <label htmlFor='accept_terms' className='flex-1 text-[.625em] font-extralight'>
+              <label htmlFor='accept_terms' className='flex-1 text-left text-[.625em] font-extralight'>
                 By clicking submit, you agree to our <span className='font-bold'>Privacy Policy</span> and consent to
                 receive updates from Mark Media. <br />
                 {errors.accept_terms && <span className='text-red-500'>{errors.accept_terms.message}</span>}

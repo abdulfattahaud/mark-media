@@ -397,7 +397,7 @@ export const ContactUsDialog = ({ children }: { children: React.ReactNode }) => 
                       />
                     </svg>
                   </div>
-                  <label htmlFor='accept_terms' className='flex-1 text-[.625em] font-extralight'>
+                  <label htmlFor='accept_terms' className='flex-1 text-left text-[.625em] font-extralight'>
                     By clicking submit, you agree to our <span className='font-bold'>Privacy Policy</span> and consent
                     to receive updates from Mark Media. <br />
                     {errors.accept_terms && <span className='text-red-500'>{errors.accept_terms.message}</span>}
