@@ -40,7 +40,7 @@ const links = [
   },
   {
     name: "Contact Us",
-    href: "#contact-us",
+    href: "#footer",
   },
 ];
 
