@@ -210,9 +210,9 @@ export const AboutSlider = () => {
                   ></div>
                 </div>
                 <div className='flex h-[18rem] w-full flex-col items-start justify-center bg-primary px-[2.25rem] sm:h-auto'>
-                  <h4 className='select-none text-[1.875rem] font-extrabold leading-[1] text-[#00000099]'>
+                  <h3 className='select-none text-[1.875rem] font-extrabold leading-[1] text-[#00000099]'>
                     {slides.title}
-                  </h4>
+                  </h3>
                   <div className='my-3 h-[3px] w-[3.5rem] bg-black sm:my-6'></div>
                   <p className='select-none text-[1rem] leading-[1.5] sm:text-[1.25rem]'>{slides.description}</p>
                 </div>

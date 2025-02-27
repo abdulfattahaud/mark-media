@@ -343,10 +343,10 @@ export const Footer = () => {
               <span className='text-sm leading-[1.35] md:text-[1.125em]'>© 2025 All Rights reserved</span>
             </div>
             <div className='flex h-full flex-col items-start justify-between gap-4'>
-              <ul className='flex flex-col gap-4'>
+              <ul className='flex flex-col gap-2 text-base leading-[1]'>
                 <li>
                   <Link href='/' target='_blank' className='flex items-end gap-2.5'>
-                    <span>x</span>
+                    <span>X</span>
                     <svg
                       className='size-[.625rem]'
                       width='9'
@@ -370,6 +370,8 @@ export const Footer = () => {
                       </defs>
                     </svg>
                   </Link>
+                </li>
+                <li>
                   <Link href='/' target='_blank' className='flex items-end gap-2.5'>
                     <span>Facebook</span>
                     <svg
@@ -395,6 +397,8 @@ export const Footer = () => {
                       </defs>
                     </svg>
                   </Link>
+                </li>
+                <li>
                   <Link href='/' target='_blank' className='flex items-end gap-2.5'>
                     <span>Instagram</span>
                     <svg
@@ -420,6 +424,8 @@ export const Footer = () => {
                       </defs>
                     </svg>
                   </Link>
+                </li>
+                <li>
                   <Link href='/' target='_blank' className='flex items-end gap-2.5'>
                     <span>LinkedIn</span>
                     <svg
