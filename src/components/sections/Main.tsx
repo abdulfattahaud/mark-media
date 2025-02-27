@@ -96,7 +96,7 @@ export const Main = () => {
       );
   }, []);
   return (
-    <div id='main-section' className='relative h-[calc((var(--vh)*100)-6.25rem)] border-b-[1.25rem] border-b-primary'>
+    <div id='main-section' className='relative h-[calc((var(--vh)*100)-4rem)] sm:h-[calc((var(--vh)*100)-6.25rem)] border-b-[1.25rem] border-b-primary'>
       <div className='flex h-full flex-col items-center gap-10 pl-[4rem] sm:flex-row md:pl-[12.5rem]'>
         <div className='flex h-full w-full flex-col items-start justify-center text-white sm:h-auto sm:w-1/2 sm:justify-start sm:text-black'>
           <span className='hide-first mb-2 text-[1.25rem] font-extrabold leading-[1.06] text-white sm:text-grayC md:text-[1.875rem]'>
@@ -134,6 +134,8 @@ export const Main = () => {
             className='h-full w-full object-cover'
             width={730}
             height={890}
+            priority
+            loading="eager"
           />
           <div className='overlay absolute left-0 top-0 block size-full bg-[#00000048] sm:hidden'></div>
           <Image
