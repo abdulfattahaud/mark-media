@@ -204,6 +204,7 @@ const GetInTouchDialog = ({ children }: { children: React.ReactNode }) => {
               type='submit'
               className={`mx-auto mt-[1em] w-[15em] rounded-[60px] bg-primary py-[.875em] font-medium ${loading ? "pointer-events-none cursor-wait opacity-50" : ""}`}
               disabled={loading}
+              aria-label='Submit'
             >
               {loading ? "Submitting..." : "Submit"}
             </button>
@@ -324,6 +325,7 @@ export const Footer = () => {
                     behavior: "smooth",
                   });
                 }}
+                aria-label='Scroll to top'
                 className='absolute right-0 top-[-50%] z-[2] flex size-[2.5rem] items-center justify-center rounded-full bg-primary sm:left-0 sm:right-auto sm:top-[-3rem] sm:size-[3.5rem] md:left-[-7rem] md:top-0 md:size-[6.5rem]'
               >
                 <svg

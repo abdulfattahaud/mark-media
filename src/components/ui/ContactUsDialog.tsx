@@ -406,6 +406,7 @@ export const ContactUsDialog = ({ children }: { children: React.ReactNode }) => 
               </div>
             </div>
             <button
+              aria-label='Submit'
               disabled={loading}
               type='submit'
               className={`w-[15em] rounded-[60px] bg-primary py-[.875em] font-medium ${loading ? "pointer-events-none cursor-wait opacity-50" : ""}`}

@@ -143,13 +143,14 @@ const SlideItem = ({ slide }: { slide: Slide }) => {
         className='h-[32rem] w-full rounded-[25px] object-cover md:h-[25rem]'
       />
       <div
-        className={`absolute bottom-3 left-3 flex flex-col overflow-hidden ${isOpen ? "h-[calc(100%-1.5rem)] rounded-[20px] bg-[#FFCD00CC]" : "h-[2.5rem] rounded-[50px] bg-primary md:h-[4rem]"} w-[calc(100%-1.5rem)] px-2 py-1 transition-[height_background]`}
+        className={`absolute bottom-3 left-3 flex flex-col overflow-hidden ${isOpen ? "h-[calc(100%-1.5rem)] rounded-[20px] bg-[#FFCD00CC]" : "h-[2.5rem] rounded-[50px] bg-primary md:h-[4rem]"} w-[calc(100%-1.5rem)] px-2 py-2 transition-[height_background]`}
       >
         <div className={`flex ${isOpen ? "h-auto" : "h-full"} items-center justify-between transition-[height]`}>
-          <h3 className='font-extrabold'>{slide.title}</h3>
+          <h3 className='pl-5 font-extrabold'>{slide.title}</h3>
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className='flex size-[2rem] items-center justify-center rounded-full bg-white md:size-[3.5rem]'
+            aria-label={isOpen ? "Close" : "Open"}
+            className='flex size-[2rem] items-center justify-center rounded-full bg-white md:size-[3rem]'
           >
             <svg
               className={`size-[1rem] md:size-[1.5rem] ${isOpen ? "rotate-[140deg]" : ""} transition-[transform]`}
@@ -307,6 +308,7 @@ export const Expertise = () => {
               onClick={() => {
                 emblaApi?.scrollPrev();
               }}
+              aria-label='Previous'
               className='flex size-[3.5rem] items-center justify-center rounded-full border-[.5rem] border-primary bg-black'
             >
               <svg
@@ -329,6 +331,7 @@ export const Expertise = () => {
               onClick={() => {
                 emblaApi?.scrollNext();
               }}
+              aria-label='Next'
               className='flex size-[3.5rem] items-center justify-center rounded-full border-[.5rem] border-primary bg-black'
             >
               <svg

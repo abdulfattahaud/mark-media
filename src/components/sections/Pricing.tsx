@@ -370,6 +370,7 @@ export const Pricing = () => {
             </div>
             <div className='embla__actions mt-8 flex justify-center gap-1'>
               <button
+                aria-label='Previous'
                 onClick={() => {
                   emblaApi?.scrollPrev();
                 }}
@@ -392,6 +393,7 @@ export const Pricing = () => {
                 </svg>
               </button>
               <button
+                aria-label='Next'
                 onClick={() => {
                   emblaApi?.scrollNext();
                 }}

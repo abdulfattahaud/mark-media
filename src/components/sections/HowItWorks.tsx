@@ -67,7 +67,7 @@ const Header = () => {
       <div className='hidden max-w-[40rem] flex-wrap items-center justify-center gap-3 sm:flex md:max-w-[65rem]'>
         <div className='logo-wrapper flex h-[3.5rem] w-[9.875rem] items-center justify-center overflow-hidden rounded-[12px] border-[3px] border-primary bg-black px-6 py-3 md:h-[6.875rem] md:w-[21rem] md:px-12 md:py-6'>
           <Link href='https://www.vidnik.co.uk/' target='_blank' className=''>
-            <Image src='/icons/vidnik.png' alt='Vidnik' width={240} height={64} className='h-full w-auto' />
+            <Image src='/icons/vidnik.png' alt='Vidnik Logo Image' width={240} height={64} className='h-full w-auto' />
             <span className='absolute left-0 top-0 text-[0px] opacity-0'>Vidnik</span>
           </Link>
         </div>
@@ -93,7 +93,13 @@ const Header = () => {
           <div className='embla__slide w-full'>
             <div className='logo-wrapper flex h-[6.5rem] w-full items-center justify-center overflow-hidden rounded-[32px] bg-black px-6 py-3'>
               <Link href='https://www.vidnik.co.uk/' target='_blank' className='h-full'>
-                <Image src='/icons/vidnik.png' alt='Vidnik' width={240} height={64} className='h-full w-auto' />
+                <Image
+                  src='/icons/vidnik.png'
+                  alt='Vidnik Logo Image'
+                  width={240}
+                  height={64}
+                  className='h-full w-auto'
+                />
                 <span className='absolute left-0 top-0 text-[0px] opacity-0'>Vidnik</span>
               </Link>
             </div>
@@ -124,6 +130,7 @@ const Header = () => {
         </div>
         <div className='embla__actions mt-4 flex items-center justify-center gap-4'>
           <button
+            aria-label='Previous'
             onClick={() => {
               emblaApi?.scrollPrev();
             }}
@@ -146,6 +153,7 @@ const Header = () => {
             </svg>
           </button>
           <button
+            aria-label='Next'
             onClick={() => {
               emblaApi?.scrollNext();
             }}

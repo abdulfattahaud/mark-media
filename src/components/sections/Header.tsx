@@ -93,6 +93,7 @@ export const Header = () => {
     <div id='home' className='relative'>
       <div className='menu-open-wrapper pointer-events-none fixed right-[32px] top-[16px] z-[49] sm:right-[48px] sm:top-[48px]'>
         <button
+          aria-label='Open menu'
           ref={menuOpen}
           onMouseOver={handleMouseOver}
           onMouseLeave={handleMouseLeave}
@@ -129,6 +130,7 @@ export const Header = () => {
       <div className='menu-screen-wrapper fixed left-0 top-0 z-[1001] hidden w-full justify-end sm:flex'>
         <div className='menu-screen w-ful relative z-[2] flex h-[100dvh] rounded-l-[3.125rem] bg-primary px-[3.125rem] py-[4.5rem] md:w-[35%] md:min-w-[30rem]'>
           <button
+            aria-label='Close menu'
             onClick={() => document.body.setAttribute("data-navigation-status", "not-active")}
             className='close-but absolute right-4 top-4 z-[10] flex size-[3.5rem] items-center justify-center rounded-full bg-white'
           >
@@ -234,6 +236,7 @@ export const Header = () => {
       <div className='mobile-menu-wrapper fixed left-0 top-0 z-[1001] h-[100svh] w-full bg-primary sm:hidden'>
         <div className='relative h-full w-full'>
           <button
+            aria-label='Close menu'
             onClick={() => document.body.setAttribute("data-navigation-status", "not-active")}
             className='close-but absolute right-4 top-4 z-[10] flex size-[3.5rem] items-center justify-center rounded-full bg-white'
           >
@@ -353,7 +356,12 @@ export const Header = () => {
             Schedule Meeting
           </DialogTrigger>
         </ContactUsDialog>
-        <button ref={mobileMenu} onClick={handleClick} className='rounded-[10px] bg-primary px-4 py-2.5 sm:hidden'>
+        <button
+          aria-label='Open menu'
+          ref={mobileMenu}
+          onClick={handleClick}
+          className='rounded-[10px] bg-primary px-4 py-2.5 sm:hidden'
+        >
           <svg
             className='h-3.5 w-[1.125rem]'
             width='18'

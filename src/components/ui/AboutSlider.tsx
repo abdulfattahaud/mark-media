@@ -145,6 +145,7 @@ export const AboutSlider = () => {
     <div className='relative w-full sm:w-auto'>
       <div className='embla__actions absolute bottom-[-80px] left-[50%] flex -translate-x-1/2 gap-1 sm:bottom-auto sm:left-auto sm:right-0 sm:top-[-4rem] sm:translate-x-0'>
         <button
+          aria-label='Previous'
           onClick={() => {
             emblaApi?.scrollPrev();
           }}
@@ -167,6 +168,7 @@ export const AboutSlider = () => {
           </svg>
         </button>
         <button
+          aria-label='Next'
           onClick={() => {
             emblaApi?.scrollNext();
           }}
