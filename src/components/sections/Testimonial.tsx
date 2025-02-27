@@ -162,12 +162,13 @@ export const Testimonial = () => {
                 <div className='flex items-center gap-2'>
                   <span className='text-xs font-bold leading-[1] text-[#220A33]'>Jeff Weinstein</span>
                   <CheckIcon />
-                  <span className='text-xs font-medium text-[#BA59FF]'>@Jeff_weinstein</span>
                 </div>
               </div>
 
               <div className='pl-[3rem] text-base'>
-                <p>@markmedia makes thinking hard, easier.</p>
+                <p>
+                Mark Media completely transformed our online presence! Their team is professional, creative, and results-driven. We’ve seen a significant increase in engagement and sales since partnering with them. Highly recommend
+                </p>
               </div>
             </div>
             <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
@@ -182,14 +183,12 @@ export const Testimonial = () => {
                 <div className='flex items-center gap-2'>
                   <span className='text-xs font-bold leading-[1] text-[#220A33]'>Jake Mor</span>
                   <CheckIcon />
-                  <span className='text-xs font-medium text-[#BA59FF]'>@Jake_Mor</span>
                 </div>
               </div>
 
               <div className='pl-[3rem] text-base'>
                 <p>
-                  Mark Media transformed our online presence with a sleek, user-friendly website that perfectly reflects
-                  our development
+                Working with Mark Media has been a game-changer for our social media strategy. They understand the algorithms, create stunning content, and consistently deliver measurable results. Truly a top-notch agency!.
                 </p>
               </div>
             </div>
@@ -207,12 +206,13 @@ export const Testimonial = () => {
                 <div className='flex items-center gap-2'>
                   <span className='text-xs font-bold leading-[1] text-[#220A33]'>Danny Trinh</span>
                   <CheckIcon />
-                  <span className='text-xs font-medium text-[#BA59FF]'>@dtrinh</span>
                 </div>
               </div>
 
               <div className='pl-[3rem] text-base'>
-                <p>Pro-tip: Use @markmedia</p>
+                <p>
+                Mark Media helped us climb to the top of Google rankings! Their SEO strategies are cutting-edge, and their team is always transparent about progress. Our website traffic has tripled in just six months!
+                </p>
               </div>
             </div>
             <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
@@ -227,14 +227,12 @@ export const Testimonial = () => {
                 <div className='flex items-center gap-2'>
                   <span className='text-xs font-bold leading-[1] text-[#220A33]'>Max Ogles</span>
                   <CheckIcon />
-                  <span className='text-xs font-medium text-[#BA59FF]'>@maxogles</span>
                 </div>
               </div>
 
               <div className='pl-[3rem] text-base'>
                 <p>
-                  Mark Media transformed our online presence with a sleek, user-friendly website that perfectly reflects
-                  our development
+                The ROI from Mark Media’s ad campaigns has been incredible. They’ve helped us target the right audience and optimize our ad spend. We’re seeing higher conversions and lower costs—what more could you ask for?
                 </p>
               </div>
             </div>
@@ -250,14 +248,12 @@ export const Testimonial = () => {
                 <div className='flex items-center gap-2'>
                   <span className='text-xs font-bold leading-[1] text-[#220A33]'>Design pappa</span>
                   <CheckIcon />
-                  <span className='text-xs font-medium text-[#BA59FF]'>@designpappa</span>
                 </div>
               </div>
 
               <div className='pl-[3rem] text-base'>
                 <p>
-                  Mark Media transformed our online presence with a sleek, user-friendly website that perfectly reflects
-                  our development
+                We’ve been working with Mark Media for over a year, and they’ve become an extension of our team. Their consistent effort and dedication have helped us grow year after year. We couldn’t be happier!
                 </p>
               </div>
             </div>
@@ -275,14 +271,12 @@ export const Testimonial = () => {
                 <div className='flex items-center gap-2'>
                   <span className='text-xs font-bold leading-[1] text-[#220A33]'>Shahed Khan</span>
                   <CheckIcon />
-                  <span className='text-xs font-medium text-[#BA59FF]'>@_shahedk</span>
                 </div>
               </div>
 
               <div className='pl-[3rem] text-base'>
                 <p>
-                  @markmedia is such an underrated product. Great design. Built for collaboration. Highly recommend it
-                  to anyone who creates flowcharts, mind maps, etc.
+                From logo design to brand messaging, Mark Media nailed it! They took the time to understand our vision and brought it to life in ways we couldn’t have imagined. Our brand has never been stronger!
                 </p>
               </div>
             </div>
@@ -298,12 +292,13 @@ export const Testimonial = () => {
                 <div className='flex items-center gap-2'>
                   <span className='text-xs font-bold leading-[1] text-[#220A33]'>Josh Johnson</span>
                   <CheckIcon />
-                  <span className='text-xs font-medium text-[#BA59FF]'>@secondfret</span>
                 </div>
               </div>
 
               <div className='pl-[3rem] text-base'>
-                <p>Dang. @markmedia is beyond good. It might turn into my favorite tool as a PM.</p>
+                <p>
+                From concept to launch, Mark Media exceeded our expectations. Their professional approach and creative flair boosted our online engagement significantly.
+                </p>
               </div>
             </div>
             <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
@@ -318,14 +313,12 @@ export const Testimonial = () => {
                 <div className='flex items-center gap-2'>
                   <span className='text-xs font-bold leading-[1] text-[#220A33]'>Mark Johnson CC</span>
                   <CheckIcon />
-                  <span className='text-xs font-medium text-[#BA59FF]'>@markjohnsoncc</span>
                 </div>
               </div>
 
               <div className='pl-[3rem] text-base'>
                 <p>
-                  Mark Media transformed our online presence with a sleek, user-friendly website that perfectly reflects
-                  our development
+                Their commitment to excellence and keen industry insights transformed our online presence. Mark Media is our trusted partner for all marketing needs
                 </p>
               </div>
             </div>
