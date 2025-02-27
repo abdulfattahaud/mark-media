@@ -293,11 +293,11 @@ export const Footer = () => {
             </div>
             <div className='flex flex-col gap-8'>
               <div className='flex flex-col gap-2'>
-                <span className='text-[.625em] font-medium leading-[1.4]'>Address</span>
-                <span className='text-sm'>302E, A1 Building, Dubai Digital Park, Dubai</span>
+                <span className='text-[1em] font-medium leading-[1.4]'>Address</span>
+                <span className='text-[1.25em]'>302E, A1 Building, Dubai Digital Park, Dubai</span>
               </div>
               <div className='flex flex-col gap-2'>
-                <span className='text-[.625em] font-medium leading-[1.4]'>Opening hours</span>
+                <span className='text-[1em] font-medium leading-[1.4]'>Opening hours</span>
                 <span className='text-[1.25em] font-medium'>Mon - Fri: 9AM - 6PM</span>
               </div>
             </div>
