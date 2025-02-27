@@ -18,7 +18,7 @@ type Slide = {
 const slides: Slide[] = [
   {
     image: {
-      src: "/images/about-slider-01.png",
+      src: "/images/about-slider-01-c.png",
       alt: "About slider image",
     },
     title: "Mission",
@@ -30,7 +30,7 @@ const slides: Slide[] = [
   },
   {
     image: {
-      src: "/images/about-slider-02.png",
+      src: "/images/about-slider-02-c.png",
       alt: "About slider image",
     },
     title: "Vision",
@@ -42,7 +42,7 @@ const slides: Slide[] = [
   },
   {
     image: {
-      src: "/images/about-slider-03.png",
+      src: "/images/about-slider-03-c.png",
       alt: "About slider image",
     },
     title: "Goal",

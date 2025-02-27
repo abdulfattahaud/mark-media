@@ -129,9 +129,9 @@ export const Main = () => {
             <div className=''></div>
           </div>
           <Image
-            src='/images/hero-main-c.png'
+            src='/images/hero-main-ct.png'
             alt='Main hero image'
-            className='h-full w-full object-cover'
+            className='h-full max-h-[890px] sm:max-h-none w-full object-cover'
             width={730}
             height={890}
             priority

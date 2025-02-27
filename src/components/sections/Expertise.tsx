@@ -361,7 +361,7 @@ export const Expertise = () => {
         </div>
       </div>
       <Image
-        src='/images/exp-bg-c.png'
+        src='/images/exp-bg-ct.png'
         alt='Background noise'
         width={1600}
         height={1150}
