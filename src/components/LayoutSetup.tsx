@@ -3,7 +3,8 @@ import { calculateRem } from "@/lib/calculateRem";
 import { useEffect } from "react";
 
 import gsap from "gsap";
-import { ScrollTrigger, CustomEase } from "gsap/all";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { CustomEase } from "gsap/CustomEase";
 
 gsap.registerPlugin(ScrollTrigger, CustomEase);
 
