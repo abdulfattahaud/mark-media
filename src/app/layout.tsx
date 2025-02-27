@@ -24,6 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
+      <head>
+        <link rel='icon' href='./favicon.ico' />
+      </head>
       <body data-navigation-status='not-active' className={`${urbanist.variable} ${syne.variable} antialiased`}>
         {children}
       </body>
