@@ -68,10 +68,10 @@ export const AboutSlider = () => {
   }, [emblaApi]);
 
   useEffect(() => {
-    const slidersTitles = document.querySelectorAll("#about .embla__slide h4");
+    const slidersTitles = document.querySelectorAll("#about .embla__slide h3");
     const slidersDescriptions = document.querySelectorAll("#about .embla__slide p");
 
-    gsap.killTweensOf("#about .embla__slide h4 .word");
+    gsap.killTweensOf("#about .embla__slide h3 .word");
     gsap.killTweensOf("#about .embla__slide p .word");
 
     slidersTitles.forEach((title) => {
@@ -87,7 +87,7 @@ export const AboutSlider = () => {
     });
 
     const ctx = gsap.context(() => {
-      gsap.to("#about .embla__slide:first-child h4 .word", {
+      gsap.to("#about .embla__slide:first-child h3 .word", {
         yPercent: 0,
         duration: 0.8,
         ease: "power2.inOut",
@@ -106,7 +106,7 @@ export const AboutSlider = () => {
   }, []);
 
   useEffect(() => {
-    const slidersTitles = document.querySelectorAll("#about .embla__slide h4");
+    const slidersTitles = document.querySelectorAll("#about .embla__slide h3");
     const slidersDescriptions = document.querySelectorAll("#about .embla__slide p");
 
     gsap.killTweensOf(slidersTitles[activeSlide].querySelectorAll(".word"));
