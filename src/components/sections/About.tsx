@@ -113,7 +113,7 @@ export const About = () => {
         alt='Background hexagon shapes'
         width={1500}
         height={900}
-        className='absolute right-0 top-0 z-[-1] h-auto w-[50%]'
+        className='absolute right-0 top-0 z-[-1] h-auto w-full sm:w-[50%]'
       />
       <div className='left-border'></div>
     </div>

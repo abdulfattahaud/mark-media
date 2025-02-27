@@ -170,7 +170,7 @@ export const ContactUsDialog = ({ children }: { children: React.ReactNode }) => 
                     {errors.checks && <span className='text-red-500'>{errors.checks.message}</span>}
                   </p>
                 </header>
-                <ul className='mb-[2.25em] flex flex-col gap-[.625em] text-[1em]'>
+                <ul className='mb-[2.25em] flex flex-col gap-[.625em] text-left text-[1em]'>
                   <li className={`relative flex items-center justify-between`}>
                     <label>Website Design & Development</label>
                     <div

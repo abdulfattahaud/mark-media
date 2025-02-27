@@ -77,7 +77,7 @@ export const Main = () => {
         "-=.5",
       )
       .fromTo(
-        "#home button",
+        "#main-section button",
         {
           opacity: 0,
         },
@@ -112,7 +112,7 @@ export const Main = () => {
             Driven Marketing Solutions
           </p>
           <ContactUsDialog>
-            <DialogTrigger className='hidden rounded-[.75rem] bg-primary px-3 py-2 text-sm font-bold text-black sm:block md:rounded-[1.25rem] md:px-6 md:py-4 md:text-base'>
+            <DialogTrigger className='rounded-[.75rem] bg-primary px-3 py-2 text-sm font-bold text-black opacity-0 md:rounded-[1.25rem] md:px-6 md:py-4 md:text-base'>
               Schedule Meeting
             </DialogTrigger>
           </ContactUsDialog>

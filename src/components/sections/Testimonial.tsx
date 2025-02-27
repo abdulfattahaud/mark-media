@@ -153,7 +153,7 @@ export const Testimonial = () => {
             <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
               <div className='flex items-center gap-2'>
                 <Image
-                  src='/images/test-01.png'
+                  src='/images/test-04.png'
                   alt=''
                   width={40}
                   height={40}
@@ -173,7 +173,7 @@ export const Testimonial = () => {
             <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
               <div className='flex items-center gap-2'>
                 <Image
-                  src='/images/test-02.png'
+                  src='/images/test-03.png'
                   alt=''
                   width={40}
                   height={40}
@@ -198,7 +198,7 @@ export const Testimonial = () => {
             <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
               <div className='flex items-center gap-2'>
                 <Image
-                  src='/images/test-03.png'
+                  src='/images/test-01.png'
                   alt=''
                   width={40}
                   height={40}
@@ -218,7 +218,7 @@ export const Testimonial = () => {
             <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
               <div className='flex items-center gap-2'>
                 <Image
-                  src='/images/test-04.png'
+                  src='/images/test-07.png'
                   alt=''
                   width={40}
                   height={40}
@@ -241,7 +241,7 @@ export const Testimonial = () => {
             <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
               <div className='flex items-center gap-2'>
                 <Image
-                  src='/images/test-05.png'
+                  src='/images/test-02.png'
                   alt=''
                   width={40}
                   height={40}
@@ -266,7 +266,7 @@ export const Testimonial = () => {
             <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
               <div className='flex items-center gap-2'>
                 <Image
-                  src='/images/test-06.png'
+                  src='/images/test-08.png'
                   alt=''
                   width={40}
                   height={40}
@@ -289,7 +289,7 @@ export const Testimonial = () => {
             <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
               <div className='flex items-center gap-2'>
                 <Image
-                  src='/images/test-07.png'
+                  src='/images/test-05.png'
                   alt=''
                   width={40}
                   height={40}
@@ -309,7 +309,7 @@ export const Testimonial = () => {
             <div className='testi-item flex flex-col gap-2.5 rounded-[10px] bg-white p-4'>
               <div className='flex items-center gap-2'>
                 <Image
-                  src='/images/test-08.png'
+                  src='/images/test-06.png'
                   alt=''
                   width={40}
                   height={40}

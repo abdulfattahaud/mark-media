@@ -150,7 +150,7 @@ const SlideItem = ({ slide }: { slide: Slide }) => {
           <button
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Close" : "Open"}
-            className='flex size-[2rem] items-center justify-center rounded-full bg-white md:size-[3rem]'
+            className='flex size-[1.5rem] items-center justify-center rounded-full bg-white md:size-[3rem]'
           >
             <svg
               className={`size-[1rem] md:size-[1.5rem] ${isOpen ? "rotate-[140deg]" : ""} transition-[transform]`}
