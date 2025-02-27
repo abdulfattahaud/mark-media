@@ -365,7 +365,14 @@ export const Expertise = () => {
         alt='Background noise'
         width={1600}
         height={1150}
-        className='absolute right-0 top-0 z-[1] size-full object-cover'
+        className='absolute hidden sm:block right-0 top-0 z-[1] size-full object-cover'
+      />
+      <Image
+        src='/images/exp-bg-ct.png'
+        alt='Background noise'
+        width={400}
+        height={800}
+        className='absolute sm:hidden right-0 top-0 z-[1] size-full object-cover'
       />
     </div>
   );

@@ -131,11 +131,11 @@ export const Main = () => {
           <Image
             src='/images/hero-main-ct.png'
             alt='Main hero image'
-            className='h-full max-h-[890px] sm:max-h-none w-full object-cover'
-            width={730}
-            height={890}
+            className='h-full max-h-[890px] w-full object-cover sm:max-h-none'
+            fill
+            sizes="(max-width: 640px) 100vw, 50vw"
             priority
-            loading="eager"
+            loading='eager'
           />
           <div className='overlay absolute left-0 top-0 block size-full bg-[#00000048] sm:hidden'></div>
           <Image

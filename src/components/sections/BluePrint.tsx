@@ -154,17 +154,17 @@ const Plan = () => {
       >
         <span className='text-primary'>P</span>lan.
       </span>
-      <figure className='flex h-[38rem] flex-1 items-center justify-center'>
+      <figure className='flex w-full sm:w-auto relative h-[16rem] sm:h-[38rem] sm:flex-1 items-center justify-center'>
         <Image
           src='/images/plan-img-c.png'
           alt='Plan'
           loading='eager'
-          width={450}
-          height={500}
-          className='h-full w-auto'
+          fill
+          sizes="(max-width: 768px) 100vw, 25vw"
+          className='h-full w-auto object-contain'
         />
       </figure>
-      <div className='flex flex-1 flex-col gap-8 text-white'>
+      <div className='flex sm:flex-1 flex-col gap-8 text-white'>
         <h3 className='text-[clamp(2.75rem,2.1422rem+2.5932vw,3.75rem)] font-bold leading-[.85] md:text-[3.75rem]'>
           Immerse &<br /> Strategize
         </h3>
@@ -314,26 +314,26 @@ const Run = () => {
             ignite growth.
           </p>
         </div>
-        <figure className='flex h-[38rem] flex-1 items-center justify-center'>
+        <figure className='flex w-full sm:w-auto relative h-[16rem] sm:h-[38rem] sm:flex-1 items-center justify-center'>
           <Image
             src='/images/run-1-c.png'
             alt='Plan'
             loading='eager'
-            width={450}
-            height={500}
-            className='h-full w-auto'
+            fill
+            sizes="(max-width: 768px) 100vw, 25vw"
+            className='h-full w-auto object-contain'
           />
         </figure>
       </div>
       <div ref={block2Ref} className='flex flex-1 flex-col items-center justify-center gap-24 md:flex-row'>
-        <figure className='flex h-[38rem] flex-1 items-center justify-center'>
+        <figure className='flex w-full sm:w-auto relative h-[16rem] sm:h-[38rem] sm:flex-1 items-center justify-center'>
           <Image
             src='/images/run-2-c.png'
             alt='Plan'
             loading='eager'
-            width={450}
-            height={500}
-            className='h-full w-auto'
+            fill
+            sizes="(max-width: 768px) 100vw, 25vw"
+            className='h-full w-auto object-contain'
           />
         </figure>
         <div className='flex flex-1 flex-col gap-8 text-black'>
@@ -443,14 +443,14 @@ const Recap = () => {
           see—and seize—the full scope of your brand’s potential.
         </p>
       </div>
-      <figure className='flex h-[38rem] flex-1 items-center justify-center'>
+      <figure className='flex w-full sm:w-auto relative h-[16rem] sm:h-[38rem] sm:flex-1 items-center justify-center'>
         <Image
           src='/images/recap-img.png'
           alt='Plan'
           loading='eager'
-          width={450}
-          height={500}
-          className='h-full w-auto'
+          fill
+          sizes="(max-width: 768px) 100vw, 25vw"
+          className='h-full w-auto object-contain'
         />
       </figure>
     </div>
@@ -530,17 +530,17 @@ const Collaborate = () => {
       >
         Collaborate.
       </span>
-      <figure className='flex h-[38rem] flex-1 items-center justify-center'>
+      <figure className='flex w-full sm:w-auto relative h-[16rem] sm:h-[38rem] sm:flex-1 items-center justify-center'>
         <Image
           src='/images/collaborate-1-c.png'
           alt='Plan'
           loading='eager'
-          width={450}
-          height={500}
-          className='h-full w-auto'
+          fill
+          sizes="(max-width: 768px) 100vw, 25vw"
+          className='h-full w-auto object-contain'
         />
       </figure>
-      <div className='flex flex-1 flex-col gap-8'>
+      <div className='flex sm:flex-1 flex-col gap-8'>
         <h3 className='text-[clamp(2.75rem,2.1422rem+2.5932vw,3.75rem)] font-bold leading-[.85] md:text-[3.75rem]'>
           Collaborate for
           <br className='hidden md:block' /> Impact

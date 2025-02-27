@@ -197,13 +197,15 @@ export const AboutSlider = () => {
             <div key={index} className='embla__slide max-h-[55rem] sm:max-h-[31rem]'>
               <div className='flex h-full flex-col sm:flex-row'>
                 <div className='relative max-h-[50%] sm:max-h-none sm:max-w-[60%] sm:flex-[1_0_60%]'>
-                  <Image
-                    src={slides.image.src}
-                    alt={slides.image.alt}
-                    width={720}
-                    height={495}
-                    className='h-full w-full object-cover'
-                  />
+                  <figure className='flex relative overflow-hidden h-[18rem] sm:h-[30rem] w-full items-center justify-center'>
+                    <Image
+                      src={slides.image.src}
+                        alt={slides.image.alt}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 60vw"
+                        className='h-full w-full object-cover'
+                      />
+                  </figure>
                   <div
                     className='absolute bottom-2 left-4 right-0 z-[1] text-[1.5rem] font-bold leading-[1] text-white sm:text-[2.25rem]'
                     dangerouslySetInnerHTML={{ __html: slides.text }}
