@@ -156,7 +156,7 @@ const Plan = () => {
       </span>
       <figure className='flex h-[38rem] flex-1 items-center justify-center'>
         <Image
-          src='/images/plan-img.png'
+          src='/images/plan-img-c.png'
           alt='Plan'
           loading='eager'
           width={450}
@@ -316,7 +316,7 @@ const Run = () => {
         </div>
         <figure className='flex h-[38rem] flex-1 items-center justify-center'>
           <Image
-            src='/images/run-1.png'
+            src='/images/run-1-c.png'
             alt='Plan'
             loading='eager'
             width={450}
@@ -328,7 +328,7 @@ const Run = () => {
       <div ref={block2Ref} className='flex flex-1 flex-col items-center justify-center gap-24 md:flex-row'>
         <figure className='flex h-[38rem] flex-1 items-center justify-center'>
           <Image
-            src='/images/run-2.png'
+            src='/images/run-2-c.png'
             alt='Plan'
             loading='eager'
             width={450}
@@ -532,7 +532,7 @@ const Collaborate = () => {
       </span>
       <figure className='flex h-[38rem] flex-1 items-center justify-center'>
         <Image
-          src='/images/collaborate-1.png'
+          src='/images/collaborate-1-c.png'
           alt='Plan'
           loading='eager'
           width={450}

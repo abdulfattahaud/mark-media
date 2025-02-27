@@ -67,7 +67,7 @@ export const Pricing = () => {
   return (
     <div id='pricing' ref={wrapperRef} className='relative h-max min-h-svh'>
       <Image
-        src='/images/busniess-bg.png'
+        src='/images/busniess-bg-c.png'
         alt=''
         width={1600}
         height={1200}

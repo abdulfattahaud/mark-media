@@ -19,7 +19,7 @@ type Slide = {
 const slides: Slide[] = [
   {
     image: {
-      src: "/images/exp-slide-01.png",
+      src: "/images/exp-slide-01-c.png",
       alt: "Slide 1",
     },
     title: "Branding & Strategy",
@@ -28,7 +28,7 @@ const slides: Slide[] = [
   },
   {
     image: {
-      src: "/images/exp-slide-02.png",
+      src: "/images/exp-slide-02-c.png",
       alt: "Slide 2",
     },
     title: "Digital Marketing",
@@ -37,7 +37,7 @@ const slides: Slide[] = [
   },
   {
     image: {
-      src: "/images/exp-slide-03.png",
+      src: "/images/exp-slide-03-c.png",
       alt: "Slide 3",
     },
     title: "Data Analytics & Optimization",
@@ -361,7 +361,7 @@ export const Expertise = () => {
         </div>
       </div>
       <Image
-        src='/images/exp-bg.png'
+        src='/images/exp-bg-c.png'
         alt='Background noise'
         width={1600}
         height={1150}
