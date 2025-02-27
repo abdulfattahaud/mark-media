@@ -55,7 +55,7 @@ const Loader = () => {
           <Image src='/icons/logo.png' alt='Mark Media Logo' width={200} height={100} className='h-auto w-[300px]' />
         </div>
       </div>
-      {isLoaded && <Home />}
+      <Home />
     </div>
   );
 };
