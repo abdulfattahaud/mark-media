@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
+import Link from "next/link";
 const Header = () => {
   const headerRef = useRef<HTMLDivElement>(null);
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, skipSnaps: false, containScroll: "trimSnaps" });
@@ -65,10 +66,13 @@ const Header = () => {
       <h2 className='text-[2rem] font-extrabold text-[#24272B] md:text-[3.75rem]'>The Brands That Trust Us</h2>
       <div className='hidden max-w-[40rem] flex-wrap items-center justify-center gap-3 sm:flex md:max-w-[65rem]'>
         <div className='logo-wrapper flex h-[3.5rem] w-[9.875rem] items-center justify-center overflow-hidden rounded-[12px] border-[3px] border-primary bg-black px-6 py-3 md:h-[6.875rem] md:w-[21rem] md:px-12 md:py-6'>
-          <Image src='/icons/unity.png' alt='Unity Marketing' width={240} height={64} className='h-full w-auto' />
+          <Link href='https://www.vidnik.co.uk/' target='_blank' className=''>
+            <Image src='/icons/vidnik.png' alt='Vidnik' width={240} height={64} className='h-full w-auto' />
+            <span className='absolute left-0 top-0 text-[0px] opacity-0'>Vidnik</span>
+          </Link>
         </div>
         <div className='logo-wrapper flex h-[3.5rem] w-[9.875rem] items-center justify-center overflow-hidden rounded-[12px] border-[3px] border-primary bg-black px-6 py-3 md:h-[6.875rem] md:w-[21rem] md:px-12 md:py-6'>
-          <Image src='/icons/vidnik.png' alt='Vidnik' width={240} height={64} className='h-full w-auto' />
+          <Image src='/icons/unity.png' alt='Unity Marketing' width={240} height={64} className='h-full w-auto' />
         </div>
         <div className='logo-wrapper flex h-[3.5rem] w-[9.875rem] items-center justify-center overflow-hidden rounded-[12px] border-[3px] border-primary bg-black px-6 py-3 md:h-[6.875rem] md:w-[21rem] md:px-12 md:py-6'>
           <Image src='/icons/xygma.png' alt='Xygma' width={240} height={64} className='h-full w-auto' />
@@ -77,7 +81,10 @@ const Header = () => {
           <Image src='/icons/zadlaw.png' alt='Zadlaw' width={240} height={64} className='h-full w-auto' />
         </div>
         <div className='logo-wrapper flex h-[3.5rem] w-[9.875rem] items-center justify-center overflow-hidden rounded-[12px] border-[3px] border-primary bg-black px-12 py-1 md:h-[6.875rem] md:w-[21rem]'>
-          <Image src='/icons/sbt.png' alt='SBT' width={240} height={64} className='h-full w-auto' />
+          <Link href='https://stepbytech.com' target='_blank' className='h-full'>
+            <Image src='/icons/sbt.png' alt='SBT' width={240} height={64} className='h-full w-auto' />
+            <span className='absolute left-0 top-0 text-[0px] opacity-0'>Step By Tech</span>
+          </Link>
         </div>
       </div>
 
@@ -85,12 +92,15 @@ const Header = () => {
         <div className='embla__container gap-4'>
           <div className='embla__slide w-full'>
             <div className='logo-wrapper flex h-[6.5rem] w-full items-center justify-center overflow-hidden rounded-[32px] bg-black px-6 py-3'>
-              <Image src='/icons/unity.png' alt='Unity Marketing' width={240} height={64} className='h-full w-auto' />
+              <Link href='https://www.vidnik.co.uk/' target='_blank' className='h-full'>
+                <Image src='/icons/vidnik.png' alt='Vidnik' width={240} height={64} className='h-full w-auto' />
+                <span className='absolute left-0 top-0 text-[0px] opacity-0'>Vidnik</span>
+              </Link>
             </div>
           </div>
           <div className='embla__slide w-full'>
             <div className='logo-wrapper flex h-[6.5rem] w-full items-center justify-center overflow-hidden rounded-[32px] bg-black px-6 py-3'>
-              <Image src='/icons/vidnik.png' alt='Vidnik' width={240} height={64} className='h-full w-auto' />
+              <Image src='/icons/unity.png' alt='Unity Marketing' width={240} height={64} className='h-full w-auto' />
             </div>
           </div>
           <div className='embla__slide w-full'>
@@ -105,7 +115,10 @@ const Header = () => {
           </div>
           <div className='embla__slide mr-4 w-full'>
             <div className='logo-wrapper flex h-[6.5rem] w-full items-center justify-center overflow-hidden rounded-[32px] bg-black px-12 py-3'>
-              <Image src='/icons/sbt.png' alt='SBT' width={240} height={64} className='h-full w-auto' />
+              <Link href='https://stepbytech.com' target='_blank' className='h-full'>
+                <Image src='/icons/sbt.png' alt='SBT' width={240} height={64} className='h-full w-auto' />
+                <span className='absolute left-0 top-0 text-[0px] opacity-0'>Step By Tech</span>
+              </Link>
             </div>
           </div>
         </div>

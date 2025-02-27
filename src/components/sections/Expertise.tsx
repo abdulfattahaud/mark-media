@@ -261,8 +261,8 @@ export const Expertise = () => {
     };
   }, []);
   return (
-    <div id='expertise' className='relative h-max min-h-[min(100svh,900px)] overflow-hidden bg-primary pr-4 sm:pr-0'>
-      <div className='relative z-[2] flex h-full flex-col justify-center gap-10 pb-[2rem] pl-[2.5rem] pt-[3rem] sm:pl-[4rem] md:py-[3.25rem] md:pl-[12.5rem]'>
+    <div id='expertise' className='relative h-max overflow-hidden bg-primary pr-4 sm:pr-0'>
+      <div className='relative z-[2] flex h-full flex-col justify-center gap-10 pb-[2rem] pl-[2.5rem] pt-[3rem] sm:pl-[4rem] md:py-[7.25rem] md:pl-[12.5rem]'>
         <div className='flex flex-col items-start gap-8'>
           <div className='flex items-center gap-5'>
             <Image
