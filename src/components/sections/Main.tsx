@@ -96,17 +96,17 @@ export const Main = () => {
       );
   }, []);
   return (
-    <div id='main-section' className='relative h-[calc((var(--vh)*100)-4rem)] smh:h-[calc(calc(var(--vh)*100)-clamp(4rem,0.5rem+16vh,6.5rem))] sm:h-[calc((var(--vh)*100)-6.25rem)] border-b-[1.25rem] border-b-primary'>
+    <div id='main-section' className='relative h-[calc((var(--vh)*100)-4rem)] xsh:h-[calc((var(--vh)*100)-2.5rem)] smh:h-[calc(calc(var(--vh)*100)-clamp(4rem,0.5rem+16vh,6.5rem))] sm:h-[calc((var(--vh)*100)-6.25rem)] border-b-[1.25rem] border-b-primary'>
       <div className='flex h-full flex-col items-center gap-10 pl-[4rem] sm:flex-row md:pl-[12.5rem]'>
-        <div className='flex h-full w-full flex-col smh:text-[clamp(0.5rem,-0.025rem+2.4vh,0.875rem)] items-start justify-center text-white sm:h-auto sm:w-1/2 sm:justify-start sm:text-black'>
+        <div className='flex h-full w-full flex-col smh:text-[clamp(0.5rem,-0.025rem+2.4vh,0.875rem)] xsh:text-[clamp(0.5rem,-0.025rem+2.4vh,0.875rem)] items-start justify-center text-white sm:h-auto sm:w-1/2 sm:justify-start sm:text-black'>
           <span className='hide-first mb-[.5em] text-[1.25em] font-extrabold leading-[1.06] text-white sm:text-grayC md:text-[1.875em]'>
             Mark Media
           </span>
-          <h1 className='hide-first mb-[1.75rem] text-[clamp(2.5em,-2.6429em+10.7143vw,4em)] leading-[1.06] md:text-[6em]'>
+          <h1 className='hide-first xsh:mb-[1.25rem] mb-[1.75rem] text-[clamp(2.5em,-2.6429em+10.7143vw,4em)] leading-[1.06] md:text-[6em]'>
             Your Bridge To Unstoppable
             <br /> Brand Success
           </h1>
-          <p className='hide-first mb-[2.125em] text-[1.25em] leading-[1.2] text-white sm:text-grayC md:text-[1.5em]'>
+          <p className='hide-first xsh:mb-[1.25rem] mb-[2.125em] text-[1.25em] leading-[1.2] text-white sm:text-grayC md:text-[1.5em]'>
             Leading You From Vision to Victory With Strategic, Results-
             <br />
             Driven Marketing Solutions

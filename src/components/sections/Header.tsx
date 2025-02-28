@@ -326,7 +326,7 @@ export const Header = () => {
         </div>
       </div>
       <div
-        className='flex h-[4rem] w-full items-center justify-between gap-2 border-b border-[#BABABA33] bg-white px-8 py-4 smh:h-[clamp(4rem,0.5rem+16vh,6.5rem)] relative z-[1] sm:h-[6.25rem] md:px-16'
+        className='flex xsh:h-[2.5rem] h-[4rem] w-full items-center justify-between gap-2 border-b border-[#BABABA33] bg-white px-8 py-4 xsh:py-2 smh:py-2 smh:h-[clamp(4rem,0.5rem+16vh,6.5rem)] relative z-[1] sm:h-[6.25rem] md:px-16'
         style={{
           boxShadow: "0px 4px 100px 0px #C3C3C340",
         }}
@@ -335,7 +335,7 @@ export const Header = () => {
           src='/icons/logo.png'
           width={115}
           height={60}
-          className='w-[5.5rem] sm:w-[7.25rem] smh:h-full smh:w-auto'
+          className='w-[5.5rem] sm:w-[7.25rem] smh:h-full smh:w-auto xsh:h-full xsh:w-auto'
           alt='Media Mark Logo'
         />
         <ul className='hidden gap-10 text-[1.125rem] md:flex'>
@@ -360,7 +360,7 @@ export const Header = () => {
           aria-label='Open menu'
           ref={mobileMenu}
           onClick={handleClick}
-          className='rounded-[10px] bg-primary px-4 py-2.5 md:hidden'
+          className='rounded-[10px] bg-primary xsh:h-full flex items-center justify-center px-4 py-2.5 md:hidden'
         >
           <svg
             className='h-3.5 w-[1.125rem]'
