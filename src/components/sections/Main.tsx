@@ -96,23 +96,23 @@ export const Main = () => {
       );
   }, []);
   return (
-    <div id='main-section' className='relative h-[calc((var(--vh)*100)-4rem)] sm:h-[calc((var(--vh)*100)-6.25rem)] border-b-[1.25rem] border-b-primary'>
+    <div id='main-section' className='relative h-[calc((var(--vh)*100)-4rem)] smh:h-[calc(calc(var(--vh)*100)-clamp(4rem,0.5rem+16vh,6.5rem))] sm:h-[calc((var(--vh)*100)-6.25rem)] border-b-[1.25rem] border-b-primary'>
       <div className='flex h-full flex-col items-center gap-10 pl-[4rem] sm:flex-row md:pl-[12.5rem]'>
-        <div className='flex h-full w-full flex-col items-start justify-center text-white sm:h-auto sm:w-1/2 sm:justify-start sm:text-black'>
-          <span className='hide-first mb-2 text-[1.25rem] font-extrabold leading-[1.06] text-white sm:text-grayC md:text-[1.875rem]'>
+        <div className='flex h-full w-full flex-col smh:text-[clamp(0.5rem,-0.025rem+2.4vh,0.875rem)] items-start justify-center text-white sm:h-auto sm:w-1/2 sm:justify-start sm:text-black'>
+          <span className='hide-first mb-[.5em] text-[1.25em] font-extrabold leading-[1.06] text-white sm:text-grayC md:text-[1.875em]'>
             Mark Media
           </span>
-          <h1 className='hide-first mb-7 text-[clamp(2.5rem,-2.6429rem+10.7143vw,4rem)] leading-[1.06] md:text-[6rem]'>
+          <h1 className='hide-first mb-[1.75rem] text-[clamp(2.5em,-2.6429em+10.7143vw,4em)] leading-[1.06] md:text-[6em]'>
             Your Bridge To Unstoppable
             <br /> Brand Success
           </h1>
-          <p className='hide-first mb-[2.125rem] text-[1.25rem] leading-[1.2] text-white sm:text-grayC md:text-[1.5rem]'>
+          <p className='hide-first mb-[2.125em] text-[1.25em] leading-[1.2] text-white sm:text-grayC md:text-[1.5em]'>
             Leading You From Vision to Victory With Strategic, Results-
             <br />
             Driven Marketing Solutions
           </p>
           <ContactUsDialog>
-            <DialogTrigger className='rounded-[.75rem] bg-primary px-3 py-2 text-sm font-bold text-black opacity-0 md:rounded-[1.25rem] md:px-6 md:py-4 md:text-base'>
+            <DialogTrigger className='rounded-[.75em] bg-primary px-[.75em] py-[.5em] text-[.875em] font-bold text-black opacity-0 md:rounded-[1.25em] md:px-[1.5em] md:py-[1em] md:text-[1em]'>
               Schedule Meeting
             </DialogTrigger>
           </ContactUsDialog>

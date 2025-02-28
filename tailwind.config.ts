@@ -61,6 +61,7 @@ export default {
       },
       screens: {
         sm: "768px",
+        smh: {raw: "(min-width: 768px) and (max-height: 600px)"},
         md: "993px",
         lg: "1200px",
         xl: "1440px",
