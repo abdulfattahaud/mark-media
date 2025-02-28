@@ -98,13 +98,13 @@ export const Header = () => {
           onMouseOver={handleMouseOver}
           onMouseLeave={handleMouseLeave}
           onClick={handleClick}
-          className='menu-open flex size-[clamp(3.125rem,0.625rem+5.2083vw,6.875rem)] items-center justify-center overflow-hidden rounded-full bg-primary'
+          className='menu-open flex p-4 items-center relative aspect-square justify-center overflow-hidden rounded-full bg-primary'
           style={{
             boxShadow: "hsl(47.91deg 100% 30.39%) 0px 0px 4px 0px",
           }}
         >
           <svg
-            className='arr-svg pointer-events-none absolute size-[1.5rem] smh:size-[2.5rem] sm:size-[4.5rem]'
+            className='arr-svg pointer-events-none size-[1.5rem] smh:size-[clamp(1.5rem,0.1rem+6.4vh,2.5rem)] sm:size-[clamp(1.5rem,-8.7857rem+21.4286vw,4.5rem)]'
             width='72'
             height='72'
             viewBox='0 0 72 72'
