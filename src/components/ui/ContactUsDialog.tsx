@@ -91,7 +91,7 @@ export const ContactUsDialog = ({ children }: { children: React.ReactNode }) => 
       }}
     >
       {children}
-      <DialogContent className='h-max max-h-[90%] w-full max-w-[85%] overflow-scroll rounded-[20px] bg-white px-[2.5em] pb-[1em] pt-[2.25em] text-[16px] shadow-[rgb(107_107_107)_0px_0px_0px_20px] sm:max-w-[44em] sm:text-[20px] sm:shadow-[rgb(107_107_107)_0px_0px_0px_30px]'>
+      <DialogContent className='h-max max-h-[90%] w-full max-w-[85%] overflow-scroll rounded-[20px] bg-white px-[1.5em] pb-[1em] pt-[2.25em] text-[16px] shadow-[rgb(107_107_107)_0px_0px_0px_20px] sm:max-w-[44em] sm:text-[20px] sm:shadow-[rgb(107_107_107)_0px_0px_0px_30px]'>
         <DialogHeader>
           <DialogTitle
             className='mb-[.875em] pt-[1.5rem] sm:pt-0'
@@ -363,7 +363,7 @@ export const ContactUsDialog = ({ children }: { children: React.ReactNode }) => 
                   </li>
                 </ul>
 
-                <div className='relative flex gap-[.625em]'>
+                <div className='relative items-center flex gap-[.625em]'>
                   <input
                     type='checkbox'
                     value='accept_terms'

@@ -146,7 +146,7 @@ const SlideItem = ({ slide }: { slide: Slide }) => {
         className={`absolute bottom-3 left-3 flex flex-col overflow-hidden ${isOpen ? "h-[calc(100%-1.5rem)] rounded-[20px] bg-[#FFCD00CC]" : "h-[2.5rem] rounded-[50px] bg-primary md:h-[4rem]"} w-[calc(100%-1.5rem)] px-2 py-2 transition-[height_background]`}
       >
         <div className={`flex ${isOpen ? "h-auto" : "h-full"} items-center justify-between transition-[height]`}>
-          <h3 className='pl-5 font-extrabold'>{slide.title}</h3>
+          <h3 className={`pl-5 font-extrabold ${isOpen ? "line-clamp-none" : "line-clamp-1"} leading-[1]`}>{slide.title}</h3>
           <button
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Close" : "Open"}

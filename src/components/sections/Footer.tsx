@@ -88,7 +88,7 @@ const GetInTouchDialog = ({ children }: { children: React.ReactNode }) => {
     >
       {children}
       <DialogContent
-        className='h-max max-h-[580px] w-full max-w-[85%] overflow-scroll rounded-[20px] bg-white px-[2.5em] pb-[1em] pt-[2.25em] text-[16px] shadow-[rgb(107_107_107)_0px_0px_0px_20px] sm:h-[90%] sm:max-h-none sm:max-w-[24em] sm:text-[20px] sm:shadow-[rgb(107_107_107)_0px_0px_0px_30px]'
+        className='h-max max-h-[580px] w-full max-w-[85%] overflow-scroll rounded-[20px] bg-white px-[1.5em] pb-[1em] pt-[2.25em] text-[16px] shadow-[rgb(107_107_107)_0px_0px_0px_20px] sm:h-[90%] sm:max-h-none sm:max-w-[24em] sm:text-[20px] sm:shadow-[rgb(107_107_107)_0px_0px_0px_30px]'
         style={{
           boxShadow: "",
         }}
@@ -160,7 +160,7 @@ const GetInTouchDialog = ({ children }: { children: React.ReactNode }) => {
                 />
               </div>
             </div>
-            <div className='relative flex gap-[.625em]'>
+            <div className='relative flex items-center gap-[.625em]'>
               <input
                 type='checkbox'
                 value='accept_terms'
