@@ -127,7 +127,7 @@ export const Header = () => {
           </svg>
         </button>
       </div>
-      <div className='menu-screen-wrapper fixed left-0 top-0 z-[1001] hidden w-full justify-end sm:flex'>
+      <div className='menu-screen-wrapper fixed left-0 top-0 z-[1001] hidden w-full justify-end md:flex'>
         <div className='menu-screen w-ful relative z-[2] flex h-[100dvh] rounded-l-[3.125rem] bg-primary px-[3.125rem] py-[4.5rem] md:w-[35%] md:min-w-[30rem]'>
           <button
             aria-label='Close menu'
@@ -233,7 +233,7 @@ export const Header = () => {
         </div>
         <div className='overlay absolute left-0 top-0 z-[1] h-full w-full bg-[#3837373D] opacity-0'></div>
       </div>
-      <div className='mobile-menu-wrapper fixed left-0 top-0 z-[1001] h-[100svh] w-full bg-primary sm:hidden'>
+      <div className='mobile-menu-wrapper fixed left-0 top-0 z-[1001] h-[100svh] w-full bg-primary md:hidden'>
         <div className='relative h-full w-full'>
           <button
             aria-label='Close menu'
@@ -262,7 +262,7 @@ export const Header = () => {
               />
             </svg>
           </button>
-          <div className='flex h-full flex-col justify-between gap-[1.625rem] px-4 py-6'>
+          <div className='flex overflow-scroll h-full flex-col justify-between gap-[1.625rem] px-4 py-6'>
             <Image
               src='/icons/logo.png'
               alt='Mark Media'
@@ -352,7 +352,7 @@ export const Header = () => {
           ))}
         </ul>
         <ContactUsDialog>
-          <DialogTrigger className='hidden rounded-[.75rem] bg-primary px-3 py-2 text-sm font-bold text-black sm:block md:rounded-[1.25rem] md:px-6 md:py-4 md:text-base'>
+          <DialogTrigger className='hidden rounded-[.75rem] bg-primary px-3 py-2 text-sm font-bold text-black md:block md:rounded-[1.25rem] md:px-6 md:py-4 md:text-base'>
             Schedule Meeting
           </DialogTrigger>
         </ContactUsDialog>
@@ -360,7 +360,7 @@ export const Header = () => {
           aria-label='Open menu'
           ref={mobileMenu}
           onClick={handleClick}
-          className='rounded-[10px] bg-primary px-4 py-2.5 sm:hidden'
+          className='rounded-[10px] bg-primary px-4 py-2.5 md:hidden'
         >
           <svg
             className='h-3.5 w-[1.125rem]'
