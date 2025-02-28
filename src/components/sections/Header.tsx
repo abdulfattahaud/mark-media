@@ -104,7 +104,7 @@ export const Header = () => {
           }}
         >
           <svg
-            className='arr-svg pointer-events-none absolute size-[1.5rem] sm:size-[4.5rem]'
+            className='arr-svg pointer-events-none absolute size-[1.5rem] smh:size-[2.5rem] sm:size-[4.5rem]'
             width='72'
             height='72'
             viewBox='0 0 72 72'
